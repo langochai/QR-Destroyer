@@ -6,9 +6,6 @@ using System.Windows.Threading;
 
 namespace wpf_control
 {
-    /// <summary>
-    /// Interaction logic for MoveableControl.xaml
-    /// </summary>
     public partial class GameControl : UserControl
     {
         private DispatcherTimer timer;
@@ -16,9 +13,9 @@ namespace wpf_control
         private double dx = 0;
         private double dy = 0;
 
-        public double speedFactor = 1.0;
+        public double speedFactor = 0.5;
 
-        private int currentImg = 0;
+        public int currentImg = 0;
         private string[] imagePaths =
         {
             "Images/qr1.png",
@@ -53,7 +50,7 @@ namespace wpf_control
 
             timer = new DispatcherTimer
             {
-                Interval = TimeSpan.FromMilliseconds(1)
+                Interval = TimeSpan.FromMilliseconds(5)
             };
             timer.Tick += Timer_Tick;
             timer.Start();
@@ -102,7 +99,7 @@ namespace wpf_control
         public void RespawnImage()
         {
             MainCanvas.Children.Remove(BouncingImage);
-            currentImg++;
+            currentImg = (currentImg + 1) % imagePaths.Length;
             BouncingImage = new Image
             {
                 Width = 150,
@@ -119,9 +116,8 @@ namespace wpf_control
             Canvas.SetLeft(BouncingImage, newX);
             Canvas.SetTop(BouncingImage, newY);
 
-            double minSpeed = 2.0, maxSpeed = 5.0;
-            dx = (random.NextDouble() * (maxSpeed - minSpeed) + minSpeed) * (random.Next(0, 2) == 0 ? 1 : -1);
-            dy = (random.NextDouble() * (maxSpeed - minSpeed) + minSpeed) * (random.Next(0, 2) == 0 ? 1 : -1);
+            dx = random.Next(2) == 0 ? -3 : 3;
+            dy = random.Next(2) == 0 ? -3 : 3;
         }
     }
 }
