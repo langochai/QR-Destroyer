@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Forms;
-using System.Windows.Input;
 using wpf_control;
 
 namespace wpf_in_winforms
@@ -17,9 +10,11 @@ namespace wpf_in_winforms
     {
         private SortableBindingList<Customer> customers = new SortableBindingList<Customer>();
         private readonly List<PictureBox> Stars = new List<PictureBox>();
-        private List<String> answers = new List<string> { 
+
+        private List<String> answers = new List<string> {
             "rtc-placeholder1","rizzler-of-rtc","skibidi-toilet","giga-chad-of-rtc","customer-fanum-list","humongous-gyatt"
         };
+
         public GameFrame()
         {
             InitializeComponent();
@@ -30,11 +25,13 @@ namespace wpf_in_winforms
             Stars.AddRange(new[] { star1, star2, star3, star4, star5, star6 });
             DisplayRank();
         }
+
         public void DisplayRank()
         {
             grvRank.DataSource = customers;
             grvRank.Sort(grvRank.Columns["colScore"], ListSortDirection.Descending);
         }
+
         public void NextQR()
         {
             if (!(eleHost.Child is GameControl game)) return;
