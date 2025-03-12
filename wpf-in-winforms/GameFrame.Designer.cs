@@ -39,8 +39,8 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboQRValue = new System.Windows.Forms.ComboBox();
             this.btnCheck = new System.Windows.Forms.Button();
+            this.cboQRValue = new System.Windows.Forms.ComboBox();
             this.star6 = new System.Windows.Forms.PictureBox();
             this.star5 = new System.Windows.Forms.PictureBox();
             this.star4 = new System.Windows.Forms.PictureBox();
@@ -211,6 +211,17 @@
             this.panel1.Size = new System.Drawing.Size(1854, 105);
             this.panel1.TabIndex = 4;
             // 
+            // btnCheck
+            // 
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.Location = new System.Drawing.Point(1699, 39);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(103, 34);
+            this.btnCheck.TabIndex = 7;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // cboQRValue
             // 
             this.cboQRValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,17 +237,6 @@
             this.cboQRValue.Name = "cboQRValue";
             this.cboQRValue.Size = new System.Drawing.Size(192, 33);
             this.cboQRValue.TabIndex = 6;
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheck.Location = new System.Drawing.Point(1699, 39);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(103, 34);
-            this.btnCheck.TabIndex = 7;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // star6
             // 
@@ -301,6 +301,7 @@
             // 
             // colName
             // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colName.DataPropertyName = "Name";
             this.colName.HeaderText = "Name";
             this.colName.Name = "colName";

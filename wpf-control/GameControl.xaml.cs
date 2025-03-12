@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Threading;
 
 namespace wpf_control
 {
     public partial class GameControl : UserControl
     {
-        private DispatcherTimer timer;
-
+        private Storyboard currentStoryboard = new Storyboard();
         private double dx = 0;
         private double dy = 0;
 
         public double speedFactor = 0.5;
 
         public int currentImg = 0;
+
         private string[] imagePaths =
         {
             "Images/qr1.png",
@@ -48,25 +48,50 @@ namespace wpf_control
             Canvas.SetLeft(BouncingImage, initialX);
             Canvas.SetTop(BouncingImage, initialY);
 
-            timer = new DispatcherTimer
-            {
-                Interval = TimeSpan.FromMilliseconds(5)
-            };
-            timer.Tick += Timer_Tick;
-            timer.Start();
+            AnimateImage();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        public void RespawnImage()
         {
-            double x = Canvas.GetLeft(BouncingImage);
-            double y = Canvas.GetTop(BouncingImage);
+            if (currentStoryboard != null)
+            {
+                currentStoryboard.Stop();
+                currentStoryboard = null;
+            }
+            MainCanvas.Children.Remove(BouncingImage);
 
-            double newX = x + dx * speedFactor;
-            double newY = y + dy * speedFactor;
+            currentImg = (currentImg + 1) % imagePaths.Length;
+            BouncingImage = new Image
+            {
+                Width = 150,
+                Height = 150,
+                Source = new BitmapImage(new Uri(imagePaths[currentImg], UriKind.Relative)),
+                Stretch = System.Windows.Media.Stretch.Uniform
+            };
+
+            MainCanvas.Children.Add(BouncingImage);
+
+            double newX = random.NextDouble() * (MainCanvas.ActualWidth - BouncingImage.Width);
+            double newY = random.NextDouble() * (MainCanvas.ActualHeight - BouncingImage.Height);
+            Canvas.SetLeft(BouncingImage, newX);
+            Canvas.SetTop(BouncingImage, newY);
+
+            dx = random.Next(2) == 0 ? -3 : 3;
+            dy = random.Next(2) == 0 ? -3 : 3;
+
+            AnimateImage();
+        }
+
+        private void AnimateImage()
+        {
+            double currentX = Canvas.GetLeft(BouncingImage);
+            double currentY = Canvas.GetTop(BouncingImage);
+
+            double newX = currentX + dx * speedFactor;
+            double newY = currentY + dy * speedFactor;
 
             double canvasWidth = MainCanvas.ActualWidth;
             double canvasHeight = MainCanvas.ActualHeight;
-
             double imgWidth = BouncingImage.ActualWidth;
             double imgHeight = BouncingImage.ActualHeight;
 
@@ -92,32 +117,36 @@ namespace wpf_control
                 dy = -dy;
             }
 
-            Canvas.SetLeft(BouncingImage, newX);
-            Canvas.SetTop(BouncingImage, newY);
-        }
-
-        public void RespawnImage()
-        {
-            MainCanvas.Children.Remove(BouncingImage);
-            currentImg = (currentImg + 1) % imagePaths.Length;
-            BouncingImage = new Image
+            Storyboard sb = new Storyboard();
+            TimeSpan duration = TimeSpan.FromMilliseconds(20);
+            DoubleAnimation animX = new DoubleAnimation
             {
-                Width = 150,
-                Height = 150,
-                Source = new BitmapImage(new Uri(imagePaths[currentImg], UriKind.Relative)),
-                Stretch = System.Windows.Media.Stretch.Uniform
+                From = currentX,
+                To = newX,
+                Duration = new Duration(duration),
+                FillBehavior = FillBehavior.Stop
             };
-
-            MainCanvas.Children.Add(BouncingImage);
-
-            double newX = random.NextDouble() * (MainCanvas.ActualWidth - BouncingImage.Width);
-            double newY = random.NextDouble() * (MainCanvas.ActualHeight - BouncingImage.Height);
-
-            Canvas.SetLeft(BouncingImage, newX);
-            Canvas.SetTop(BouncingImage, newY);
-
-            dx = random.Next(2) == 0 ? -3 : 3;
-            dy = random.Next(2) == 0 ? -3 : 3;
+            Storyboard.SetTarget(animX, BouncingImage);
+            Storyboard.SetTargetProperty(animX, new PropertyPath("(Canvas.Left)"));
+            sb.Children.Add(animX);
+            DoubleAnimation animY = new DoubleAnimation
+            {
+                From = currentY,
+                To = newY,
+                Duration = new Duration(duration),
+                FillBehavior = FillBehavior.Stop
+            };
+            Storyboard.SetTarget(animY, BouncingImage);
+            Storyboard.SetTargetProperty(animY, new PropertyPath("(Canvas.Top)"));
+            sb.Children.Add(animY);
+            sb.Completed += (s, e) =>
+            {
+                Canvas.SetLeft(BouncingImage, newX);
+                Canvas.SetTop(BouncingImage, newY);
+                AnimateImage();
+            };
+            currentStoryboard = sb;
+            sb.Begin();
         }
     }
 }
