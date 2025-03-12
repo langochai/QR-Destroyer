@@ -39,14 +39,18 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboQRValue = new System.Windows.Forms.ComboBox();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.star6 = new System.Windows.Forms.PictureBox();
             this.star5 = new System.Windows.Forms.PictureBox();
             this.star4 = new System.Windows.Forms.PictureBox();
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
-            this.cboQRValue = new System.Windows.Forms.ComboBox();
-            this.btnCheck = new System.Windows.Forms.Button();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -130,6 +134,11 @@
             // grvRank
             // 
             this.grvRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvRank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colName,
+            this.colCompany,
+            this.colScore});
             this.grvRank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvRank.Location = new System.Drawing.Point(0, 100);
             this.grvRank.Name = "grvRank";
@@ -202,6 +211,33 @@
             this.panel1.Size = new System.Drawing.Size(1854, 105);
             this.panel1.TabIndex = 4;
             // 
+            // cboQRValue
+            // 
+            this.cboQRValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboQRValue.FormattingEnabled = true;
+            this.cboQRValue.Items.AddRange(new object[] {
+            "rtc-placeholder1",
+            "rizzler-of-rtc",
+            "skibidi-toilet",
+            "giga-chad-of-rtc",
+            "customer-fanum-list",
+            "humongous-gyatt"});
+            this.cboQRValue.Location = new System.Drawing.Point(1487, 40);
+            this.cboQRValue.Name = "cboQRValue";
+            this.cboQRValue.Size = new System.Drawing.Size(192, 33);
+            this.cboQRValue.TabIndex = 6;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.Location = new System.Drawing.Point(1699, 39);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(103, 34);
+            this.btnCheck.TabIndex = 7;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // star6
             // 
             this.star6.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
@@ -256,32 +292,30 @@
             this.star1.TabIndex = 0;
             this.star1.TabStop = false;
             // 
-            // cboQRValue
+            // colId
             // 
-            this.cboQRValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboQRValue.FormattingEnabled = true;
-            this.cboQRValue.Items.AddRange(new object[] {
-            "rtc-placeholder1",
-            "rizzler-of-rtc",
-            "skibidi-toilet",
-            "giga-chad-of-rtc",
-            "customer-fanum-list",
-            "humongous-gyatt"});
-            this.cboQRValue.Location = new System.Drawing.Point(1487, 40);
-            this.cboQRValue.Name = "cboQRValue";
-            this.cboQRValue.Size = new System.Drawing.Size(192, 33);
-            this.cboQRValue.TabIndex = 6;
+            this.colId.DataPropertyName = "Id";
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = false;
             // 
-            // btnCheck
+            // colName
             // 
-            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheck.Location = new System.Drawing.Point(1699, 39);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(103, 34);
-            this.btnCheck.TabIndex = 7;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            // 
+            // colCompany
+            // 
+            this.colCompany.DataPropertyName = "Company";
+            this.colCompany.HeaderText = "Company";
+            this.colCompany.Name = "colCompany";
+            // 
+            // colScore
+            // 
+            this.colScore.DataPropertyName = "Score";
+            this.colScore.HeaderText = "Score";
+            this.colScore.Name = "colScore";
             // 
             // GameFrame
             // 
@@ -340,6 +374,10 @@
         private System.Windows.Forms.Integration.ElementHost eleHost;
         private System.Windows.Forms.ComboBox cboQRValue;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCompany;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colScore;
     }
 }
 
