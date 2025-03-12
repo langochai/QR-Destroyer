@@ -61,41 +61,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MoveableControl.xaml">
+    <Page Include="GameControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Screen3.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Screen2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Screen1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WPFButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="MoveableControl.xaml.cs">
-      <DependentUpon>MoveableControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Screen3.xaml.cs">
-      <DependentUpon>Screen3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Screen2.xaml.cs">
-      <DependentUpon>Screen2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Screen1.xaml.cs">
-      <DependentUpon>Screen1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WPFButton.xaml.cs">
-      <DependentUpon>WPFButton.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="GameControl.xaml.cs">
+      <DependentUpon>GameControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +92,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\qr1.png" />
+    <Resource Include="Images\qr2.png" />
+    <Resource Include="Images\qr3.png" />
+    <Resource Include="Images\qr4.png" />
+    <Resource Include="Images\qr5.png" />
+    <Resource Include="Images\qr6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

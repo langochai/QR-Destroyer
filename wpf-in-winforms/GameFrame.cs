@@ -16,7 +16,7 @@ namespace wpf_in_winforms
         public GameFrame()
         {
             InitializeComponent();
-            //eleHost.Child = new MoveableControl();
+            eleHost.Child = new GameControl();
         }
     }
 }
