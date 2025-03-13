@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing.Text;
+using System.Drawing;
 using System.Windows.Forms;
 using wpf_control;
 
@@ -19,9 +21,9 @@ namespace wpf_in_winforms
         {
             InitializeComponent();
             eleHost.Child = new GameControl();
-            customers.Add(new Customer { Id = 0, Name = "Giga Chad", Company = "AAA", Score = 3 });
-            customers.Add(new Customer { Id = 0, Name = "Wimpy Beta", Company = "BBB", Score = 1 });
-            customers.Add(new Customer { Id = 0, Name = "Sigma of the Company", Company = "CCC", Score = 2 });
+            customers.Add(new Customer { Id = 0, Name = "Giga Chad", Company = "AAA", PlayTime = 30 });
+            customers.Add(new Customer { Id = 0, Name = "Wimpy Beta", Company = "BBB", PlayTime = 10 });
+            customers.Add(new Customer { Id = 0, Name = "Sigma of the Company", Company = "CCC", PlayTime = 20 });
             Stars.AddRange(new[] { star1, star2, star3, star4, star5, star6 });
             DisplayRank();
         }
@@ -29,7 +31,7 @@ namespace wpf_in_winforms
         public void DisplayRank()
         {
             grvRank.DataSource = customers;
-            grvRank.Sort(grvRank.Columns["colScore"], ListSortDirection.Descending);
+            grvRank.Sort(grvRank.Columns["colPlayTime"], ListSortDirection.Descending);
         }
 
         public void NextQR()

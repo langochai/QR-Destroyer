@@ -37,7 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblGameName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCheck = new System.Windows.Forms.Button();
             this.cboQRValue = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,8 @@
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlayTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -106,7 +107,7 @@
             // 
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 230);
+            this.splitContainer2.Location = new System.Drawing.Point(0, 205);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -117,8 +118,8 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.grvRank);
             this.splitContainer2.Panel2.Controls.Add(this.panel2);
-            this.splitContainer2.Size = new System.Drawing.Size(1854, 831);
-            this.splitContainer2.SplitterDistance = 1429;
+            this.splitContainer2.Size = new System.Drawing.Size(1584, 656);
+            this.splitContainer2.SplitterDistance = 1220;
             this.splitContainer2.TabIndex = 3;
             // 
             // eleHost
@@ -126,7 +127,7 @@
             this.eleHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eleHost.Location = new System.Drawing.Point(0, 0);
             this.eleHost.Name = "eleHost";
-            this.eleHost.Size = new System.Drawing.Size(1425, 827);
+            this.eleHost.Size = new System.Drawing.Size(1216, 652);
             this.eleHost.TabIndex = 0;
             this.eleHost.Text = "elementHost1";
             this.eleHost.Child = null;
@@ -138,11 +139,12 @@
             this.colId,
             this.colName,
             this.colCompany,
-            this.colScore});
+            this.colPlayTime,
+            this.colCreatedDate});
             this.grvRank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvRank.Location = new System.Drawing.Point(0, 100);
             this.grvRank.Name = "grvRank";
-            this.grvRank.Size = new System.Drawing.Size(417, 727);
+            this.grvRank.Size = new System.Drawing.Size(356, 552);
             this.grvRank.TabIndex = 1;
             // 
             // panel2
@@ -151,7 +153,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(417, 100);
+            this.panel2.Size = new System.Drawing.Size(356, 100);
             this.panel2.TabIndex = 0;
             // 
             // label2
@@ -169,6 +171,7 @@
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
             // 
@@ -179,20 +182,20 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.label3);
-            this.splitContainer3.Size = new System.Drawing.Size(1854, 125);
-            this.splitContainer3.SplitterDistance = 125;
+            this.splitContainer3.Panel2.Controls.Add(this.lblGameName);
+            this.splitContainer3.Size = new System.Drawing.Size(1584, 100);
+            this.splitContainer3.SplitterDistance = 100;
             this.splitContainer3.TabIndex = 0;
             // 
-            // label3
+            // lblGameName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(234, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(424, 55);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "QR DESTROYER!";
+            this.lblGameName.AutoSize = true;
+            this.lblGameName.Font = new System.Drawing.Font("Arial", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameName.Location = new System.Drawing.Point(234, 28);
+            this.lblGameName.Name = "lblGameName";
+            this.lblGameName.Size = new System.Drawing.Size(424, 55);
+            this.lblGameName.TabIndex = 0;
+            this.lblGameName.Text = "QR DESTROYER!";
             // 
             // panel1
             // 
@@ -206,9 +209,9 @@
             this.panel1.Controls.Add(this.star2);
             this.panel1.Controls.Add(this.star1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 125);
+            this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1854, 105);
+            this.panel1.Size = new System.Drawing.Size(1584, 105);
             this.panel1.TabIndex = 4;
             // 
             // btnCheck
@@ -312,17 +315,23 @@
             this.colCompany.HeaderText = "Company";
             this.colCompany.Name = "colCompany";
             // 
-            // colScore
+            // colPlayTime
             // 
-            this.colScore.DataPropertyName = "Score";
-            this.colScore.HeaderText = "Score";
-            this.colScore.Name = "colScore";
+            this.colPlayTime.DataPropertyName = "PlayTime";
+            this.colPlayTime.HeaderText = "PlayTime";
+            this.colPlayTime.Name = "colPlayTime";
+            // 
+            // colCreatedDate
+            // 
+            this.colCreatedDate.HeaderText = "CreatedDate";
+            this.colCreatedDate.Name = "colCreatedDate";
+            this.colCreatedDate.Visible = false;
             // 
             // GameFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1854, 1061);
+            this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainer3);
@@ -371,14 +380,15 @@
         private System.Windows.Forms.PictureBox star3;
         private System.Windows.Forms.PictureBox star2;
         private System.Windows.Forms.PictureBox star1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblGameName;
         private System.Windows.Forms.Integration.ElementHost eleHost;
         private System.Windows.Forms.ComboBox cboQRValue;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompany;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colScore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPlayTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedDate;
     }
 }
 
