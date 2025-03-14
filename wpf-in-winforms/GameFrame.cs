@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.IO.Ports;
+using System.Linq;
 using System.Media;
 using System.Windows.Forms;
 using wpf_control;
+using wpf_control.Models;
 using wpf_in_winforms.Fonts;
 
 namespace wpf_in_winforms
@@ -14,15 +17,14 @@ namespace wpf_in_winforms
     {
         private SortableBindingList<Customers> customers = new SortableBindingList<Customers>();
         private readonly List<PictureBox> Stars = new List<PictureBox>();
-
-        private List<String> answers = new List<string> {
-            "rtc-placeholder1","rizzler-of-rtc","skibidi-toilet","giga-chad-of-rtc","customer-fanum-list","humongous-gyatt"
-        };
+        private List<QRs> QRs = new List<QRs>();
 
         public GameFrame()
         {
             InitializeComponent();
             eleHost.Child = new GameControl();
+            ChangeSpeed(Properties.Settings.Default.Speed);
+            SetQRSettings();
             grvRank.DataSource = customers;
             Stars.AddRange(new[] { star1, star2, star3, star4, star5, star6 });
             DisplayRank();
@@ -40,14 +42,13 @@ namespace wpf_in_winforms
         {
             PlaySound();
             if (!(eleHost.Child is GameControl game)) return;
-            Stars[game.currentImg].Image = Properties.Resources.star;
-            if (game.currentImg == 5)
+            Stars[game.currentIndex].Image = Properties.Resources.star;
+            if (game.currentIndex == 5)
             {
                 eleHost.Child = null;
                 MessageBox.Show("Bạn là người chiến thắng!!!", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             game.RespawnImage();
-            //game.speedFactor += 0.3;
         }
 
         private void DisplayPixelFont()
@@ -61,9 +62,15 @@ namespace wpf_in_winforms
             soundPlayer.Play();
         }
 
+        public void ChangeSpeed(int speed)
+        {
+            if (!(eleHost.Child is GameControl game)) return;
+            game.speedFactor = 2.5 * (speed + 1);
+        }
+
         #region Kết nối tới scanner
 
-        private SerialPort scannerSerialPort;
+        public SerialPort scannerSerialPort;
 
         private void Connect()
         {
@@ -76,16 +83,18 @@ namespace wpf_in_winforms
                     scannerSerialPort = null;
                 }
                 Parity parity = (Parity)Enum.Parse(typeof(Parity), "NONE", true);
-                scannerSerialPort = new SerialPort(SerialPort.GetPortNames()[0], 600, parity, 7, (StopBits)1);
-                scannerSerialPort.ReadTimeout = 1000;
-                scannerSerialPort.WriteTimeout = 1000;
+                scannerSerialPort = new SerialPort(SerialPort.GetPortNames()[0], 600, parity, 7, (StopBits)1)
+                {
+                    ReadTimeout = 1000,
+                    WriteTimeout = 1000
+                };
                 scannerSerialPort.Open();
                 scannerSerialPort.DataReceived -= Com_DataReceived;
                 scannerSerialPort.DataReceived += Com_DataReceived;
             }
             catch (Exception)
             {
-                MessageBox.Show("Thiết bị chưa được kết nối", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Thiết bị chưa được kết nối hoặc không có quyền truy cập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -94,10 +103,25 @@ namespace wpf_in_winforms
             try
             {
                 SerialPort sp = (SerialPort)sender;
+                string textResult = sp.ReadExisting();
                 txtQRResult.BeginInvoke(new Action(() =>
                 {
-                    txtQRResult.Text = sp.ReadExisting();
+                    txtQRResult.Text = textResult;
                 }));
+                if (!(eleHost.Child is GameControl game)) return;
+                bool isCorrect = string.Concat(textResult.Where(c => !char.IsWhiteSpace(c))) == QRs[game.currentIndex].Content;
+                if (!isCorrect) return;
+                PlaySound();
+                Stars[game.currentIndex].BeginInvoke(new Action(() =>
+                {
+                    Stars[game.currentIndex].Image = Properties.Resources.star;
+                }));
+                if(game.currentIndex == 5)
+                {
+                    eleHost.BeginInvoke(new Action(() => { eleHost.Child = null; }));
+                    MessageBox.Show("Bạn là người chiến thắng!!!", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                game.Dispatcher.BeginInvoke(new Action(() =>{game.RespawnImage();}));
             }
             catch (Exception ex)
             {
@@ -106,5 +130,49 @@ namespace wpf_in_winforms
         }
 
         #endregion Kết nối tới scanner
+
+        private void picSetting_Click(object sender, EventArgs e)
+        {
+            Settings frm = new Settings();
+            frm.gameFrame = this;
+            frm.ShowDialog();
+        }
+
+        private void SetQRSettings()
+        {
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            QRs.Add(new QRs
+            {
+                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR1Path"])),
+                Content = Convert.ToString(Properties.Settings.Default["QR1Content"])
+            });
+            QRs.Add(new QRs
+            {
+                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR2Path"])),
+                Content = Convert.ToString(Properties.Settings.Default["QR2Content"])
+            });
+            QRs.Add(new QRs
+            {
+                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR3Path"])),
+                Content = Convert.ToString(Properties.Settings.Default["QR3Content"])
+            });
+            QRs.Add(new QRs
+            {
+                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR4Path"])),
+                Content = Convert.ToString(Properties.Settings.Default["QR4Content"])
+            });
+            QRs.Add(new QRs
+            {
+                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR5Path"])),
+                Content = Convert.ToString(Properties.Settings.Default["QR5Content"])
+            });
+            QRs.Add(new QRs
+            {
+                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR6Path"])),
+                Content = Convert.ToString(Properties.Settings.Default["QR6Content"])
+            });
+            if (!(eleHost.Child is GameControl game)) return;
+            game.QRs = QRs;
+        }
     }
 }

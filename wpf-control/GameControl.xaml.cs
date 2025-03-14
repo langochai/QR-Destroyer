@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using wpf_control.Models;
 
 namespace wpf_control
 {
@@ -13,10 +16,8 @@ namespace wpf_control
         private double dy = 0;
 
         public double speedFactor = 0.5;
-
-        public int currentImg = 0;
-
-        private string[] imagePaths =
+        public List<QRs> QRs = new List<QRs>();
+        public string[] imagePaths =
         {
             "Images/qr1.png",
             "Images/qr2.png",
@@ -25,6 +26,7 @@ namespace wpf_control
             "Images/qr5.png",
             "Images/qr6.png",
         };
+        public int currentIndex = 5;
 
         private readonly Random random = new Random();
 
@@ -47,7 +49,7 @@ namespace wpf_control
             double initialY = random.NextDouble() * (canvasHeight - imgHeight);
             Canvas.SetLeft(BouncingImage, initialX);
             Canvas.SetTop(BouncingImage, initialY);
-
+            RespawnImage();
             AnimateImage();
         }
 
@@ -60,12 +62,20 @@ namespace wpf_control
             }
             MainCanvas.Children.Remove(BouncingImage);
 
-            currentImg = (currentImg + 1) % imagePaths.Length;
+            currentIndex = (currentIndex + 1) % imagePaths.Length;
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            var filePath = Path.Combine(baseDir, "Images", QRs[currentIndex].FileName);
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(filePath, UriKind.Absolute);
+            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+            bitmap.EndInit();
+            bitmap.Freeze();
             BouncingImage = new Image
             {
                 Width = 150,
                 Height = 150,
-                Source = new BitmapImage(new Uri(imagePaths[currentImg], UriKind.Relative)),
+                Source = bitmap,
                 Stretch = System.Windows.Media.Stretch.Uniform
             };
 

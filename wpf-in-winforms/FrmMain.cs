@@ -19,7 +19,12 @@ namespace wpf_in_winforms
         private void btnStart_Click(object sender, EventArgs e)
         {
             GameFrame frm = new GameFrame();
-            frm.FormClosed += (s, ev) => { this.Show(); };
+            frm.FormClosed += (s, ev) => {
+                frm.scannerSerialPort.Close();
+                frm.scannerSerialPort.Dispose();
+                frm.scannerSerialPort = null;
+                this.Show(); 
+            };
             this.Hide();
             frm.Show();
             //if (ValidateInputs())

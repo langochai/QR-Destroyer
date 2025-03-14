@@ -49,13 +49,14 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.lblGameName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picSetting = new System.Windows.Forms.PictureBox();
+            this.txtQRResult = new System.Windows.Forms.TextBox();
             this.star6 = new System.Windows.Forms.PictureBox();
             this.star5 = new System.Windows.Forms.PictureBox();
             this.star4 = new System.Windows.Forms.PictureBox();
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
-            this.txtQRResult = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -69,6 +70,7 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).BeginInit();
@@ -276,6 +278,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.picSetting);
             this.panel1.Controls.Add(this.txtQRResult);
             this.panel1.Controls.Add(this.star6);
             this.panel1.Controls.Add(this.star5);
@@ -288,6 +291,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1584, 105);
             this.panel1.TabIndex = 4;
+            // 
+            // picSetting
+            // 
+            this.picSetting.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picSetting.Image = global::wpf_in_winforms.Properties.Resources.cog;
+            this.picSetting.Location = new System.Drawing.Point(1482, 19);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Size = new System.Drawing.Size(65, 65);
+            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSetting.TabIndex = 7;
+            this.picSetting.TabStop = false;
+            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
+            // 
+            // txtQRResult
+            // 
+            this.txtQRResult.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtQRResult.Location = new System.Drawing.Point(1344, 42);
+            this.txtQRResult.Name = "txtQRResult";
+            this.txtQRResult.Size = new System.Drawing.Size(100, 20);
+            this.txtQRResult.TabIndex = 6;
             // 
             // star6
             // 
@@ -349,13 +372,6 @@
             this.star1.TabIndex = 0;
             this.star1.TabStop = false;
             // 
-            // txtQRResult
-            // 
-            this.txtQRResult.Location = new System.Drawing.Point(1344, 42);
-            this.txtQRResult.Name = "txtQRResult";
-            this.txtQRResult.Size = new System.Drawing.Size(100, 20);
-            this.txtQRResult.TabIndex = 6;
-            // 
             // GameFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,6 +401,7 @@
             this.splitContainer3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
@@ -423,6 +440,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlayTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedDate;
         private System.Windows.Forms.TextBox txtQRResult;
+        private System.Windows.Forms.PictureBox picSetting;
     }
 }
 
