@@ -52,6 +52,7 @@
             this.chkChannel3 = new System.Windows.Forms.CheckBox();
             this.chkChannel4 = new System.Windows.Forms.CheckBox();
             this.chkChannel5 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -317,6 +318,16 @@
             this.chkChannel5.Text = "Khác/Other";
             this.chkChannel5.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(977, 651);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 38);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "TEST";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +335,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1169, 722);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.chkChannel5);
             this.Controls.Add(this.chkChannel4);
             this.Controls.Add(this.chkChannel3);
@@ -380,5 +392,6 @@
         private System.Windows.Forms.CheckBox chkChannel3;
         private System.Windows.Forms.CheckBox chkChannel4;
         private System.Windows.Forms.CheckBox chkChannel5;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -104,13 +104,13 @@ namespace wpf_in_winforms
                 {
                     Stars[game.currentIndex].Image = Properties.Resources.star;
                 }));
-                if(game.currentIndex == 5)
+                if (game.currentIndex == 5)
                 {
                     // lưu thời gian vào db
                     eleHost.BeginInvoke(new Action(() => { eleHost.Child = null; }));
                     MessageBox.Show("Bạn là người chiến thắng!!!", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                game.Dispatcher.BeginInvoke(new Action(() =>{game.RespawnImage();}));
+                game.Dispatcher.BeginInvoke(new Action(() => { game.RespawnImage(); }));
             }
             catch (Exception ex)
             {
@@ -130,36 +130,14 @@ namespace wpf_in_winforms
         public void SetQRSettings()
         {
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            QRs.Add(new QRs
+            for (int i = 1; i < 7; i++)
             {
-                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR1Path"])),
-                Content = Convert.ToString(Properties.Settings.Default["QR1Content"])
-            });
-            QRs.Add(new QRs
-            {
-                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR2Path"])),
-                Content = Convert.ToString(Properties.Settings.Default["QR2Content"])
-            });
-            QRs.Add(new QRs
-            {
-                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR3Path"])),
-                Content = Convert.ToString(Properties.Settings.Default["QR3Content"])
-            });
-            QRs.Add(new QRs
-            {
-                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR4Path"])),
-                Content = Convert.ToString(Properties.Settings.Default["QR4Content"])
-            });
-            QRs.Add(new QRs
-            {
-                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR5Path"])),
-                Content = Convert.ToString(Properties.Settings.Default["QR5Content"])
-            });
-            QRs.Add(new QRs
-            {
-                FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR6Path"])),
-                Content = Convert.ToString(Properties.Settings.Default["QR6Content"])
-            });
+                QRs.Add(new QRs
+                {
+                    FileName = Path.Combine(baseDir, "Images", Convert.ToString(Properties.Settings.Default["QR" + i + "Path"])),
+                    Content = Convert.ToString(Properties.Settings.Default["QR" + i + "Content"])
+                });
+            }
             if (!(eleHost.Child is GameControl game)) return;
             game.QRs = QRs;
         }

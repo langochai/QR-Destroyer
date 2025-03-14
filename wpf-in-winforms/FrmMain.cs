@@ -78,5 +78,15 @@ namespace wpf_in_winforms
                 chkInterest5.Checked || chkInterest6.Checked || chkInterest7.Checked) &&
                 (chkChannel1.Checked || chkChannel2.Checked || chkChannel3.Checked || chkChannel4.Checked || chkChannel5.Checked);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "Gigachad";
+            txtEmail.Text = "giggachad@gmail.com";
+            txtCompany.Text = "GIGACHAD COMPANY";
+            txtPhoneNumber.Text = "0123456789";
+            chkInterest1.Checked = chkChannel1.Checked = true;
+            btnStart_Click(null, null);
+        }
     }
 }
