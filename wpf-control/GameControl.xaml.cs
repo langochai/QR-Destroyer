@@ -26,7 +26,7 @@ namespace wpf_control
             "Images/qr6.png",
         };
 
-        private Random random = new Random();
+        private readonly Random random = new Random();
 
         public GameControl()
         {

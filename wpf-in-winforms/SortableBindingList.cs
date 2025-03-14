@@ -10,8 +10,8 @@ namespace wpf_in_winforms
     public class SortableBindingList<T> : BindingList<T>
     {
         private bool isSortedValue;
-        ListSortDirection sortDirectionValue;
-        PropertyDescriptor sortPropertyValue;
+        private ListSortDirection sortDirectionValue;
+        private PropertyDescriptor sortPropertyValue;
 
         public SortableBindingList()
         {

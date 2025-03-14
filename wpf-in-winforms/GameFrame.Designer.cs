@@ -34,24 +34,28 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.eleHost = new System.Windows.Forms.Integration.ElementHost();
             this.grvRank = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInterestIds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChannelIds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlayTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.lblGameName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCheck = new System.Windows.Forms.Button();
-            this.cboQRValue = new System.Windows.Forms.ComboBox();
             this.star6 = new System.Windows.Forms.PictureBox();
             this.star5 = new System.Windows.Forms.PictureBox();
             this.star4 = new System.Windows.Forms.PictureBox();
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlayTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtQRResult = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -137,7 +141,12 @@
             this.grvRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvRank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
+            this.colRank,
             this.colName,
+            this.colEmail,
+            this.colPhoneNumber,
+            this.colInterestIds,
+            this.colChannelIds,
             this.colCompany,
             this.colPlayTime,
             this.colCreatedDate});
@@ -146,6 +155,73 @@
             this.grvRank.Name = "grvRank";
             this.grvRank.Size = new System.Drawing.Size(356, 552);
             this.grvRank.TabIndex = 1;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = false;
+            // 
+            // colRank
+            // 
+            this.colRank.HeaderText = "Rank";
+            this.colRank.Name = "colRank";
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = false;
+            // 
+            // colPhoneNumber
+            // 
+            this.colPhoneNumber.DataPropertyName = "PhoneNumber";
+            this.colPhoneNumber.HeaderText = "PhoneNumber";
+            this.colPhoneNumber.Name = "colPhoneNumber";
+            this.colPhoneNumber.Visible = false;
+            // 
+            // colInterestIds
+            // 
+            this.colInterestIds.DataPropertyName = "InterestIds";
+            this.colInterestIds.HeaderText = "InterestIds";
+            this.colInterestIds.Name = "colInterestIds";
+            this.colInterestIds.Visible = false;
+            // 
+            // colChannelIds
+            // 
+            this.colChannelIds.DataPropertyName = "ChannelIds";
+            this.colChannelIds.HeaderText = "ChannelIds";
+            this.colChannelIds.Name = "colChannelIds";
+            this.colChannelIds.Visible = false;
+            // 
+            // colCompany
+            // 
+            this.colCompany.DataPropertyName = "Company";
+            this.colCompany.HeaderText = "Company";
+            this.colCompany.Name = "colCompany";
+            this.colCompany.Visible = false;
+            // 
+            // colPlayTime
+            // 
+            this.colPlayTime.DataPropertyName = "PlayTime";
+            this.colPlayTime.HeaderText = "PlayTime";
+            this.colPlayTime.Name = "colPlayTime";
+            // 
+            // colCreatedDate
+            // 
+            this.colCreatedDate.DataPropertyName = "CreatedDate";
+            this.colCreatedDate.HeaderText = "CreatedDate";
+            this.colCreatedDate.Name = "colCreatedDate";
+            this.colCreatedDate.Visible = false;
             // 
             // panel2
             // 
@@ -158,11 +234,10 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(145, 32);
+            this.label2.Location = new System.Drawing.Point(110, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 37);
             this.label2.TabIndex = 0;
@@ -189,9 +264,10 @@
             // 
             // lblGameName
             // 
+            this.lblGameName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGameName.AutoSize = true;
             this.lblGameName.Font = new System.Drawing.Font("Arial", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameName.Location = new System.Drawing.Point(234, 28);
+            this.lblGameName.Location = new System.Drawing.Point(430, 22);
             this.lblGameName.Name = "lblGameName";
             this.lblGameName.Size = new System.Drawing.Size(424, 55);
             this.lblGameName.TabIndex = 0;
@@ -200,8 +276,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnCheck);
-            this.panel1.Controls.Add(this.cboQRValue);
+            this.panel1.Controls.Add(this.txtQRResult);
             this.panel1.Controls.Add(this.star6);
             this.panel1.Controls.Add(this.star5);
             this.panel1.Controls.Add(this.star4);
@@ -214,37 +289,11 @@
             this.panel1.Size = new System.Drawing.Size(1584, 105);
             this.panel1.TabIndex = 4;
             // 
-            // btnCheck
-            // 
-            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheck.Location = new System.Drawing.Point(1699, 39);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(103, 34);
-            this.btnCheck.TabIndex = 7;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
-            // cboQRValue
-            // 
-            this.cboQRValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboQRValue.FormattingEnabled = true;
-            this.cboQRValue.Items.AddRange(new object[] {
-            "rtc-placeholder1",
-            "rizzler-of-rtc",
-            "skibidi-toilet",
-            "giga-chad-of-rtc",
-            "customer-fanum-list",
-            "humongous-gyatt"});
-            this.cboQRValue.Location = new System.Drawing.Point(1487, 40);
-            this.cboQRValue.Name = "cboQRValue";
-            this.cboQRValue.Size = new System.Drawing.Size(192, 33);
-            this.cboQRValue.TabIndex = 6;
-            // 
             // star6
             // 
+            this.star6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star6.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star6.Location = new System.Drawing.Point(623, 19);
+            this.star6.Location = new System.Drawing.Point(927, 19);
             this.star6.Name = "star6";
             this.star6.Size = new System.Drawing.Size(65, 65);
             this.star6.TabIndex = 5;
@@ -252,8 +301,9 @@
             // 
             // star5
             // 
+            this.star5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star5.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star5.Location = new System.Drawing.Point(552, 19);
+            this.star5.Location = new System.Drawing.Point(856, 19);
             this.star5.Name = "star5";
             this.star5.Size = new System.Drawing.Size(65, 65);
             this.star5.TabIndex = 4;
@@ -261,8 +311,9 @@
             // 
             // star4
             // 
+            this.star4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star4.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star4.Location = new System.Drawing.Point(481, 19);
+            this.star4.Location = new System.Drawing.Point(785, 19);
             this.star4.Name = "star4";
             this.star4.Size = new System.Drawing.Size(65, 65);
             this.star4.TabIndex = 3;
@@ -270,8 +321,9 @@
             // 
             // star3
             // 
+            this.star3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star3.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star3.Location = new System.Drawing.Point(410, 19);
+            this.star3.Location = new System.Drawing.Point(714, 19);
             this.star3.Name = "star3";
             this.star3.Size = new System.Drawing.Size(65, 65);
             this.star3.TabIndex = 2;
@@ -279,8 +331,9 @@
             // 
             // star2
             // 
+            this.star2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star2.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star2.Location = new System.Drawing.Point(339, 19);
+            this.star2.Location = new System.Drawing.Point(643, 19);
             this.star2.Name = "star2";
             this.star2.Size = new System.Drawing.Size(65, 65);
             this.star2.TabIndex = 1;
@@ -288,44 +341,20 @@
             // 
             // star1
             // 
+            this.star1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star1.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star1.Location = new System.Drawing.Point(268, 19);
+            this.star1.Location = new System.Drawing.Point(572, 19);
             this.star1.Name = "star1";
             this.star1.Size = new System.Drawing.Size(65, 65);
             this.star1.TabIndex = 0;
             this.star1.TabStop = false;
             // 
-            // colId
+            // txtQRResult
             // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.Visible = false;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.DataPropertyName = "Name";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            // 
-            // colCompany
-            // 
-            this.colCompany.DataPropertyName = "Company";
-            this.colCompany.HeaderText = "Company";
-            this.colCompany.Name = "colCompany";
-            // 
-            // colPlayTime
-            // 
-            this.colPlayTime.DataPropertyName = "PlayTime";
-            this.colPlayTime.HeaderText = "PlayTime";
-            this.colPlayTime.Name = "colPlayTime";
-            // 
-            // colCreatedDate
-            // 
-            this.colCreatedDate.HeaderText = "CreatedDate";
-            this.colCreatedDate.Name = "colCreatedDate";
-            this.colCreatedDate.Visible = false;
+            this.txtQRResult.Location = new System.Drawing.Point(1344, 42);
+            this.txtQRResult.Name = "txtQRResult";
+            this.txtQRResult.Size = new System.Drawing.Size(100, 20);
+            this.txtQRResult.TabIndex = 6;
             // 
             // GameFrame
             // 
@@ -355,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
@@ -382,13 +412,17 @@
         private System.Windows.Forms.PictureBox star1;
         private System.Windows.Forms.Label lblGameName;
         private System.Windows.Forms.Integration.ElementHost eleHost;
-        private System.Windows.Forms.ComboBox cboQRValue;
-        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInterestIds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colChannelIds;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlayTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedDate;
+        private System.Windows.Forms.TextBox txtQRResult;
     }
 }
 

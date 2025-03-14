@@ -1,20 +1,20 @@
-﻿using System.Data.SQLite;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 
 namespace wpf_in_winforms
 {
     public class SqliteHelper<T> where T : new()
     {
-        private string _connectionString;
+        private static readonly string _connectionString = "Data Source=db.db";
 
         public SqliteHelper()
         {
-            _connectionString = "Data Source=db.db";
         }
 
-        public void Insert(T model)
+        public static void Insert(T model)
         {
             using (var connection = new SQLiteConnection(_connectionString))
             {
@@ -39,8 +39,7 @@ namespace wpf_in_winforms
             }
         }
 
-
-        public List<T> GetAll()
+        public static List<T> GetAll()
         {
             var results = new List<T>();
 
@@ -72,7 +71,8 @@ namespace wpf_in_winforms
 
             return results;
         }
-        public List<T> GetByColumnValue(string columnName, object value)
+
+        public static List<T> GetByColumnValue(string columnName, object value)
         {
             var results = new List<T>();
 
@@ -108,8 +108,7 @@ namespace wpf_in_winforms
             return results;
         }
 
-
-        public void Update(T model)
+        public static void Update(T model)
         {
             using (var connection = new SQLiteConnection(_connectionString))
             {
@@ -131,7 +130,7 @@ namespace wpf_in_winforms
             }
         }
 
-        public void Delete(int id)
+        public static void Delete(int id)
         {
             using (var connection = new SQLiteConnection(_connectionString))
             {
@@ -147,7 +146,7 @@ namespace wpf_in_winforms
             }
         }
 
-        private string GetSqliteType(Type type)
+        private static string GetSqliteType(Type type)
         {
             if (type == typeof(int)) return "INTEGER";
             if (type == typeof(string)) return "TEXT";
@@ -155,6 +154,57 @@ namespace wpf_in_winforms
             if (type == typeof(bool)) return "INTEGER";
             // Add more type mappings as needed
             throw new NotSupportedException($"Type {type} not supported");
+        }
+
+        private static T GetCustomerView()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                                SELECT json_group_array(
+                                         json_object(
+                                           'Id', c.Id,
+                                           'Name', c.Name,
+                                           'Company', c.Company,
+                                           'Email', c.Email,
+                                           'PhoneNumber', c.PhoneNumber,
+                                           'PlayTime', c.PlayTime,
+                                           'CreatedDate', c.CreatedDate,
+                                           'Interests', (
+                                             SELECT json_group_array(
+                                                      json_object(
+                                                        'Id', i.Id,
+                                                        'TextVN', i.TextVN,
+                                                        'TextEN', i.TextEN
+                                                      )
+                                                    )
+                                             FROM Interests i
+                                             JOIN json_each(c.InterestIds) ON json_each.value = i.id
+                                           ),
+                                           'Channels', (
+                                             SELECT json_group_array(
+                                                      json_object(
+                                                        'Id', ch.Id,
+                                                        'TextVN', ch.TextVN,
+                                                        'TextEN', ch.TextEN
+                                                      )
+                                                    )
+                                             FROM Channels ch
+                                             JOIN json_each(c.ChannelIds) ON json_each.value = ch.id
+                                           )
+                                         )
+                                       ) AS customers_json
+                                FROM customers c;";
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    object result = command.ExecuteScalar() ?? throw new SQLiteException("Couldn't get the data");
+                    string jsonResult = result.ToString();
+                    return JsonConvert.DeserializeObject<T>(jsonResult);
+                }
+            }
         }
     }
 }
