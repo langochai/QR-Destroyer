@@ -21,7 +21,7 @@ namespace wpf_in_winforms
                 connection.Open();
 
                 var properties = typeof(T).GetProperties()
-                    .Where(p => p.Name != "ID" && p.GetValue(model) != null);
+                    .Where(p => p.Name.ToUpper() != "ID" && p.GetValue(model) != null);
 
                 var columns = string.Join(", ", properties.Select(p => p.Name));
                 var values = string.Join(", ", properties.Select(p => $"@{p.Name}"));

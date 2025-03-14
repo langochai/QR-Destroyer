@@ -128,7 +128,7 @@
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="db.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Fonts\joystix_monospace.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

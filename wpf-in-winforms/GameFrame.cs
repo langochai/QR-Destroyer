@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.IO.Ports;
@@ -19,10 +20,16 @@ namespace wpf_in_winforms
         private SortableBindingList<Customers> customers = new SortableBindingList<Customers>();
         private readonly List<PictureBox> Stars = new List<PictureBox>();
         private List<QRs> QRs = new List<QRs>();
+        private Stopwatch stopwatch = new Stopwatch();
 
         public GameFrame()
         {
             InitializeComponent();
+        }
+
+        private void GameFrame_Load(object sender, EventArgs e)
+        {
+            startTime();
             eleHost.Child = new GameControl();
             ChangeSpeed(Properties.Settings.Default.Speed);
             SetQRSettings();
@@ -32,7 +39,12 @@ namespace wpf_in_winforms
             DisplayPixelFont();
             Connect();
         }
-
+        void startTime()
+        {
+            stopwatch.Start();
+            GameTick.Interval = 1000;
+            GameTick.Start();
+        }
         public void DisplayRank()
         {
             customers = new SortableBindingList<Customers>(SqliteHelper<Customers>.GetAll());
@@ -107,8 +119,11 @@ namespace wpf_in_winforms
                 if (game.currentIndex == 5)
                 {
                     // lưu thời gian vào db
+                    stopwatch.Stop();
+                    int playTimeInSeconds = (int)stopwatch.Elapsed.TotalSeconds;
+                    customer.PlayTime = playTimeInSeconds; 
                     eleHost.BeginInvoke(new Action(() => { eleHost.Child = null; }));
-                    MessageBox.Show("Bạn là người chiến thắng!!!", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Bạn là người chiến thắng!!!\nThời gian: {lblPlayTime.Text}", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 game.Dispatcher.BeginInvoke(new Action(() => { game.RespawnImage(); }));
             }
@@ -141,5 +156,15 @@ namespace wpf_in_winforms
             if (!(eleHost.Child is GameControl game)) return;
             game.QRs = QRs;
         }
+
+        private void GameTick_Tick(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new Action(() =>
+            {
+                TimeSpan elapsed = stopwatch.Elapsed;
+                lblPlayTime.Text = $"{elapsed.Minutes:D2}:{elapsed.Seconds:D2}";
+            }));
+        }
+
     }
 }

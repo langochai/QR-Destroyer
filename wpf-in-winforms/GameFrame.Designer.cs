@@ -59,6 +59,7 @@
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
             this.GameTick = new System.Windows.Forms.Timer(this.components);
+            this.lblPlayTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -280,6 +281,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblPlayTime);
             this.panel1.Controls.Add(this.picSetting);
             this.panel1.Controls.Add(this.txtQRResult);
             this.panel1.Controls.Add(this.star6);
@@ -377,6 +379,17 @@
             // GameTick
             // 
             this.GameTick.Interval = 1000;
+            this.GameTick.Tick += new System.EventHandler(this.GameTick_Tick);
+            // 
+            // lblPlayTime
+            // 
+            this.lblPlayTime.AutoSize = true;
+            this.lblPlayTime.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayTime.Location = new System.Drawing.Point(29, 39);
+            this.lblPlayTime.Name = "lblPlayTime";
+            this.lblPlayTime.Size = new System.Drawing.Size(64, 24);
+            this.lblPlayTime.TabIndex = 8;
+            this.lblPlayTime.Text = "00:00";
             // 
             // GameFrame
             // 
@@ -390,6 +403,7 @@
             this.Name = "GameFrame";
             this.Text = "QR DESTROYER";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GameFrame_Load);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -448,6 +462,7 @@
         private System.Windows.Forms.TextBox txtQRResult;
         private System.Windows.Forms.PictureBox picSetting;
         private System.Windows.Forms.Timer GameTick;
+        private System.Windows.Forms.Label lblPlayTime;
     }
 }
 
