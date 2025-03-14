@@ -36,12 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnUpdate1 = new System.Windows.Forms.Button();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnUpdate2 = new System.Windows.Forms.Button();
@@ -54,14 +48,20 @@
             this.btnSave5 = new System.Windows.Forms.Button();
             this.btnUpdate6 = new System.Windows.Forms.Button();
             this.btnSave6 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtQR1Content = new System.Windows.Forms.TextBox();
+            this.txtQR2Content = new System.Windows.Forms.TextBox();
+            this.txtQR3Content = new System.Windows.Forms.TextBox();
+            this.txtQR4Content = new System.Windows.Forms.TextBox();
+            this.txtQR5Content = new System.Windows.Forms.TextBox();
+            this.txtQR6Content = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtQR1Path = new System.Windows.Forms.Label();
+            this.txtQR2Path = new System.Windows.Forms.Label();
+            this.txtQR3Path = new System.Windows.Forms.Label();
+            this.txtQR4Path = new System.Windows.Forms.Label();
+            this.txtQR5Path = new System.Windows.Forms.Label();
+            this.txtQR6Path = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblSpeed
@@ -155,54 +155,6 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "QR6";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox1.Location = new System.Drawing.Point(96, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 32);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox2.Location = new System.Drawing.Point(96, 148);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(223, 32);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox3.Location = new System.Drawing.Point(96, 188);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(223, 32);
-            this.textBox3.TabIndex = 10;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox4.Location = new System.Drawing.Point(96, 228);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(223, 32);
-            this.textBox4.TabIndex = 14;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox5.Location = new System.Drawing.Point(96, 268);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(223, 32);
-            this.textBox5.TabIndex = 18;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox6.Location = new System.Drawing.Point(96, 308);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(223, 32);
-            this.textBox6.TabIndex = 22;
-            // 
             // btnUpdate1
             // 
             this.btnUpdate1.Font = new System.Drawing.Font("Arial", 15.75F);
@@ -220,7 +172,7 @@
             this.btnSave1.Name = "btnSave1";
             this.btnSave1.Size = new System.Drawing.Size(129, 32);
             this.btnSave1.TabIndex = 5;
-            this.btnSave1.Text = "Save";
+            this.btnSave1.Text = "Browse";
             this.btnSave1.UseVisualStyleBackColor = true;
             // 
             // btnUpdate2
@@ -240,7 +192,7 @@
             this.btnSave2.Name = "btnSave2";
             this.btnSave2.Size = new System.Drawing.Size(129, 32);
             this.btnSave2.TabIndex = 9;
-            this.btnSave2.Text = "Save";
+            this.btnSave2.Text = "Browse";
             this.btnSave2.UseVisualStyleBackColor = true;
             // 
             // btnUpdate3
@@ -260,7 +212,7 @@
             this.btnSave3.Name = "btnSave3";
             this.btnSave3.Size = new System.Drawing.Size(129, 32);
             this.btnSave3.TabIndex = 13;
-            this.btnSave3.Text = "Save";
+            this.btnSave3.Text = "Browse";
             this.btnSave3.UseVisualStyleBackColor = true;
             // 
             // btnUpdate4
@@ -280,7 +232,7 @@
             this.btnSave4.Name = "btnSave4";
             this.btnSave4.Size = new System.Drawing.Size(129, 32);
             this.btnSave4.TabIndex = 17;
-            this.btnSave4.Text = "Save";
+            this.btnSave4.Text = "Browse";
             this.btnSave4.UseVisualStyleBackColor = true;
             // 
             // btnUpdate5
@@ -300,7 +252,7 @@
             this.btnSave5.Name = "btnSave5";
             this.btnSave5.Size = new System.Drawing.Size(129, 32);
             this.btnSave5.TabIndex = 21;
-            this.btnSave5.Text = "Save";
+            this.btnSave5.Text = "Browse";
             this.btnSave5.UseVisualStyleBackColor = true;
             // 
             // btnUpdate6
@@ -320,56 +272,56 @@
             this.btnSave6.Name = "btnSave6";
             this.btnSave6.Size = new System.Drawing.Size(129, 32);
             this.btnSave6.TabIndex = 25;
-            this.btnSave6.Text = "Save";
+            this.btnSave6.Text = "Browse";
             this.btnSave6.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // txtQR1Content
             // 
-            this.textBox7.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox7.Location = new System.Drawing.Point(325, 107);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(155, 32);
-            this.textBox7.TabIndex = 3;
+            this.txtQR1Content.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR1Content.Location = new System.Drawing.Point(325, 107);
+            this.txtQR1Content.Name = "txtQR1Content";
+            this.txtQR1Content.Size = new System.Drawing.Size(155, 32);
+            this.txtQR1Content.TabIndex = 3;
             // 
-            // textBox8
+            // txtQR2Content
             // 
-            this.textBox8.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox8.Location = new System.Drawing.Point(325, 149);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(155, 32);
-            this.textBox8.TabIndex = 7;
+            this.txtQR2Content.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR2Content.Location = new System.Drawing.Point(325, 149);
+            this.txtQR2Content.Name = "txtQR2Content";
+            this.txtQR2Content.Size = new System.Drawing.Size(155, 32);
+            this.txtQR2Content.TabIndex = 7;
             // 
-            // textBox9
+            // txtQR3Content
             // 
-            this.textBox9.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox9.Location = new System.Drawing.Point(325, 189);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(155, 32);
-            this.textBox9.TabIndex = 11;
+            this.txtQR3Content.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR3Content.Location = new System.Drawing.Point(325, 189);
+            this.txtQR3Content.Name = "txtQR3Content";
+            this.txtQR3Content.Size = new System.Drawing.Size(155, 32);
+            this.txtQR3Content.TabIndex = 11;
             // 
-            // textBox10
+            // txtQR4Content
             // 
-            this.textBox10.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox10.Location = new System.Drawing.Point(325, 228);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(155, 32);
-            this.textBox10.TabIndex = 15;
+            this.txtQR4Content.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR4Content.Location = new System.Drawing.Point(325, 228);
+            this.txtQR4Content.Name = "txtQR4Content";
+            this.txtQR4Content.Size = new System.Drawing.Size(155, 32);
+            this.txtQR4Content.TabIndex = 15;
             // 
-            // textBox11
+            // txtQR5Content
             // 
-            this.textBox11.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox11.Location = new System.Drawing.Point(325, 269);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(155, 32);
-            this.textBox11.TabIndex = 19;
+            this.txtQR5Content.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR5Content.Location = new System.Drawing.Point(325, 269);
+            this.txtQR5Content.Name = "txtQR5Content";
+            this.txtQR5Content.Size = new System.Drawing.Size(155, 32);
+            this.txtQR5Content.TabIndex = 19;
             // 
-            // textBox12
+            // txtQR6Content
             // 
-            this.textBox12.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.textBox12.Location = new System.Drawing.Point(325, 309);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(155, 32);
-            this.textBox12.TabIndex = 23;
+            this.txtQR6Content.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR6Content.Location = new System.Drawing.Point(325, 309);
+            this.txtQR6Content.Name = "txtQR6Content";
+            this.txtQR6Content.Size = new System.Drawing.Size(155, 32);
+            this.txtQR6Content.TabIndex = 23;
             // 
             // label7
             // 
@@ -391,19 +343,85 @@
             this.label8.TabIndex = 33;
             this.label8.Text = "Nội dung";
             // 
+            // txtQR1Path
+            // 
+            this.txtQR1Path.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQR1Path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQR1Path.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR1Path.Location = new System.Drawing.Point(92, 107);
+            this.txtQR1Path.Name = "txtQR1Path";
+            this.txtQR1Path.Size = new System.Drawing.Size(223, 32);
+            this.txtQR1Path.TabIndex = 34;
+            // 
+            // txtQR2Path
+            // 
+            this.txtQR2Path.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQR2Path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQR2Path.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR2Path.Location = new System.Drawing.Point(92, 148);
+            this.txtQR2Path.Name = "txtQR2Path";
+            this.txtQR2Path.Size = new System.Drawing.Size(223, 32);
+            this.txtQR2Path.TabIndex = 35;
+            // 
+            // txtQR3Path
+            // 
+            this.txtQR3Path.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQR3Path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQR3Path.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR3Path.Location = new System.Drawing.Point(92, 188);
+            this.txtQR3Path.Name = "txtQR3Path";
+            this.txtQR3Path.Size = new System.Drawing.Size(223, 32);
+            this.txtQR3Path.TabIndex = 36;
+            // 
+            // txtQR4Path
+            // 
+            this.txtQR4Path.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQR4Path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQR4Path.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR4Path.Location = new System.Drawing.Point(92, 227);
+            this.txtQR4Path.Name = "txtQR4Path";
+            this.txtQR4Path.Size = new System.Drawing.Size(223, 32);
+            this.txtQR4Path.TabIndex = 37;
+            // 
+            // txtQR5Path
+            // 
+            this.txtQR5Path.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQR5Path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQR5Path.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR5Path.Location = new System.Drawing.Point(92, 268);
+            this.txtQR5Path.Name = "txtQR5Path";
+            this.txtQR5Path.Size = new System.Drawing.Size(223, 32);
+            this.txtQR5Path.TabIndex = 38;
+            // 
+            // txtQR6Path
+            // 
+            this.txtQR6Path.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQR6Path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQR6Path.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.txtQR6Path.Location = new System.Drawing.Point(92, 309);
+            this.txtQR6Path.Name = "txtQR6Path";
+            this.txtQR6Path.Size = new System.Drawing.Size(223, 32);
+            this.txtQR6Path.TabIndex = 39;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 387);
+            this.Controls.Add(this.txtQR6Path);
+            this.Controls.Add(this.txtQR5Path);
+            this.Controls.Add(this.txtQR4Path);
+            this.Controls.Add(this.txtQR3Path);
+            this.Controls.Add(this.txtQR2Path);
+            this.Controls.Add(this.txtQR1Path);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtQR6Content);
+            this.Controls.Add(this.txtQR5Content);
+            this.Controls.Add(this.txtQR4Content);
+            this.Controls.Add(this.txtQR3Content);
+            this.Controls.Add(this.txtQR2Content);
+            this.Controls.Add(this.txtQR1Content);
             this.Controls.Add(this.btnSave6);
             this.Controls.Add(this.btnUpdate6);
             this.Controls.Add(this.btnSave5);
@@ -416,12 +434,6 @@
             this.Controls.Add(this.btnUpdate2);
             this.Controls.Add(this.btnSave1);
             this.Controls.Add(this.btnUpdate1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -432,6 +444,7 @@
             this.Controls.Add(this.lblSpeed);
             this.Name = "Settings";
             this.Text = "Settings";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Settings_FormClosed);
             this.Shown += new System.EventHandler(this.Settings_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -448,12 +461,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button btnUpdate1;
         private System.Windows.Forms.Button btnSave1;
         private System.Windows.Forms.Button btnUpdate2;
@@ -466,13 +473,19 @@
         private System.Windows.Forms.Button btnSave5;
         private System.Windows.Forms.Button btnUpdate6;
         private System.Windows.Forms.Button btnSave6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtQR1Content;
+        private System.Windows.Forms.TextBox txtQR2Content;
+        private System.Windows.Forms.TextBox txtQR3Content;
+        private System.Windows.Forms.TextBox txtQR4Content;
+        private System.Windows.Forms.TextBox txtQR5Content;
+        private System.Windows.Forms.TextBox txtQR6Content;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label txtQR1Path;
+        private System.Windows.Forms.Label txtQR2Path;
+        private System.Windows.Forms.Label txtQR3Path;
+        private System.Windows.Forms.Label txtQR4Path;
+        private System.Windows.Forms.Label txtQR5Path;
+        private System.Windows.Forms.Label txtQR6Path;
     }
 }

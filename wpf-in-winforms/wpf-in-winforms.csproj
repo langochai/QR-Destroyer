@@ -167,9 +167,6 @@
     <None Include="Resources\main-background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\music_icon.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\cog.png" />
     <Content Include="Images\qr1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -138,7 +138,7 @@ namespace wpf_in_winforms
             frm.ShowDialog();
         }
 
-        private void SetQRSettings()
+        public void SetQRSettings()
         {
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             QRs.Add(new QRs
