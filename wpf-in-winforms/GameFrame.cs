@@ -15,6 +15,7 @@ namespace wpf_in_winforms
 {
     public partial class GameFrame : Form
     {
+        public Customers customer;
         private SortableBindingList<Customers> customers = new SortableBindingList<Customers>();
         private readonly List<PictureBox> Stars = new List<PictureBox>();
         private List<QRs> QRs = new List<QRs>();
@@ -36,19 +37,6 @@ namespace wpf_in_winforms
         {
             customers = new SortableBindingList<Customers>(SqliteHelper<Customers>.GetAll());
             grvRank.Sort(grvRank.Columns["colPlayTime"], ListSortDirection.Ascending);
-        }
-
-        public void NextQR()
-        {
-            PlaySound();
-            if (!(eleHost.Child is GameControl game)) return;
-            Stars[game.currentIndex].Image = Properties.Resources.star;
-            if (game.currentIndex == 5)
-            {
-                eleHost.Child = null;
-                MessageBox.Show("Bạn là người chiến thắng!!!", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            game.RespawnImage();
         }
 
         private void DisplayPixelFont()
@@ -118,6 +106,7 @@ namespace wpf_in_winforms
                 }));
                 if(game.currentIndex == 5)
                 {
+                    // lưu thời gian vào db
                     eleHost.BeginInvoke(new Action(() => { eleHost.Child = null; }));
                     MessageBox.Show("Bạn là người chiến thắng!!!", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

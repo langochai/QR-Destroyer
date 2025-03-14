@@ -19,6 +19,7 @@ namespace wpf_in_winforms
         private void btnStart_Click(object sender, EventArgs e)
         {
             GameFrame frm = new GameFrame();
+            //frm.customer = newCustomer;
             frm.FormClosed += (s, ev) => {
                 frm.scannerSerialPort.Close();
                 frm.scannerSerialPort.Dispose();

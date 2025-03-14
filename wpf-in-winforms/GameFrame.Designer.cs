@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameFrame));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
+            this.GameTick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -372,6 +374,10 @@
             this.star1.TabIndex = 0;
             this.star1.TabStop = false;
             // 
+            // GameTick
+            // 
+            this.GameTick.Interval = 1000;
+            // 
             // GameFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,6 +447,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedDate;
         private System.Windows.Forms.TextBox txtQRResult;
         private System.Windows.Forms.PictureBox picSetting;
+        private System.Windows.Forms.Timer GameTick;
     }
 }
 
