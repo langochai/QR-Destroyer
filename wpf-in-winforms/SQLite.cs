@@ -155,8 +155,36 @@ namespace wpf_in_winforms
             // Add more type mappings as needed
             throw new NotSupportedException($"Type {type} not supported");
         }
-
-        private static T GetCustomerView()
+        public static List<T> GetCustomerView()
+        {
+            var results = new List<T>();
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = @"SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank, 
+                                * FROM customers ORDER BY PlayTime ASC LIMIT 10";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var model = new T();
+                        foreach (var property in typeof(T).GetProperties())
+                        {
+                            var columnName = property.Name;
+                            if (reader[columnName] != DBNull.Value)
+                            {
+                                var value = reader[columnName];
+                                property.SetValue(model, Convert.ChangeType(value, property.PropertyType));
+                            }
+                        }
+                        results.Add(model);
+                    }
+                }
+            }
+            return results;
+        }
+        public static T GetCustomerViewJSON()
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
@@ -166,6 +194,7 @@ namespace wpf_in_winforms
                                 SELECT json_group_array(
                                          json_object(
                                            'Id', c.Id,
+                                           'Rank', c.Rank,
                                            'Name', c.Name,
                                            'Company', c.Company,
                                            'Email', c.Email,
@@ -196,7 +225,8 @@ namespace wpf_in_winforms
                                            )
                                          )
                                        ) AS customers_json
-                                FROM customers c;";
+                                FROM (SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank, 
+                                    * FROM customers ORDER BY PlayTime ASC LIMIT 10) c;";
 
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {

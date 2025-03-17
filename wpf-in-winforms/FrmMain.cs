@@ -50,12 +50,17 @@ namespace wpf_in_winforms
                 GameFrame frm = new GameFrame();
                 frm.customer = newCustomer;
                 frm.FormClosed += (s, ev) => {
-                    frm.scannerSerialPort.Close();
-                    frm.scannerSerialPort.Dispose();
+                    frm.scannerSerialPort?.Close();
+                    frm.scannerSerialPort?.Dispose();
                     frm.scannerSerialPort = null;
                     this.Show();
                 };
                 this.Hide();
+                txtCompany.Text = txtEmail.Text = txtName.Text = txtPhoneNumber.Text = "";
+                foreach(var ctrl in this.Controls)
+                {
+                    if(ctrl is CheckBox checkbox) checkbox.Checked = false;
+                }
                 frm.Show();
             }
             else

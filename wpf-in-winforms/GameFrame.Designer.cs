@@ -35,6 +35,20 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.eleHost = new System.Windows.Forms.Integration.ElementHost();
             this.grvRank = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.GameTick = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblPlayTime = new System.Windows.Forms.Label();
+            this.picSetting = new System.Windows.Forms.PictureBox();
+            this.txtQRResult = new System.Windows.Forms.TextBox();
+            this.star6 = new System.Windows.Forms.PictureBox();
+            this.star5 = new System.Windows.Forms.PictureBox();
+            this.star4 = new System.Windows.Forms.PictureBox();
+            this.star3 = new System.Windows.Forms.PictureBox();
+            this.star2 = new System.Windows.Forms.PictureBox();
+            this.star1 = new System.Windows.Forms.PictureBox();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,21 +59,6 @@
             this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPlayTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.lblGameName = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.picSetting = new System.Windows.Forms.PictureBox();
-            this.txtQRResult = new System.Windows.Forms.TextBox();
-            this.star6 = new System.Windows.Forms.PictureBox();
-            this.star5 = new System.Windows.Forms.PictureBox();
-            this.star4 = new System.Windows.Forms.PictureBox();
-            this.star3 = new System.Windows.Forms.PictureBox();
-            this.star2 = new System.Windows.Forms.PictureBox();
-            this.star1 = new System.Windows.Forms.PictureBox();
-            this.GameTick = new System.Windows.Forms.Timer(this.components);
-            this.lblPlayTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -69,10 +68,7 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvRank)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
@@ -116,7 +112,7 @@
             // 
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 205);
+            this.splitContainer2.Location = new System.Drawing.Point(0, 285);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -127,8 +123,8 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.grvRank);
             this.splitContainer2.Panel2.Controls.Add(this.panel2);
-            this.splitContainer2.Size = new System.Drawing.Size(1584, 656);
-            this.splitContainer2.SplitterDistance = 1220;
+            this.splitContainer2.Size = new System.Drawing.Size(1584, 576);
+            this.splitContainer2.SplitterDistance = 1231;
             this.splitContainer2.TabIndex = 3;
             // 
             // eleHost
@@ -136,7 +132,7 @@
             this.eleHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eleHost.Location = new System.Drawing.Point(0, 0);
             this.eleHost.Name = "eleHost";
-            this.eleHost.Size = new System.Drawing.Size(1216, 652);
+            this.eleHost.Size = new System.Drawing.Size(1227, 572);
             this.eleHost.TabIndex = 0;
             this.eleHost.Text = "elementHost1";
             this.eleHost.Child = null;
@@ -158,8 +154,167 @@
             this.grvRank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvRank.Location = new System.Drawing.Point(0, 100);
             this.grvRank.Name = "grvRank";
-            this.grvRank.Size = new System.Drawing.Size(356, 552);
+            this.grvRank.Size = new System.Drawing.Size(345, 472);
             this.grvRank.TabIndex = 1;
+            this.grvRank.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.grvRank_CellPainting);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(345, 100);
+            this.panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(63, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(235, 74);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Top những người\r\nnguy hiểm";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GameTick
+            // 
+            this.GameTick.Interval = 1000;
+            this.GameTick.Tick += new System.EventHandler(this.GameTick_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::wpf_in_winforms.Properties.Resources.Header_Image;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1584, 180);
+            this.panel1.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::wpf_in_winforms.Properties.Resources.Score_Background;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblPlayTime);
+            this.panel3.Controls.Add(this.picSetting);
+            this.panel3.Controls.Add(this.txtQRResult);
+            this.panel3.Controls.Add(this.star6);
+            this.panel3.Controls.Add(this.star5);
+            this.panel3.Controls.Add(this.star4);
+            this.panel3.Controls.Add(this.star3);
+            this.panel3.Controls.Add(this.star2);
+            this.panel3.Controls.Add(this.star1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 180);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1584, 105);
+            this.panel3.TabIndex = 5;
+            // 
+            // lblPlayTime
+            // 
+            this.lblPlayTime.AutoSize = true;
+            this.lblPlayTime.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayTime.Location = new System.Drawing.Point(29, 39);
+            this.lblPlayTime.Name = "lblPlayTime";
+            this.lblPlayTime.Size = new System.Drawing.Size(64, 24);
+            this.lblPlayTime.TabIndex = 8;
+            this.lblPlayTime.Text = "00:00";
+            // 
+            // picSetting
+            // 
+            this.picSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSetting.BackColor = System.Drawing.Color.Transparent;
+            this.picSetting.Image = global::wpf_in_winforms.Properties.Resources.cog;
+            this.picSetting.Location = new System.Drawing.Point(1482, 19);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Size = new System.Drawing.Size(65, 65);
+            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSetting.TabIndex = 7;
+            this.picSetting.TabStop = false;
+            // 
+            // txtQRResult
+            // 
+            this.txtQRResult.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtQRResult.Location = new System.Drawing.Point(1344, 42);
+            this.txtQRResult.Name = "txtQRResult";
+            this.txtQRResult.Size = new System.Drawing.Size(100, 20);
+            this.txtQRResult.TabIndex = 6;
+            // 
+            // star6
+            // 
+            this.star6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.star6.BackColor = System.Drawing.Color.Transparent;
+            this.star6.Image = ((System.Drawing.Image)(resources.GetObject("star6.Image")));
+            this.star6.Location = new System.Drawing.Point(927, 19);
+            this.star6.Name = "star6";
+            this.star6.Size = new System.Drawing.Size(65, 65);
+            this.star6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star6.TabIndex = 5;
+            this.star6.TabStop = false;
+            // 
+            // star5
+            // 
+            this.star5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.star5.BackColor = System.Drawing.Color.Transparent;
+            this.star5.Image = ((System.Drawing.Image)(resources.GetObject("star5.Image")));
+            this.star5.Location = new System.Drawing.Point(856, 19);
+            this.star5.Name = "star5";
+            this.star5.Size = new System.Drawing.Size(65, 65);
+            this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star5.TabIndex = 4;
+            this.star5.TabStop = false;
+            // 
+            // star4
+            // 
+            this.star4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.star4.BackColor = System.Drawing.Color.Transparent;
+            this.star4.Image = ((System.Drawing.Image)(resources.GetObject("star4.Image")));
+            this.star4.Location = new System.Drawing.Point(785, 19);
+            this.star4.Name = "star4";
+            this.star4.Size = new System.Drawing.Size(65, 65);
+            this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star4.TabIndex = 3;
+            this.star4.TabStop = false;
+            // 
+            // star3
+            // 
+            this.star3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.star3.BackColor = System.Drawing.Color.Transparent;
+            this.star3.Image = ((System.Drawing.Image)(resources.GetObject("star3.Image")));
+            this.star3.Location = new System.Drawing.Point(714, 19);
+            this.star3.Name = "star3";
+            this.star3.Size = new System.Drawing.Size(65, 65);
+            this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star3.TabIndex = 2;
+            this.star3.TabStop = false;
+            // 
+            // star2
+            // 
+            this.star2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.star2.BackColor = System.Drawing.Color.Transparent;
+            this.star2.Image = ((System.Drawing.Image)(resources.GetObject("star2.Image")));
+            this.star2.Location = new System.Drawing.Point(643, 19);
+            this.star2.Name = "star2";
+            this.star2.Size = new System.Drawing.Size(65, 65);
+            this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star2.TabIndex = 1;
+            this.star2.TabStop = false;
+            // 
+            // star1
+            // 
+            this.star1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.star1.BackColor = System.Drawing.Color.Transparent;
+            this.star1.Image = ((System.Drawing.Image)(resources.GetObject("star1.Image")));
+            this.star1.Location = new System.Drawing.Point(572, 19);
+            this.star1.Name = "star1";
+            this.star1.Size = new System.Drawing.Size(65, 65);
+            this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star1.TabIndex = 0;
+            this.star1.TabStop = false;
             // 
             // colId
             // 
@@ -170,6 +325,7 @@
             // 
             // colRank
             // 
+            this.colRank.DataPropertyName = "Rank";
             this.colRank.HeaderText = "Rank";
             this.colRank.Name = "colRank";
             // 
@@ -228,177 +384,14 @@
             this.colCreatedDate.Name = "colCreatedDate";
             this.colCreatedDate.Visible = false;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(356, 100);
-            this.panel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(110, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 37);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Xếp hạng";
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitContainer3.IsSplitterFixed = true;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.BackgroundImage = global::wpf_in_winforms.Properties.Resources.icon_logo_RTC_2023;
-            this.splitContainer3.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.lblGameName);
-            this.splitContainer3.Size = new System.Drawing.Size(1584, 100);
-            this.splitContainer3.SplitterDistance = 100;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // lblGameName
-            // 
-            this.lblGameName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblGameName.AutoSize = true;
-            this.lblGameName.Font = new System.Drawing.Font("Arial", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameName.Location = new System.Drawing.Point(430, 22);
-            this.lblGameName.Name = "lblGameName";
-            this.lblGameName.Size = new System.Drawing.Size(424, 55);
-            this.lblGameName.TabIndex = 0;
-            this.lblGameName.Text = "QR DESTROYER!";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblPlayTime);
-            this.panel1.Controls.Add(this.picSetting);
-            this.panel1.Controls.Add(this.txtQRResult);
-            this.panel1.Controls.Add(this.star6);
-            this.panel1.Controls.Add(this.star5);
-            this.panel1.Controls.Add(this.star4);
-            this.panel1.Controls.Add(this.star3);
-            this.panel1.Controls.Add(this.star2);
-            this.panel1.Controls.Add(this.star1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 100);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1584, 105);
-            this.panel1.TabIndex = 4;
-            // 
-            // picSetting
-            // 
-            this.picSetting.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picSetting.Image = global::wpf_in_winforms.Properties.Resources.cog;
-            this.picSetting.Location = new System.Drawing.Point(1482, 19);
-            this.picSetting.Name = "picSetting";
-            this.picSetting.Size = new System.Drawing.Size(65, 65);
-            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSetting.TabIndex = 7;
-            this.picSetting.TabStop = false;
-            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
-            // 
-            // txtQRResult
-            // 
-            this.txtQRResult.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtQRResult.Location = new System.Drawing.Point(1344, 42);
-            this.txtQRResult.Name = "txtQRResult";
-            this.txtQRResult.Size = new System.Drawing.Size(100, 20);
-            this.txtQRResult.TabIndex = 6;
-            // 
-            // star6
-            // 
-            this.star6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.star6.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star6.Location = new System.Drawing.Point(927, 19);
-            this.star6.Name = "star6";
-            this.star6.Size = new System.Drawing.Size(65, 65);
-            this.star6.TabIndex = 5;
-            this.star6.TabStop = false;
-            // 
-            // star5
-            // 
-            this.star5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.star5.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star5.Location = new System.Drawing.Point(856, 19);
-            this.star5.Name = "star5";
-            this.star5.Size = new System.Drawing.Size(65, 65);
-            this.star5.TabIndex = 4;
-            this.star5.TabStop = false;
-            // 
-            // star4
-            // 
-            this.star4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.star4.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star4.Location = new System.Drawing.Point(785, 19);
-            this.star4.Name = "star4";
-            this.star4.Size = new System.Drawing.Size(65, 65);
-            this.star4.TabIndex = 3;
-            this.star4.TabStop = false;
-            // 
-            // star3
-            // 
-            this.star3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.star3.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star3.Location = new System.Drawing.Point(714, 19);
-            this.star3.Name = "star3";
-            this.star3.Size = new System.Drawing.Size(65, 65);
-            this.star3.TabIndex = 2;
-            this.star3.TabStop = false;
-            // 
-            // star2
-            // 
-            this.star2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.star2.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star2.Location = new System.Drawing.Point(643, 19);
-            this.star2.Name = "star2";
-            this.star2.Size = new System.Drawing.Size(65, 65);
-            this.star2.TabIndex = 1;
-            this.star2.TabStop = false;
-            // 
-            // star1
-            // 
-            this.star1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.star1.Image = global::wpf_in_winforms.Properties.Resources.star_disable;
-            this.star1.Location = new System.Drawing.Point(572, 19);
-            this.star1.Name = "star1";
-            this.star1.Size = new System.Drawing.Size(65, 65);
-            this.star1.TabIndex = 0;
-            this.star1.TabStop = false;
-            // 
-            // GameTick
-            // 
-            this.GameTick.Interval = 1000;
-            this.GameTick.Tick += new System.EventHandler(this.GameTick_Tick);
-            // 
-            // lblPlayTime
-            // 
-            this.lblPlayTime.AutoSize = true;
-            this.lblPlayTime.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayTime.Location = new System.Drawing.Point(29, 39);
-            this.lblPlayTime.Name = "lblPlayTime";
-            this.lblPlayTime.Size = new System.Drawing.Size(64, 24);
-            this.lblPlayTime.TabIndex = 8;
-            this.lblPlayTime.Text = "00:00";
-            // 
             // GameFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.splitContainer2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.splitContainer3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameFrame";
             this.Text = "QR DESTROYER";
@@ -415,12 +408,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvRank)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            this.splitContainer3.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
@@ -439,16 +428,19 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView grvRank;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Integration.ElementHost eleHost;
+        private System.Windows.Forms.Timer GameTick;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblPlayTime;
+        private System.Windows.Forms.PictureBox picSetting;
+        private System.Windows.Forms.TextBox txtQRResult;
         private System.Windows.Forms.PictureBox star6;
         private System.Windows.Forms.PictureBox star5;
         private System.Windows.Forms.PictureBox star4;
         private System.Windows.Forms.PictureBox star3;
         private System.Windows.Forms.PictureBox star2;
         private System.Windows.Forms.PictureBox star1;
-        private System.Windows.Forms.Label lblGameName;
-        private System.Windows.Forms.Integration.ElementHost eleHost;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
@@ -459,10 +451,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlayTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedDate;
-        private System.Windows.Forms.TextBox txtQRResult;
-        private System.Windows.Forms.PictureBox picSetting;
-        private System.Windows.Forms.Timer GameTick;
-        private System.Windows.Forms.Label lblPlayTime;
     }
 }
 

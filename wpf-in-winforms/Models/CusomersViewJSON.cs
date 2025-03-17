@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace wpf_in_winforms.Models
 {
-    class CusomerView
+    class CusomersViewJSON
     {
         public int Id { get; set; }
+        public int Rank { get; set; }
         public string Name { get; set; }
         public string Company { get; set; }
         public string PhoneNumber { get; set; }

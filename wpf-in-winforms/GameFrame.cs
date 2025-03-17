@@ -11,13 +11,14 @@ using System.Windows.Forms;
 using wpf_control;
 using wpf_control.Models;
 using wpf_in_winforms.Fonts;
+using wpf_in_winforms.Models;
 
 namespace wpf_in_winforms
 {
     public partial class GameFrame : Form
     {
         public Customers customer;
-        private SortableBindingList<Customers> customers = new SortableBindingList<Customers>();
+        private SortableBindingList<CustomersView> customers = new SortableBindingList<CustomersView>();
         private readonly List<PictureBox> Stars = new List<PictureBox>();
         private List<QRs> QRs = new List<QRs>();
         private Stopwatch stopwatch = new Stopwatch();
@@ -36,7 +37,6 @@ namespace wpf_in_winforms
             grvRank.DataSource = customers;
             Stars.AddRange(new[] { star1, star2, star3, star4, star5, star6 });
             DisplayRank();
-            DisplayPixelFont();
             Connect();
         }
         void startTime()
@@ -47,13 +47,8 @@ namespace wpf_in_winforms
         }
         public void DisplayRank()
         {
-            customers = new SortableBindingList<Customers>(SqliteHelper<Customers>.GetAll());
+            customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView());
             grvRank.Sort(grvRank.Columns["colPlayTime"], ListSortDirection.Ascending);
-        }
-
-        private void DisplayPixelFont()
-        {
-            lblGameName.Font = new Font(FontRegister.Font.Families[0], 40);
         }
 
         private void PlaySound()
@@ -114,7 +109,7 @@ namespace wpf_in_winforms
                 PlaySound();
                 Stars[game.currentIndex].BeginInvoke(new Action(() =>
                 {
-                    Stars[game.currentIndex].Image = Properties.Resources.star;
+                    Stars[game.currentIndex].Image = Properties.Resources.star_new;
                 }));
                 if (game.currentIndex == 5)
                 {
@@ -166,5 +161,9 @@ namespace wpf_in_winforms
             }));
         }
 
+        private void grvRank_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+        }
     }
 }
