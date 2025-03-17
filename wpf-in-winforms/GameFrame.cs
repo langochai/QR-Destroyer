@@ -48,7 +48,7 @@ namespace wpf_in_winforms
         public void DisplayRank()
         {
             customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView());
-            grvRank.Sort(grvRank.Columns["colPlayTime"], ListSortDirection.Ascending);
+            //grvRank.Sort(grvRank.Columns["colPlayTime"], ListSortDirection.Ascending);
         }
 
         private void PlaySound()
@@ -159,11 +159,6 @@ namespace wpf_in_winforms
                 TimeSpan elapsed = stopwatch.Elapsed;
                 lblPlayTime.Text = $"{elapsed.Minutes:D2}:{elapsed.Seconds:D2}";
             }));
-        }
-
-        private void grvRank_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-
         }
     }
 }

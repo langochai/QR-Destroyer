@@ -49,16 +49,6 @@
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInterestIds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChannelIds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlayTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -140,23 +130,11 @@
             // grvRank
             // 
             this.grvRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvRank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colRank,
-            this.colName,
-            this.colEmail,
-            this.colPhoneNumber,
-            this.colInterestIds,
-            this.colChannelIds,
-            this.colCompany,
-            this.colPlayTime,
-            this.colCreatedDate});
             this.grvRank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvRank.Location = new System.Drawing.Point(0, 100);
             this.grvRank.Name = "grvRank";
             this.grvRank.Size = new System.Drawing.Size(345, 472);
             this.grvRank.TabIndex = 1;
-            this.grvRank.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.grvRank_CellPainting);
             // 
             // panel2
             // 
@@ -316,74 +294,6 @@
             this.star1.TabIndex = 0;
             this.star1.TabStop = false;
             // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.Visible = false;
-            // 
-            // colRank
-            // 
-            this.colRank.DataPropertyName = "Rank";
-            this.colRank.HeaderText = "Rank";
-            this.colRank.Name = "colRank";
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.DataPropertyName = "Name";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            // 
-            // colEmail
-            // 
-            this.colEmail.DataPropertyName = "Email";
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.Visible = false;
-            // 
-            // colPhoneNumber
-            // 
-            this.colPhoneNumber.DataPropertyName = "PhoneNumber";
-            this.colPhoneNumber.HeaderText = "PhoneNumber";
-            this.colPhoneNumber.Name = "colPhoneNumber";
-            this.colPhoneNumber.Visible = false;
-            // 
-            // colInterestIds
-            // 
-            this.colInterestIds.DataPropertyName = "InterestIds";
-            this.colInterestIds.HeaderText = "InterestIds";
-            this.colInterestIds.Name = "colInterestIds";
-            this.colInterestIds.Visible = false;
-            // 
-            // colChannelIds
-            // 
-            this.colChannelIds.DataPropertyName = "ChannelIds";
-            this.colChannelIds.HeaderText = "ChannelIds";
-            this.colChannelIds.Name = "colChannelIds";
-            this.colChannelIds.Visible = false;
-            // 
-            // colCompany
-            // 
-            this.colCompany.DataPropertyName = "Company";
-            this.colCompany.HeaderText = "Company";
-            this.colCompany.Name = "colCompany";
-            this.colCompany.Visible = false;
-            // 
-            // colPlayTime
-            // 
-            this.colPlayTime.DataPropertyName = "PlayTime";
-            this.colPlayTime.HeaderText = "PlayTime";
-            this.colPlayTime.Name = "colPlayTime";
-            // 
-            // colCreatedDate
-            // 
-            this.colCreatedDate.DataPropertyName = "CreatedDate";
-            this.colCreatedDate.HeaderText = "CreatedDate";
-            this.colCreatedDate.Name = "colCreatedDate";
-            this.colCreatedDate.Visible = false;
-            // 
             // GameFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,16 +351,6 @@
         private System.Windows.Forms.PictureBox star3;
         private System.Windows.Forms.PictureBox star2;
         private System.Windows.Forms.PictureBox star1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInterestIds;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colChannelIds;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCompany;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPlayTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedDate;
     }
 }
 

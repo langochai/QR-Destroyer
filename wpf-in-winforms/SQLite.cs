@@ -162,7 +162,9 @@ namespace wpf_in_winforms
             {
                 connection.Open();
                 string query = @"SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank, 
-                                * FROM customers ORDER BY PlayTime ASC LIMIT 10";
+                                Id,Name,Company,Email,PhoneNumber,InterestIds,ChannelIds,CreatedDate
+                                ,printf('%02dm%02ds', PlayTime / 60, PlayTime % 60) AS PlayTime
+                                FROM customers ORDER BY PlayTime ASC LIMIT 10";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 using (var reader = command.ExecuteReader())
                 {
