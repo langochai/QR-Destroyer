@@ -83,9 +83,9 @@ namespace wpf_in_winforms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Header_Image {
+        internal static System.Drawing.Bitmap header_background {
             get {
-                object obj = ResourceManager.GetObject("Header Image", resourceCulture);
+                object obj = ResourceManager.GetObject("header background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +136,16 @@ namespace wpf_in_winforms.Properties {
         internal static System.Drawing.Bitmap medal_gold {
             get {
                 object obj = ResourceManager.GetObject("medal_gold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medal_noob {
+            get {
+                object obj = ResourceManager.GetObject("medal-noob", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -16,7 +16,7 @@ namespace wpf_in_winforms.Models
         public string Email { get; set; }
         public string InterestIds { get; set; }
         public string ChannelIds { get; set; }
-        public string PlayTime { get; set; }
+        public int PlayTime { get; set; }
         public DateTime CreatedDate { get; set; }
     }
 }

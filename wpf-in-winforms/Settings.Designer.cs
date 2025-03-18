@@ -36,18 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnUpdate1 = new System.Windows.Forms.Button();
-            this.btnSave1 = new System.Windows.Forms.Button();
-            this.btnUpdate2 = new System.Windows.Forms.Button();
-            this.btnSave2 = new System.Windows.Forms.Button();
-            this.btnUpdate3 = new System.Windows.Forms.Button();
-            this.btnSave3 = new System.Windows.Forms.Button();
-            this.btnUpdate4 = new System.Windows.Forms.Button();
-            this.btnSave4 = new System.Windows.Forms.Button();
-            this.btnUpdate5 = new System.Windows.Forms.Button();
-            this.btnSave5 = new System.Windows.Forms.Button();
-            this.btnUpdate6 = new System.Windows.Forms.Button();
-            this.btnSave6 = new System.Windows.Forms.Button();
             this.txtQR1Content = new System.Windows.Forms.TextBox();
             this.txtQR2Content = new System.Windows.Forms.TextBox();
             this.txtQR3Content = new System.Windows.Forms.TextBox();
@@ -154,126 +142,6 @@
             this.label6.Size = new System.Drawing.Size(53, 24);
             this.label6.TabIndex = 7;
             this.label6.Text = "QR6";
-            // 
-            // btnUpdate1
-            // 
-            this.btnUpdate1.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnUpdate1.Location = new System.Drawing.Point(497, 108);
-            this.btnUpdate1.Name = "btnUpdate1";
-            this.btnUpdate1.Size = new System.Drawing.Size(129, 32);
-            this.btnUpdate1.TabIndex = 4;
-            this.btnUpdate1.Text = "Update";
-            this.btnUpdate1.UseVisualStyleBackColor = true;
-            // 
-            // btnSave1
-            // 
-            this.btnSave1.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnSave1.Location = new System.Drawing.Point(643, 107);
-            this.btnSave1.Name = "btnSave1";
-            this.btnSave1.Size = new System.Drawing.Size(129, 32);
-            this.btnSave1.TabIndex = 5;
-            this.btnSave1.Text = "Browse";
-            this.btnSave1.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate2
-            // 
-            this.btnUpdate2.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnUpdate2.Location = new System.Drawing.Point(497, 148);
-            this.btnUpdate2.Name = "btnUpdate2";
-            this.btnUpdate2.Size = new System.Drawing.Size(129, 32);
-            this.btnUpdate2.TabIndex = 8;
-            this.btnUpdate2.Text = "Update";
-            this.btnUpdate2.UseVisualStyleBackColor = true;
-            // 
-            // btnSave2
-            // 
-            this.btnSave2.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnSave2.Location = new System.Drawing.Point(643, 148);
-            this.btnSave2.Name = "btnSave2";
-            this.btnSave2.Size = new System.Drawing.Size(129, 32);
-            this.btnSave2.TabIndex = 9;
-            this.btnSave2.Text = "Browse";
-            this.btnSave2.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate3
-            // 
-            this.btnUpdate3.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnUpdate3.Location = new System.Drawing.Point(497, 188);
-            this.btnUpdate3.Name = "btnUpdate3";
-            this.btnUpdate3.Size = new System.Drawing.Size(129, 32);
-            this.btnUpdate3.TabIndex = 12;
-            this.btnUpdate3.Text = "Update";
-            this.btnUpdate3.UseVisualStyleBackColor = true;
-            // 
-            // btnSave3
-            // 
-            this.btnSave3.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnSave3.Location = new System.Drawing.Point(643, 188);
-            this.btnSave3.Name = "btnSave3";
-            this.btnSave3.Size = new System.Drawing.Size(129, 32);
-            this.btnSave3.TabIndex = 13;
-            this.btnSave3.Text = "Browse";
-            this.btnSave3.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate4
-            // 
-            this.btnUpdate4.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnUpdate4.Location = new System.Drawing.Point(497, 227);
-            this.btnUpdate4.Name = "btnUpdate4";
-            this.btnUpdate4.Size = new System.Drawing.Size(129, 32);
-            this.btnUpdate4.TabIndex = 16;
-            this.btnUpdate4.Text = "Update";
-            this.btnUpdate4.UseVisualStyleBackColor = true;
-            // 
-            // btnSave4
-            // 
-            this.btnSave4.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnSave4.Location = new System.Drawing.Point(643, 228);
-            this.btnSave4.Name = "btnSave4";
-            this.btnSave4.Size = new System.Drawing.Size(129, 32);
-            this.btnSave4.TabIndex = 17;
-            this.btnSave4.Text = "Browse";
-            this.btnSave4.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate5
-            // 
-            this.btnUpdate5.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnUpdate5.Location = new System.Drawing.Point(497, 267);
-            this.btnUpdate5.Name = "btnUpdate5";
-            this.btnUpdate5.Size = new System.Drawing.Size(129, 32);
-            this.btnUpdate5.TabIndex = 20;
-            this.btnUpdate5.Text = "Update";
-            this.btnUpdate5.UseVisualStyleBackColor = true;
-            // 
-            // btnSave5
-            // 
-            this.btnSave5.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnSave5.Location = new System.Drawing.Point(643, 268);
-            this.btnSave5.Name = "btnSave5";
-            this.btnSave5.Size = new System.Drawing.Size(129, 32);
-            this.btnSave5.TabIndex = 21;
-            this.btnSave5.Text = "Browse";
-            this.btnSave5.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate6
-            // 
-            this.btnUpdate6.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnUpdate6.Location = new System.Drawing.Point(497, 308);
-            this.btnUpdate6.Name = "btnUpdate6";
-            this.btnUpdate6.Size = new System.Drawing.Size(129, 32);
-            this.btnUpdate6.TabIndex = 24;
-            this.btnUpdate6.Text = "Update";
-            this.btnUpdate6.UseVisualStyleBackColor = true;
-            // 
-            // btnSave6
-            // 
-            this.btnSave6.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnSave6.Location = new System.Drawing.Point(643, 308);
-            this.btnSave6.Name = "btnSave6";
-            this.btnSave6.Size = new System.Drawing.Size(129, 32);
-            this.btnSave6.TabIndex = 25;
-            this.btnSave6.Text = "Browse";
-            this.btnSave6.UseVisualStyleBackColor = true;
             // 
             // txtQR1Content
             // 
@@ -407,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 387);
+            this.ClientSize = new System.Drawing.Size(513, 387);
             this.Controls.Add(this.txtQR6Path);
             this.Controls.Add(this.txtQR5Path);
             this.Controls.Add(this.txtQR4Path);
@@ -422,18 +290,6 @@
             this.Controls.Add(this.txtQR3Content);
             this.Controls.Add(this.txtQR2Content);
             this.Controls.Add(this.txtQR1Content);
-            this.Controls.Add(this.btnSave6);
-            this.Controls.Add(this.btnUpdate6);
-            this.Controls.Add(this.btnSave5);
-            this.Controls.Add(this.btnUpdate5);
-            this.Controls.Add(this.btnSave4);
-            this.Controls.Add(this.btnUpdate4);
-            this.Controls.Add(this.btnSave3);
-            this.Controls.Add(this.btnUpdate3);
-            this.Controls.Add(this.btnSave2);
-            this.Controls.Add(this.btnUpdate2);
-            this.Controls.Add(this.btnSave1);
-            this.Controls.Add(this.btnUpdate1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -461,18 +317,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnUpdate1;
-        private System.Windows.Forms.Button btnSave1;
-        private System.Windows.Forms.Button btnUpdate2;
-        private System.Windows.Forms.Button btnSave2;
-        private System.Windows.Forms.Button btnUpdate3;
-        private System.Windows.Forms.Button btnSave3;
-        private System.Windows.Forms.Button btnUpdate4;
-        private System.Windows.Forms.Button btnSave4;
-        private System.Windows.Forms.Button btnUpdate5;
-        private System.Windows.Forms.Button btnSave5;
-        private System.Windows.Forms.Button btnUpdate6;
-        private System.Windows.Forms.Button btnSave6;
         private System.Windows.Forms.TextBox txtQR1Content;
         private System.Windows.Forms.TextBox txtQR2Content;
         private System.Windows.Forms.TextBox txtQR3Content;

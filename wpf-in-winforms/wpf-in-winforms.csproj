@@ -188,7 +188,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Game Background.jpeg" />
-    <None Include="Resources\Header Image.jpg" />
     <None Include="Resources\QR Code.png" />
     <None Include="Resources\Score Background.jpg" />
     <None Include="Resources\star-new.png" />
@@ -196,7 +195,15 @@
     <None Include="Resources\medal-bronze.png" />
     <None Include="Resources\medal-silver.png" />
     <None Include="Resources\medal-gold.png" />
+    <None Include="Resources\header background.jpg" />
+    <None Include="Resources\medal-noob.png" />
     <Content Include="RtcIcon.ico" />
+    <Content Include="Sounds\bonus.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\cheers.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sounds\ting.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

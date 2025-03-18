@@ -14,7 +14,7 @@ namespace wpf_in_winforms
         {
         }
 
-        public static void Insert(T model)
+        public static int Insert(T model)
         {
             using (var connection = new SQLiteConnection(_connectionString))
             {
@@ -26,7 +26,7 @@ namespace wpf_in_winforms
                 var columns = string.Join(", ", properties.Select(p => p.Name));
                 var values = string.Join(", ", properties.Select(p => $"@{p.Name}"));
 
-                var insertQuery = $"INSERT INTO {typeof(T).Name} ({columns}) VALUES ({values})";
+                var insertQuery = $"INSERT INTO {typeof(T).Name} ({columns}) VALUES ({values}); Select last_insert_rowid()";
 
                 using (var command = new SQLiteCommand(insertQuery, connection))
                 {
@@ -34,7 +34,8 @@ namespace wpf_in_winforms
                     {
                         command.Parameters.AddWithValue($"@{property.Name}", property.GetValue(model));
                     }
-                    command.ExecuteNonQuery();
+                    int id = Convert.ToInt32(command.ExecuteScalar());
+                    return id;
                 }
             }
         }
@@ -161,10 +162,8 @@ namespace wpf_in_winforms
             using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
-                string query = @"SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank, 
-                                Id,Name,Company,Email,PhoneNumber,InterestIds,ChannelIds,CreatedDate
-                                ,printf('%02dm%02ds', PlayTime / 60, PlayTime % 60) AS PlayTime
-                                FROM customers ORDER BY PlayTime ASC LIMIT 10";
+                string query = @"SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank, *
+                                FROM customers ORDER BY PlayTime ASC LIMIT 9";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 using (var reader = command.ExecuteReader())
                 {

@@ -12,8 +12,8 @@ namespace wpf_in_winforms
         public FrmMain()
         {
             InitializeComponent();
-            var registered = FontRegister.Register();
-            if (registered) DisplayPixelFont();
+            //var registered = FontRegister.Register();
+            //if (registered) DisplayPixelFont();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -41,12 +41,12 @@ namespace wpf_in_winforms
                     Company = txtCompany.Text,
                     Email = txtEmail.Text,
                     PhoneNumber = txtPhoneNumber.Text,
-                    PlayTime = 0,
+                    PlayTime = 100000,
                     InterestIds = JsonConvert.SerializeObject(InterestIDs),
                     ChannelIds = JsonConvert.SerializeObject(ChannelIDs),
                     CreatedDate = DateTime.Now,
                 };
-                SqliteHelper<Customers>.Insert(newCustomer);
+                newCustomer.Id = SqliteHelper<Customers>.Insert(newCustomer);
                 GameFrame frm = new GameFrame();
                 frm.customer = newCustomer;
                 frm.FormClosed += (s, ev) => {

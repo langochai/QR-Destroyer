@@ -30,7 +30,6 @@ namespace wpf_in_winforms
 
         private void GameFrame_Load(object sender, EventArgs e)
         {
-            startTime();
             eleHost.Child = new GameControl();
             ChangeSpeed(Properties.Settings.Default.Speed);
             SetQRSettings();
@@ -38,22 +37,36 @@ namespace wpf_in_winforms
             Stars.AddRange(new[] { star1, star2, star3, star4, star5, star6 });
             DisplayRank();
             Connect();
-        }
-        void startTime()
-        {
             stopwatch.Start();
-            GameTick.Interval = 1000;
             GameTick.Start();
         }
         public void DisplayRank()
         {
             customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView());
-            //grvRank.Sort(grvRank.Columns["colPlayTime"], ListSortDirection.Ascending);
+            if (customers.Count < 9)
+            {
+                var missingCount = 9 - customers.Count;
+                for (int i = 0; i < missingCount; i++) { customers.Add(new CustomersView()); }
+            }
+            grvRank.DataSource = customers;
+            grvRank.Sort(grvRank.Columns["colPlayTime"], ListSortDirection.Ascending);
+            grvRank.RowTemplate.Height = (grvRank.Height - grvRank.ColumnHeadersHeight) / 10;
+            grvRank.Refresh();
+            grvRank.ClearSelection();
+            grvRank.CurrentCell = null;
         }
-
+        private void grvRank_SizeChanged(object sender, EventArgs e)
+        {
+            grvRank.RowTemplate.Height = (grvRank.Height - grvRank.ColumnHeadersHeight) / 10;
+        }
         private void PlaySound()
         {
-            var soundPlayer = new SoundPlayer("./Sounds/ting.wav");
+            var soundPlayer = new SoundPlayer("./Sounds/bonus.wav");
+            soundPlayer.Play();
+        }
+        private void PlayVictorySound()
+        {
+            var soundPlayer = new SoundPlayer("./Sounds/cheers.wav");
             soundPlayer.Play();
         }
 
@@ -99,26 +112,25 @@ namespace wpf_in_winforms
             {
                 SerialPort sp = (SerialPort)sender;
                 string textResult = sp.ReadExisting();
-                txtQRResult.BeginInvoke(new Action(() =>
-                {
-                    txtQRResult.Text = textResult;
-                }));
-                if (!(eleHost.Child is GameControl game)) return;
-                bool isCorrect = string.Concat(textResult.Where(c => !char.IsWhiteSpace(c))) == QRs[game.currentIndex].Content;
-                if (!isCorrect) return;
                 PlaySound();
-                Stars[game.currentIndex].BeginInvoke(new Action(() =>
+                if (!(eleHost.Child is GameControl game)) return;
+                var index = game.currentIndex;
+                bool isCorrect = textResult.Trim() == QRs[index].Content;
+                if (!isCorrect) return;
+                Stars[index].BeginInvoke(new Action(() =>
                 {
-                    Stars[game.currentIndex].Image = Properties.Resources.star_new;
+                    Stars[index].Image = Properties.Resources.star_new;
                 }));
-                if (game.currentIndex == 5)
+                if (index == 5)
                 {
-                    // lưu thời gian vào db
                     stopwatch.Stop();
                     int playTimeInSeconds = (int)stopwatch.Elapsed.TotalSeconds;
-                    customer.PlayTime = playTimeInSeconds; 
+                    customer.PlayTime = playTimeInSeconds;
+                    SqliteHelper<Customers>.Update(customer);
                     eleHost.BeginInvoke(new Action(() => { eleHost.Child = null; }));
-                    MessageBox.Show($"Bạn là người chiến thắng!!!\nThời gian: {lblPlayTime.Text}", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PlayVictorySound();
+                    grvRank.BeginInvoke(new Action(() => { DisplayRank(); }));
+                    MessageBox.Show($"Bạn là người chiến thắng!!!\nThời gian: {playTimeInSeconds}s", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 game.Dispatcher.BeginInvoke(new Action(() => { game.RespawnImage(); }));
             }
@@ -154,11 +166,67 @@ namespace wpf_in_winforms
 
         private void GameTick_Tick(object sender, EventArgs e)
         {
-            this.BeginInvoke(new Action(() =>
+            //this.BeginInvoke(new Action(() =>
+            //{
+            TimeSpan elapsed = stopwatch.Elapsed;
+            lblPlayTime.Text = $"{elapsed.Minutes:D2}:{elapsed.Seconds:D2}";
+            //}));
+        }
+
+        private void grvRank_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == grvRank.Columns["colRank"].Index && e.RowIndex >= 0)
             {
-                TimeSpan elapsed = stopwatch.Elapsed;
-                lblPlayTime.Text = $"{elapsed.Minutes:D2}:{elapsed.Seconds:D2}";
-            }));
+                e.PaintBackground(e.CellBounds, true);
+                //e.PaintContent(e.CellBounds);
+
+                string rankText = e.Value?.ToString() ?? "";
+                Image rankImage = GetRankImage(rankText);
+
+                if (rankImage != null)
+                {
+                    int imgSize = 36;
+                    Point imgLocation = new Point(e.CellBounds.Right - imgSize - 5, e.CellBounds.Y + (e.CellBounds.Height - imgSize) / 2);
+                    e.Graphics.DrawImage(rankImage, new Rectangle(imgLocation, new Size(imgSize, imgSize)));
+                }
+
+                e.Handled = true;
+            }
+        }
+        private Image GetRankImage(string rank)
+        {
+            switch (rank)
+            {
+                case "0":
+                    return null;
+                case "1":
+                    return Properties.Resources.medal_gold;
+                case "2":
+                    return Properties.Resources.medal_silver;
+                case "3":
+                    return Properties.Resources.medal_bronze;
+                default:
+                    return Properties.Resources.medal_noob;
+            }
+        }
+
+        private void grvRank_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (grvRank.Columns[e.ColumnIndex].ValueType == typeof(int))
+            {
+                int value = (int)e.Value;
+                if (value == 0)
+                {
+                    e.Value = string.Empty;
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void grvRank_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grvRank.ClearSelection();
+            grvRank.CurrentCell = null;
         }
     }
 }
