@@ -157,7 +157,7 @@
       <DependentUpon>WeaponShowCase.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="db.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Fonts\joystix_monospace.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -238,13 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\joystix monospace.otf" />
-    <None Include="Resources\star-disable.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\star.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main-background.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cog.png" />
@@ -266,8 +259,6 @@
     <Content Include="Images\qr6.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\Game Background.jpeg" />
-    <None Include="Resources\QR Code.png" />
     <None Include="Resources\Score Background.jpg" />
     <None Include="Resources\star-new.png" />
     <None Include="Resources\star-new-disabled.png" />
@@ -276,8 +267,8 @@
     <None Include="Resources\medal-gold.png" />
     <None Include="Resources\header background.jpg" />
     <None Include="Resources\medal-noob.png" />
-    <None Include="Resources\Background.png" />
     <None Include="Resources\background.jpg" />
+    <None Include="Resources\victory.gif" />
     <Content Include="RtcIcon.ico" />
     <Content Include="ScannerData\barcodescanner.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

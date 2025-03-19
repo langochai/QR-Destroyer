@@ -186,7 +186,7 @@
             this.lblCompany.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompany.Location = new System.Drawing.Point(13, 136);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(95, 35);
+            this.lblCompany.Size = new System.Drawing.Size(110, 35);
             this.lblCompany.TabIndex = 35;
             this.lblCompany.Text = "Công ty:";
             // 
@@ -196,7 +196,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCompany.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompany.Location = new System.Drawing.Point(114, 136);
+            this.txtCompany.Location = new System.Drawing.Point(131, 136);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(686, 35);
             this.txtCompany.TabIndex = 33;
@@ -217,7 +217,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(114, 92);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(131, 91);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(686, 35);
             this.txtPhoneNumber.TabIndex = 32;
@@ -240,12 +240,12 @@
             // 
             // chkInterest7
             // 
-            this.chkInterest7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkInterest7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkInterest7.AutoSize = true;
             this.chkInterest7.BackColor = System.Drawing.Color.Transparent;
             this.chkInterest7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest7.Location = new System.Drawing.Point(10, 384);
+            this.chkInterest7.Location = new System.Drawing.Point(16, 536);
             this.chkInterest7.Name = "chkInterest7";
             this.chkInterest7.Size = new System.Drawing.Size(127, 29);
             this.chkInterest7.TabIndex = 48;
@@ -254,12 +254,12 @@
             // 
             // chkInterest6
             // 
-            this.chkInterest6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkInterest6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkInterest6.AutoSize = true;
             this.chkInterest6.BackColor = System.Drawing.Color.Transparent;
             this.chkInterest6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest6.Location = new System.Drawing.Point(10, 349);
+            this.chkInterest6.Location = new System.Drawing.Point(16, 501);
             this.chkInterest6.Name = "chkInterest6";
             this.chkInterest6.Size = new System.Drawing.Size(354, 29);
             this.chkInterest6.TabIndex = 47;
@@ -268,12 +268,12 @@
             // 
             // chkInterest5
             // 
-            this.chkInterest5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkInterest5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkInterest5.AutoSize = true;
             this.chkInterest5.BackColor = System.Drawing.Color.Transparent;
             this.chkInterest5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest5.Location = new System.Drawing.Point(10, 289);
+            this.chkInterest5.Location = new System.Drawing.Point(16, 441);
             this.chkInterest5.Name = "chkInterest5";
             this.chkInterest5.Size = new System.Drawing.Size(345, 54);
             this.chkInterest5.TabIndex = 46;
@@ -282,12 +282,12 @@
             // 
             // chkInterest4
             // 
-            this.chkInterest4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkInterest4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkInterest4.AutoSize = true;
             this.chkInterest4.BackColor = System.Drawing.Color.Transparent;
             this.chkInterest4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest4.Location = new System.Drawing.Point(10, 229);
+            this.chkInterest4.Location = new System.Drawing.Point(16, 381);
             this.chkInterest4.Name = "chkInterest4";
             this.chkInterest4.Size = new System.Drawing.Size(408, 54);
             this.chkInterest4.TabIndex = 45;
@@ -296,12 +296,12 @@
             // 
             // chkInterest3
             // 
-            this.chkInterest3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkInterest3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkInterest3.AutoSize = true;
             this.chkInterest3.BackColor = System.Drawing.Color.Transparent;
             this.chkInterest3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest3.Location = new System.Drawing.Point(10, 194);
+            this.chkInterest3.Location = new System.Drawing.Point(16, 346);
             this.chkInterest3.Name = "chkInterest3";
             this.chkInterest3.Size = new System.Drawing.Size(380, 29);
             this.chkInterest3.TabIndex = 44;
@@ -310,12 +310,12 @@
             // 
             // chkInterest2
             // 
-            this.chkInterest2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkInterest2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkInterest2.AutoSize = true;
             this.chkInterest2.BackColor = System.Drawing.Color.Transparent;
             this.chkInterest2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest2.Location = new System.Drawing.Point(10, 134);
+            this.chkInterest2.Location = new System.Drawing.Point(16, 286);
             this.chkInterest2.Name = "chkInterest2";
             this.chkInterest2.Size = new System.Drawing.Size(481, 54);
             this.chkInterest2.TabIndex = 43;
@@ -325,12 +325,12 @@
             // 
             // chkInterest1
             // 
-            this.chkInterest1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkInterest1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkInterest1.AutoSize = true;
             this.chkInterest1.BackColor = System.Drawing.Color.Transparent;
             this.chkInterest1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest1.Location = new System.Drawing.Point(10, 74);
+            this.chkInterest1.Location = new System.Drawing.Point(16, 226);
             this.chkInterest1.Name = "chkInterest1";
             this.chkInterest1.Size = new System.Drawing.Size(325, 54);
             this.chkInterest1.TabIndex = 42;
@@ -339,11 +339,11 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 10);
+            this.label1.Location = new System.Drawing.Point(11, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(809, 61);
             this.label1.TabIndex = 41;
@@ -366,12 +366,12 @@
             // 
             // chkChannel5
             // 
-            this.chkChannel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkChannel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkChannel5.AutoSize = true;
             this.chkChannel5.BackColor = System.Drawing.Color.Transparent;
             this.chkChannel5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel5.Location = new System.Drawing.Point(13, 305);
+            this.chkChannel5.Location = new System.Drawing.Point(18, 457);
             this.chkChannel5.Name = "chkChannel5";
             this.chkChannel5.Size = new System.Drawing.Size(127, 29);
             this.chkChannel5.TabIndex = 51;
@@ -380,12 +380,12 @@
             // 
             // chkChannel4
             // 
-            this.chkChannel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkChannel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkChannel4.AutoSize = true;
             this.chkChannel4.BackColor = System.Drawing.Color.Transparent;
             this.chkChannel4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel4.Location = new System.Drawing.Point(13, 245);
+            this.chkChannel4.Location = new System.Drawing.Point(18, 397);
             this.chkChannel4.Name = "chkChannel4";
             this.chkChannel4.Size = new System.Drawing.Size(331, 54);
             this.chkChannel4.TabIndex = 50;
@@ -394,12 +394,12 @@
             // 
             // chkChannel3
             // 
-            this.chkChannel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkChannel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkChannel3.AutoSize = true;
             this.chkChannel3.BackColor = System.Drawing.Color.Transparent;
             this.chkChannel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel3.Location = new System.Drawing.Point(13, 210);
+            this.chkChannel3.Location = new System.Drawing.Point(18, 362);
             this.chkChannel3.Name = "chkChannel3";
             this.chkChannel3.Size = new System.Drawing.Size(110, 29);
             this.chkChannel3.TabIndex = 49;
@@ -408,12 +408,12 @@
             // 
             // chkChannel2
             // 
-            this.chkChannel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkChannel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkChannel2.AutoSize = true;
             this.chkChannel2.BackColor = System.Drawing.Color.Transparent;
             this.chkChannel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel2.Location = new System.Drawing.Point(13, 175);
+            this.chkChannel2.Location = new System.Drawing.Point(18, 327);
             this.chkChannel2.Name = "chkChannel2";
             this.chkChannel2.Size = new System.Drawing.Size(262, 29);
             this.chkChannel2.TabIndex = 48;
@@ -422,12 +422,12 @@
             // 
             // chkChannel1
             // 
-            this.chkChannel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chkChannel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkChannel1.AutoSize = true;
             this.chkChannel1.BackColor = System.Drawing.Color.Transparent;
             this.chkChannel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel1.Location = new System.Drawing.Point(13, 115);
+            this.chkChannel1.Location = new System.Drawing.Point(18, 267);
             this.chkChannel1.Name = "chkChannel1";
             this.chkChannel1.Size = new System.Drawing.Size(315, 54);
             this.chkChannel1.TabIndex = 47;
@@ -436,11 +436,11 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 10);
+            this.label2.Location = new System.Drawing.Point(13, 162);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(802, 102);
             this.label2.TabIndex = 46;

@@ -29,20 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Victory));
+            this.picBackground = new System.Windows.Forms.PictureBox();
+            this.lblAnnounce = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.SuspendLayout();
+            // 
+            // picBackground
+            // 
+            this.picBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBackground.Image = global::wpf_in_winforms.Properties.Resources.victory;
+            this.picBackground.Location = new System.Drawing.Point(0, 0);
+            this.picBackground.Name = "picBackground";
+            this.picBackground.Size = new System.Drawing.Size(1234, 761);
+            this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBackground.TabIndex = 0;
+            this.picBackground.TabStop = false;
+            // 
+            // lblAnnounce
+            // 
+            this.lblAnnounce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnnounce.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnnounce.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnnounce.ForeColor = System.Drawing.Color.White;
+            this.lblAnnounce.Location = new System.Drawing.Point(117, 532);
+            this.lblAnnounce.Name = "lblAnnounce";
+            this.lblAnnounce.Size = new System.Drawing.Size(1015, 224);
+            this.lblAnnounce.TabIndex = 1;
+            this.lblAnnounce.Text = "Bạn là người chiến thắng";
+            this.lblAnnounce.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Victory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1234, 761);
+            this.Controls.Add(this.lblAnnounce);
+            this.Controls.Add(this.picBackground);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Victory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Victory";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Victory_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox picBackground;
+        private System.Windows.Forms.Label lblAnnounce;
     }
 }

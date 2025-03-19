@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using wpf_control;
 using wpf_control.Models;
 using wpf_in_winforms.Fonts;
+using wpf_in_winforms.Forms;
 using wpf_in_winforms.Models;
 
 namespace wpf_in_winforms
@@ -42,16 +43,6 @@ namespace wpf_in_winforms
             DisplayFonts();
         }
 
-        private void GameFrame_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (scannerSerialPort != null)
-            {
-                scannerSerialPort.Close();
-                scannerSerialPort.Dispose();
-                scannerSerialPort = null;
-            }
-        }
-
         public void DisplayRank()
         {
             customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView());
@@ -82,12 +73,6 @@ namespace wpf_in_winforms
         private void PlaySound()
         {
             var soundPlayer = new SoundPlayer("./Sounds/bonus.wav");
-            soundPlayer.Play();
-        }
-
-        private void PlayVictorySound()
-        {
-            var soundPlayer = new SoundPlayer("./Sounds/cheers.wav");
             soundPlayer.Play();
         }
 
@@ -151,9 +136,12 @@ namespace wpf_in_winforms
                     customer.PlayTime = playTimeInSeconds;
                     SqliteHelper<Customers>.Update(customer);
                     eleHost.BeginInvoke(new Action(() => { eleHost.Child = null; }));
-                    PlayVictorySound();
                     grvRank.BeginInvoke(new Action(() => { DisplayRank(); }));
-                    MessageBox.Show($"Bạn là người chiến thắng!!!\nThời gian: {playTimeInSeconds}s", "You won!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.BeginInvoke(new Action(() =>
+                    {
+                        Victory frm = new Victory(this);
+                        frm.ShowDialog();
+                    }));
                 }
                 game.Dispatcher.BeginInvoke(new Action(() => { game.RespawnImage(); }));
             }
@@ -263,6 +251,11 @@ namespace wpf_in_winforms
         {
             grvRank.ClearSelection();
             grvRank.CurrentCell = null;
+        }
+
+        private void btnTrialPlay_Click(object sender, EventArgs e)
+        {
+            eleHost.Child = new GameControl();
         }
     }
 }

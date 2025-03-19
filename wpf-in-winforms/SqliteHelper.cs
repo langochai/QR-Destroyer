@@ -239,5 +239,23 @@ namespace wpf_in_winforms
                 }
             }
         }
+        public static int GetRank(int id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = $@"
+                                SELECT Rank FROM (
+                                    SELECT ID, PlayTime, RANK() OVER (ORDER BY PlayTime ASC) AS Rank
+                                    FROM Customers
+                                ) Ranked
+                                WHERE ID = {id};";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    object result = command.ExecuteScalar() ?? throw new SQLiteException("Couldn't get the data");
+                    return Convert.ToInt32(result);
+                }
+            }
+        }
     }
 }

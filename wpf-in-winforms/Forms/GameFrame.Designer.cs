@@ -60,8 +60,9 @@
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
-            this.picSetting = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picSetting = new System.Windows.Forms.PictureBox();
+            this.btnTrialPlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -78,8 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.star3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -307,7 +308,7 @@
             this.lblRanking.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRanking.AutoSize = true;
             this.lblRanking.BackColor = System.Drawing.Color.Transparent;
-            this.lblRanking.Font = new System.Drawing.Font("Joystix Monospace", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRanking.Font = new System.Drawing.Font("Joystix Monospace", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblRanking.Location = new System.Drawing.Point(78, 7);
             this.lblRanking.Name = "lblRanking";
             this.lblRanking.Size = new System.Drawing.Size(190, 32);
@@ -325,6 +326,7 @@
             this.panel3.BackgroundImage = global::wpf_in_winforms.Properties.Resources.Score_Background;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnTrialPlay);
             this.panel3.Controls.Add(this.lblPlayTime);
             this.panel3.Controls.Add(this.star6);
             this.panel3.Controls.Add(this.star5);
@@ -422,6 +424,17 @@
             this.star1.TabIndex = 0;
             this.star1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::wpf_in_winforms.Properties.Resources.header_background;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.picSetting);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1584, 226);
+            this.panel1.TabIndex = 4;
+            // 
             // picSetting
             // 
             this.picSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -435,16 +448,15 @@
             this.picSetting.TabStop = false;
             this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
             // 
-            // panel1
+            // btnTrialPlay
             // 
-            this.panel1.BackgroundImage = global::wpf_in_winforms.Properties.Resources.header_background;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.picSetting);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1584, 226);
-            this.panel1.TabIndex = 4;
+            this.btnTrialPlay.Location = new System.Drawing.Point(1378, 28);
+            this.btnTrialPlay.Name = "btnTrialPlay";
+            this.btnTrialPlay.Size = new System.Drawing.Size(93, 43);
+            this.btnTrialPlay.TabIndex = 9;
+            this.btnTrialPlay.Text = "Trial";
+            this.btnTrialPlay.UseVisualStyleBackColor = true;
+            this.btnTrialPlay.Click += new System.EventHandler(this.btnTrialPlay_Click);
             // 
             // GameFrame
             // 
@@ -454,11 +466,11 @@
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameFrame";
-            this.Text = "QR DESTROYER";
+            this.Text = "RTC CODE HUNTING CHAMPION";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameFrame_FormClosing);
             this.Load += new System.EventHandler(this.GameFrame_Load);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -479,8 +491,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.star3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,6 +526,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlaytime;
+        private System.Windows.Forms.Button btnTrialPlay;
     }
 }
 

@@ -16,7 +16,7 @@ namespace wpf_in_winforms.Fonts
                 MonoFont.AddFontFile("./Fonts/LCDM2N__.TTF");
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
