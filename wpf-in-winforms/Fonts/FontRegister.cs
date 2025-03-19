@@ -1,19 +1,22 @@
-﻿using System.Drawing.Text;
+﻿using System;
+using System.Drawing.Text;
 
 namespace wpf_in_winforms.Fonts
 {
     internal class FontRegister
     {
-        public static PrivateFontCollection Font = new PrivateFontCollection();
+        public static PrivateFontCollection JoystickFont = new PrivateFontCollection();
+        public static PrivateFontCollection MonoFont = new PrivateFontCollection();
 
         public static bool Register()
         {
             try
             {
-                Font.AddFontFile("./Fonts/joystix_monospace.otf");
+                JoystickFont.AddFontFile("./Fonts/joystix_monospace.otf");
+                MonoFont.AddFontFile("./Fonts/LCDM2N__.TTF");
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
                 return false;
             }

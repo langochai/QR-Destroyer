@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Drawing;
 using System.Windows.Forms;
+using wpf_in_winforms.Fonts;
 using wpf_in_winforms.Forms;
 using wpf_in_winforms.Models;
 
@@ -15,6 +16,8 @@ namespace wpf_in_winforms
         public FrmMain()
         {
             InitializeComponent();
+            bool registered = FontRegister.Register();
+            if (registered) btnStart.Font = new Font(FontRegister.JoystickFont.Families[0], 36);
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -49,7 +52,7 @@ namespace wpf_in_winforms
                 };
                 newCustomer.Id = SqliteHelper<Customers>.Insert(newCustomer);
                 Weapons weapon = new Weapons(this);
-                if(weapon.ShowDialog() != DialogResult.OK) return;
+                if (weapon.ShowDialog() != DialogResult.OK) return;
 
                 GameFrame frmGame = new GameFrame();
                 frmGame.customer = newCustomer;

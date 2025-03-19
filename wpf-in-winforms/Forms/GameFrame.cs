@@ -9,6 +9,7 @@ using System.Media;
 using System.Windows.Forms;
 using wpf_control;
 using wpf_control.Models;
+using wpf_in_winforms.Fonts;
 using wpf_in_winforms.Models;
 
 namespace wpf_in_winforms
@@ -38,6 +39,7 @@ namespace wpf_in_winforms
             Connect();
             stopwatch.Start();
             GameTick.Start();
+            DisplayFonts();
         }
 
         private void GameFrame_FormClosing(object sender, FormClosingEventArgs e)
@@ -49,6 +51,7 @@ namespace wpf_in_winforms
                 scannerSerialPort = null;
             }
         }
+
         public void DisplayRank()
         {
             customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView());
@@ -64,15 +67,24 @@ namespace wpf_in_winforms
             grvRank.ClearSelection();
             grvRank.CurrentCell = null;
         }
+
+        private void DisplayFonts()
+        {
+            lblRanking.Font = new Font(FontRegister.JoystickFont.Families[0], 20);
+            lblPlayTime.Font = new Font(FontRegister.MonoFont.Families[0], 36);
+        }
+
         private void grvRank_SizeChanged(object sender, EventArgs e)
         {
             grvRank.RowTemplate.Height = (grvRank.Height - grvRank.ColumnHeadersHeight) / 10;
         }
+
         private void PlaySound()
         {
             var soundPlayer = new SoundPlayer("./Sounds/bonus.wav");
             soundPlayer.Play();
         }
+
         private void PlayVictorySound()
         {
             var soundPlayer = new SoundPlayer("./Sounds/cheers.wav");
@@ -204,6 +216,7 @@ namespace wpf_in_winforms
                 e.Handled = true;
             }
         }
+
         private Image GetRankImage(string rank)
         {
             switch (rank)

@@ -156,6 +156,7 @@ namespace wpf_in_winforms
             // Add more type mappings as needed
             throw new NotSupportedException($"Type {type} not supported");
         }
+
         public static List<T> GetCustomerView()
         {
             var results = new List<T>();
@@ -185,6 +186,7 @@ namespace wpf_in_winforms
             }
             return results;
         }
+
         public static T GetCustomerViewJSON()
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
@@ -226,7 +228,7 @@ namespace wpf_in_winforms
                                            )
                                          )
                                        ) AS customers_json
-                                FROM (SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank, 
+                                FROM (SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank,
                                     * FROM customers ORDER BY PlayTime ASC LIMIT 10) c;";
 
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))

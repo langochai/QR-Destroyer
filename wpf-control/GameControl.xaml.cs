@@ -17,6 +17,7 @@ namespace wpf_control
 
         public double speedFactor = 0.5;
         public List<QRs> QRs = new List<QRs>();
+
         public string[] imagePaths =
         {
             "Images/qr1.png",
@@ -26,6 +27,7 @@ namespace wpf_control
             "Images/qr5.png",
             "Images/qr6.png",
         };
+
         public int currentIndex = 5;
 
         private readonly Random random = new Random();

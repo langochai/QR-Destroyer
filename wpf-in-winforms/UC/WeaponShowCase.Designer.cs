@@ -98,6 +98,7 @@
             this.Name = "WeaponShowCase";
             this.Size = new System.Drawing.Size(491, 612);
             this.Click += new System.EventHandler(this.WeaponShowCase_Click);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.WeaponShowCase_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.picAbout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vidAbout)).EndInit();
             this.ResumeLayout(false);

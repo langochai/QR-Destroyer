@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using wpf_in_winforms.Fonts;
 using wpf_in_winforms.Models;
 
 namespace wpf_in_winforms.UC
@@ -9,13 +10,17 @@ namespace wpf_in_winforms.UC
     public partial class WeaponShowCase : UserControl
     {
         private Scanner scanner;
-        private bool isClicked = false;
+        public bool isClicked = false;
+        public event Action<int> OnPickWeapon;
+        public int weaponIndex = 0;
 
-        public WeaponShowCase(Scanner s)
+        public WeaponShowCase(Scanner s, int idx)
         {
             InitializeComponent();
             scanner = s;
+            weaponIndex = idx;
             DisplayData();
+            lblName.Font = new Font(FontRegister.JoystickFont.Families[0], 26);
         }
 
         private void DisplayData()
@@ -66,25 +71,24 @@ namespace wpf_in_winforms.UC
             vidAbout.Dispose();
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        private void WeaponShowCase_Paint(object sender, PaintEventArgs e)
         {
-            base.OnPaint(e);
-
-            using (Pen dashedPen = !isClicked ? new Pen(Color.Black, 1f) : new Pen(Color.OrangeRed, 1f))
+            using (Pen dashedPen = !isClicked ? new Pen(Color.Black, 3f) : new Pen(Color.OrangeRed, 5f))
             {
                 dashedPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-                dashedPen.DashPattern = new float[] { 15, 15 };
+                dashedPen.DashPattern = new float[] { 5, 5 };
                 Rectangle rect = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
                 e.Graphics.DrawRectangle(dashedPen, rect);
             }
         }
 
-        private void WeaponShowCase_Click(object sender = null, EventArgs e = null)
+        public void WeaponShowCase_Click(object sender = null, EventArgs e = null)
         {
             isClicked = !isClicked;
             this.Invalidate();
             this.Update();
             this.Refresh();
+            if(isClicked) OnPickWeapon?.Invoke(weaponIndex);
         }
 
         private void lblName_Click(object sender, EventArgs e)
