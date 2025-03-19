@@ -1,19 +1,20 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
-using wpf_in_winforms.Fonts;
+using wpf_in_winforms.Forms;
+using wpf_in_winforms.Models;
 
 namespace wpf_in_winforms
 {
     public partial class FrmMain : Form
     {
+        public Scanner scanner;
+
         public FrmMain()
         {
             InitializeComponent();
-            //var registered = FontRegister.Register();
-            //if (registered) DisplayPixelFont();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -47,31 +48,31 @@ namespace wpf_in_winforms
                     CreatedDate = DateTime.Now,
                 };
                 newCustomer.Id = SqliteHelper<Customers>.Insert(newCustomer);
-                GameFrame frm = new GameFrame();
-                frm.customer = newCustomer;
-                frm.FormClosed += (s, ev) => {
-                    frm.scannerSerialPort?.Close();
-                    frm.scannerSerialPort?.Dispose();
-                    frm.scannerSerialPort = null;
+                Weapons weapon = new Weapons(this);
+                if(weapon.ShowDialog() != DialogResult.OK) return;
+
+                GameFrame frmGame = new GameFrame();
+                frmGame.customer = newCustomer;
+                frmGame.scanner = scanner;
+                frmGame.FormClosed += (s, ev) =>
+                {
+                    frmGame.scannerSerialPort?.Close();
+                    frmGame.scannerSerialPort?.Dispose();
+                    frmGame.scannerSerialPort = null;
                     this.Show();
                 };
                 this.Hide();
                 txtCompany.Text = txtEmail.Text = txtName.Text = txtPhoneNumber.Text = "";
-                foreach(var ctrl in this.Controls)
+                foreach (var ctrl in this.Controls)
                 {
-                    if(ctrl is CheckBox checkbox) checkbox.Checked = false;
+                    if (ctrl is CheckBox checkbox) checkbox.Checked = false;
                 }
-                frm.Show();
+                frmGame.Show();
             }
             else
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private void DisplayPixelFont()
-        {
-            btnStart.Font = new Font(FontRegister.Font.Families[0], 40);
         }
 
         private bool ValidateInputs()
