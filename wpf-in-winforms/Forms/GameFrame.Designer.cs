@@ -53,6 +53,8 @@
             this.lblRanking = new System.Windows.Forms.Label();
             this.GameTick = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnActualPlay = new System.Windows.Forms.PictureBox();
+            this.btnTrialPlay = new System.Windows.Forms.PictureBox();
             this.lblPlayTime = new System.Windows.Forms.Label();
             this.star6 = new System.Windows.Forms.PictureBox();
             this.star5 = new System.Windows.Forms.PictureBox();
@@ -62,7 +64,6 @@
             this.star1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picSetting = new System.Windows.Forms.PictureBox();
-            this.btnTrialPlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -73,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvRank)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnActualPlay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTrialPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).BeginInit();
@@ -134,6 +137,7 @@
             // 
             // eleHost
             // 
+            this.eleHost.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.eleHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eleHost.Location = new System.Drawing.Point(0, 0);
             this.eleHost.Name = "eleHost";
@@ -326,6 +330,7 @@
             this.panel3.BackgroundImage = global::wpf_in_winforms.Properties.Resources.Score_Background;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnActualPlay);
             this.panel3.Controls.Add(this.btnTrialPlay);
             this.panel3.Controls.Add(this.lblPlayTime);
             this.panel3.Controls.Add(this.star6);
@@ -339,6 +344,32 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1584, 105);
             this.panel3.TabIndex = 5;
+            // 
+            // btnActualPlay
+            // 
+            this.btnActualPlay.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnActualPlay.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualPlay.Image = global::wpf_in_winforms.Properties.Resources.play;
+            this.btnActualPlay.Location = new System.Drawing.Point(1232, 5);
+            this.btnActualPlay.Name = "btnActualPlay";
+            this.btnActualPlay.Size = new System.Drawing.Size(162, 99);
+            this.btnActualPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnActualPlay.TabIndex = 10;
+            this.btnActualPlay.TabStop = false;
+            this.btnActualPlay.Click += new System.EventHandler(this.btnActualPlay_Click);
+            // 
+            // btnTrialPlay
+            // 
+            this.btnTrialPlay.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnTrialPlay.BackColor = System.Drawing.Color.Transparent;
+            this.btnTrialPlay.Image = global::wpf_in_winforms.Properties.Resources.trial;
+            this.btnTrialPlay.Location = new System.Drawing.Point(1400, 5);
+            this.btnTrialPlay.Name = "btnTrialPlay";
+            this.btnTrialPlay.Size = new System.Drawing.Size(162, 99);
+            this.btnTrialPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnTrialPlay.TabIndex = 9;
+            this.btnTrialPlay.TabStop = false;
+            this.btnTrialPlay.Click += new System.EventHandler(this.btnTrialPlay_Click);
             // 
             // lblPlayTime
             // 
@@ -448,16 +479,6 @@
             this.picSetting.TabStop = false;
             this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
             // 
-            // btnTrialPlay
-            // 
-            this.btnTrialPlay.Location = new System.Drawing.Point(1378, 28);
-            this.btnTrialPlay.Name = "btnTrialPlay";
-            this.btnTrialPlay.Size = new System.Drawing.Size(93, 43);
-            this.btnTrialPlay.TabIndex = 9;
-            this.btnTrialPlay.Text = "Trial";
-            this.btnTrialPlay.UseVisualStyleBackColor = true;
-            this.btnTrialPlay.Click += new System.EventHandler(this.btnTrialPlay_Click);
-            // 
             // GameFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,6 +506,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnActualPlay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTrialPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
@@ -526,7 +549,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlaytime;
-        private System.Windows.Forms.Button btnTrialPlay;
+        private System.Windows.Forms.PictureBox btnTrialPlay;
+        private System.Windows.Forms.PictureBox btnActualPlay;
     }
 }
 

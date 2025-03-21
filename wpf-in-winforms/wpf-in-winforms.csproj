@@ -269,6 +269,10 @@
     <None Include="Resources\medal-noob.png" />
     <None Include="Resources\background.jpg" />
     <None Include="Resources\victory.gif" />
+    <None Include="Resources\start_button.png" />
+    <None Include="Resources\trial.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\play_demo.png" />
     <Content Include="RtcIcon.ico" />
     <Content Include="ScannerData\barcodescanner.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -46,7 +46,7 @@ namespace wpf_in_winforms.Forms
                 }
                 for (int i = 0; i < weapons.Count; i++)
                 {
-                    weapons[i].Size = new Size((this.Width / weapons.Count) - 30, this.Height - (btnStart.Height + 200));
+                    weapons[i].Size = new Size((this.Width / weapons.Count) - 30, this.Height - (btnStart.Height + 120));
                     weapons[i].Location = new Point((this.Width * i / weapons.Count) + 5, 10);
                 }
             }
@@ -61,7 +61,7 @@ namespace wpf_in_winforms.Forms
             for (int i = 0; i < weapons.Count; i++)
             {
                 if(i != pickedIndex && weapons[i].isClicked)
-                    weapons[i].WeaponShowCase_Click();
+                    weapons[i].HandleClickWeapon(false);
             }
         }
         public static List<Scanner> GetScanners()

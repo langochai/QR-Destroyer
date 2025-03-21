@@ -43,6 +43,7 @@ namespace wpf_in_winforms.UC
                     vidAbout.settings.volume = 100;
                     vidAbout.settings.mute = true;
                     vidAbout.settings.setMode("loop", true);
+                    vidAbout.uiMode = "none";
                     vidAbout.Ctlcontrols.play();
                 }
                 else if (hasPic && !hasVideo)
@@ -73,22 +74,25 @@ namespace wpf_in_winforms.UC
 
         private void WeaponShowCase_Paint(object sender, PaintEventArgs e)
         {
-            using (Pen dashedPen = !isClicked ? new Pen(Color.Black, 3f) : new Pen(Color.OrangeRed, 5f))
+            using (Pen pen = !isClicked ? new Pen(Color.Black, 3f) : new Pen(Color.OrangeRed, 5f))
             {
-                dashedPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-                dashedPen.DashPattern = new float[] { 5, 5 };
+                //pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+                //pen.DashPattern = new float[] { 5, 5 };
                 Rectangle rect = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
-                e.Graphics.DrawRectangle(dashedPen, rect);
+                e.Graphics.DrawRectangle(pen, rect);
             }
         }
-
-        public void WeaponShowCase_Click(object sender = null, EventArgs e = null)
+        public void HandleClickWeapon(bool clicked)
         {
-            isClicked = !isClicked;
+            isClicked = clicked;
             this.Invalidate();
             this.Update();
             this.Refresh();
-            if(isClicked) OnPickWeapon?.Invoke(weaponIndex);
+        }
+        public void WeaponShowCase_Click(object sender = null, EventArgs e = null)
+        {
+            OnPickWeapon?.Invoke(weaponIndex);
+            HandleClickWeapon(true);
         }
 
         private void lblName_Click(object sender, EventArgs e)

@@ -36,10 +36,10 @@
             // 
             this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStart.Enabled = false;
-            this.btnStart.Font = new System.Drawing.Font("Joystix Monospace", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(602, 891);
+            this.btnStart.Font = new System.Drawing.Font("Joystix Monospace", 50.24999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.Location = new System.Drawing.Point(12, 891);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(735, 138);
+            this.btnStart.Size = new System.Drawing.Size(1900, 138);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Chọn vũ khí";
             this.btnStart.UseVisualStyleBackColor = true;

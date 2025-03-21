@@ -16,13 +16,16 @@ namespace wpf_in_winforms
         public FrmMain()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.UserPaint |
+                     ControlStyles.AllPaintingInWmPaint |
+                     ControlStyles.DoubleBuffer, true);
             bool registered = FontRegister.Register();
             if (registered) btnStart.Font = new Font(FontRegister.JoystickFont.Families[0], 36);
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (ValidateInputs())
+            if (ValidateInputs()) 
             {
                 var InterestIDs = new List<int>();
                 if (chkInterest1.Checked) InterestIDs.Add(1);
@@ -95,6 +98,15 @@ namespace wpf_in_winforms
             txtPhoneNumber.Text = "0123456789";
             chkInterest1.Checked = chkChannel1.Checked = true;
             btnStart_Click(null, null);
+        }
+        protected override CreateParams CreateParams //prevent flickering
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
     }
 }

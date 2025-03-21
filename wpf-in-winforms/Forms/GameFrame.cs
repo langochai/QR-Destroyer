@@ -23,6 +23,8 @@ namespace wpf_in_winforms
         private readonly List<PictureBox> Stars = new List<PictureBox>();
         private List<QRs> QRs = new List<QRs>();
         private Stopwatch stopwatch = new Stopwatch();
+        public bool isTrialPlay = false;
+        public bool isPlaying = false;
 
         public GameFrame()
         {
@@ -31,16 +33,33 @@ namespace wpf_in_winforms
 
         private void GameFrame_Load(object sender, EventArgs e)
         {
+            DisplayRank();
+        }
+
+        private void InitializeGame()
+        {
             eleHost.Child = new GameControl();
             ChangeSpeed(Properties.Settings.Default.Speed);
             SetQRSettings();
-            grvRank.DataSource = customers;
             Stars.AddRange(new[] { star1, star2, star3, star4, star5, star6 });
-            DisplayRank();
-            Connect();
+            ConnectCom();
             stopwatch.Start();
             GameTick.Start();
             DisplayFonts();
+        }
+
+        private void StopGame()
+        {
+            stopwatch.Reset();
+            lblPlayTime.Text = "00:00";
+            foreach (var star in Stars) { star.Image = Properties.Resources.star_new_disabled; }
+            eleHost.Child = null;
+            if (scannerSerialPort != null)
+            {
+                scannerSerialPort.Close();
+                scannerSerialPort.Dispose();
+                scannerSerialPort = null;
+            }
         }
 
         public void DisplayRank()
@@ -86,7 +105,7 @@ namespace wpf_in_winforms
 
         public SerialPort scannerSerialPort;
 
-        private void Connect()
+        private void ConnectCom()
         {
             try
             {
@@ -96,8 +115,6 @@ namespace wpf_in_winforms
                     scannerSerialPort.Dispose();
                     scannerSerialPort = null;
                 }
-                //Parity parity = (Parity)Enum.Parse(typeof(Parity), "NONE", true);
-                //scannerSerialPort = new SerialPort(SerialPort.GetPortNames()[0], 600, parity, 7, (StopBits)1)
                 Parity parity = (Parity)Enum.Parse(typeof(Parity), scanner.Pairity, true);
                 scannerSerialPort = new SerialPort(scanner.PortName, scanner.BaudRate, parity, scanner.DataBits, (StopBits)scanner.StopBits)
                 {
@@ -129,26 +146,40 @@ namespace wpf_in_winforms
                 {
                     Stars[index].Image = Properties.Resources.star_new;
                 }));
-                if (index == 5)
-                {
-                    stopwatch.Stop();
-                    int playTimeInSeconds = (int)stopwatch.Elapsed.TotalSeconds;
-                    customer.PlayTime = playTimeInSeconds;
-                    SqliteHelper<Customers>.Update(customer);
-                    eleHost.BeginInvoke(new Action(() => { eleHost.Child = null; }));
-                    grvRank.BeginInvoke(new Action(() => { DisplayRank(); }));
-                    this.BeginInvoke(new Action(() =>
-                    {
-                        Victory frm = new Victory(this);
-                        frm.ShowDialog();
-                    }));
-                }
+                if (index == 5) HandleVictory();
                 game.Dispatcher.BeginInvoke(new Action(() => { game.RespawnImage(); }));
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi cực kì nhỏ đã xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void HandleVictory()
+        {
+            eleHost.BeginInvoke(new Action(() => { eleHost.Child = null; }));
+            stopwatch.Stop();
+            GameTick.Stop();
+            if (isTrialPlay)
+            {
+                this.BeginInvoke(new Action(() =>
+                {
+                    Victory frm = new Victory(this);
+                    frm.ShowDialog();
+                }));
+            }
+            else
+            {
+                customer.PlayTime = Convert.ToInt32(stopwatch.Elapsed.TotalSeconds);
+                SqliteHelper<Customers>.Update(customer);
+                grvRank.BeginInvoke(new Action(() => { DisplayRank(); }));
+                this.BeginInvoke(new Action(() =>
+                {
+                    Victory frm = new Victory(this);
+                    frm.ShowDialog();
+                }));
+            }
+            isPlaying = false;
         }
 
         #endregion Kết nối tới scanner
@@ -255,7 +286,24 @@ namespace wpf_in_winforms
 
         private void btnTrialPlay_Click(object sender, EventArgs e)
         {
-            eleHost.Child = new GameControl();
+            if (isPlaying) return;
+            isTrialPlay = true;
+            StopGame();
+            InitializeGame();
+            isPlaying = true;
+        }
+
+        private void btnActualPlay_Click(object sender, EventArgs e)
+        {
+            if (isPlaying) return;
+            isTrialPlay = false;
+            StopGame();
+            if (customer.PlayTime > 0 && customer.PlayTime < 100000) { 
+                MessageBox.Show("Bạn đã hoàn thành lượt chơi của mình", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                isPlaying = false;
+            }
+            else InitializeGame();
+            isPlaying = true;
         }
     }
 }
