@@ -64,6 +64,7 @@
             this.star1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picSetting = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -118,9 +120,11 @@
             // 
             // splitContainer2
             // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 331);
+            this.splitContainer2.Location = new System.Drawing.Point(3, 608);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -131,8 +135,8 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.grvRank);
             this.splitContainer2.Panel2.Controls.Add(this.panel2);
-            this.splitContainer2.Size = new System.Drawing.Size(1584, 530);
-            this.splitContainer2.SplitterDistance = 1231;
+            this.splitContainer2.Size = new System.Drawing.Size(3818, 1510);
+            this.splitContainer2.SplitterDistance = 2966;
             this.splitContainer2.TabIndex = 3;
             // 
             // eleHost
@@ -141,7 +145,7 @@
             this.eleHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eleHost.Location = new System.Drawing.Point(0, 0);
             this.eleHost.Name = "eleHost";
-            this.eleHost.Size = new System.Drawing.Size(1227, 526);
+            this.eleHost.Size = new System.Drawing.Size(2962, 1506);
             this.eleHost.TabIndex = 0;
             this.eleHost.Text = "elementHost1";
             this.eleHost.Child = null;
@@ -204,7 +208,7 @@
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.grvRank.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grvRank.RowTemplate.Height = 60;
-            this.grvRank.Size = new System.Drawing.Size(345, 471);
+            this.grvRank.Size = new System.Drawing.Size(844, 1451);
             this.grvRank.TabIndex = 1;
             this.grvRank.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvRank_CellClick);
             this.grvRank.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grvRank_CellFormatting);
@@ -280,7 +284,7 @@
             // colName
             // 
             this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.DataPropertyName = "Name";
+            this.colName.DataPropertyName = "FullName";
             this.colName.FillWeight = 60F;
             this.colName.HeaderText = "Name";
             this.colName.Name = "colName";
@@ -304,7 +308,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(345, 55);
+            this.panel2.Size = new System.Drawing.Size(844, 55);
             this.panel2.TabIndex = 0;
             // 
             // lblRanking
@@ -313,7 +317,7 @@
             this.lblRanking.AutoSize = true;
             this.lblRanking.BackColor = System.Drawing.Color.Transparent;
             this.lblRanking.Font = new System.Drawing.Font("Joystix Monospace", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblRanking.Location = new System.Drawing.Point(78, 7);
+            this.lblRanking.Location = new System.Drawing.Point(328, 7);
             this.lblRanking.Name = "lblRanking";
             this.lblRanking.Size = new System.Drawing.Size(190, 32);
             this.lblRanking.TabIndex = 0;
@@ -339,10 +343,10 @@
             this.panel3.Controls.Add(this.star3);
             this.panel3.Controls.Add(this.star2);
             this.panel3.Controls.Add(this.star1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 226);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 508);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1584, 105);
+            this.panel3.Size = new System.Drawing.Size(3818, 94);
             this.panel3.TabIndex = 5;
             // 
             // btnActualPlay
@@ -350,7 +354,7 @@
             this.btnActualPlay.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnActualPlay.BackColor = System.Drawing.Color.Transparent;
             this.btnActualPlay.Image = global::wpf_in_winforms.Properties.Resources.play;
-            this.btnActualPlay.Location = new System.Drawing.Point(1232, 5);
+            this.btnActualPlay.Location = new System.Drawing.Point(3478, 2);
             this.btnActualPlay.Name = "btnActualPlay";
             this.btnActualPlay.Size = new System.Drawing.Size(162, 99);
             this.btnActualPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -363,7 +367,7 @@
             this.btnTrialPlay.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnTrialPlay.BackColor = System.Drawing.Color.Transparent;
             this.btnTrialPlay.Image = global::wpf_in_winforms.Properties.Resources.trial;
-            this.btnTrialPlay.Location = new System.Drawing.Point(1400, 5);
+            this.btnTrialPlay.Location = new System.Drawing.Point(3646, -1);
             this.btnTrialPlay.Name = "btnTrialPlay";
             this.btnTrialPlay.Size = new System.Drawing.Size(162, 99);
             this.btnTrialPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -388,7 +392,7 @@
             this.star6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star6.BackColor = System.Drawing.Color.Transparent;
             this.star6.Image = ((System.Drawing.Image)(resources.GetObject("star6.Image")));
-            this.star6.Location = new System.Drawing.Point(980, 5);
+            this.star6.Location = new System.Drawing.Point(1912, 3);
             this.star6.Name = "star6";
             this.star6.Size = new System.Drawing.Size(90, 90);
             this.star6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -400,7 +404,7 @@
             this.star5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star5.BackColor = System.Drawing.Color.Transparent;
             this.star5.Image = ((System.Drawing.Image)(resources.GetObject("star5.Image")));
-            this.star5.Location = new System.Drawing.Point(884, 3);
+            this.star5.Location = new System.Drawing.Point(1816, 3);
             this.star5.Name = "star5";
             this.star5.Size = new System.Drawing.Size(90, 90);
             this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -412,7 +416,7 @@
             this.star4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star4.BackColor = System.Drawing.Color.Transparent;
             this.star4.Image = ((System.Drawing.Image)(resources.GetObject("star4.Image")));
-            this.star4.Location = new System.Drawing.Point(788, 5);
+            this.star4.Location = new System.Drawing.Point(1720, 5);
             this.star4.Name = "star4";
             this.star4.Size = new System.Drawing.Size(90, 90);
             this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -424,7 +428,7 @@
             this.star3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star3.BackColor = System.Drawing.Color.Transparent;
             this.star3.Image = ((System.Drawing.Image)(resources.GetObject("star3.Image")));
-            this.star3.Location = new System.Drawing.Point(692, 5);
+            this.star3.Location = new System.Drawing.Point(1624, 5);
             this.star3.Name = "star3";
             this.star3.Size = new System.Drawing.Size(90, 90);
             this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -436,7 +440,7 @@
             this.star2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star2.BackColor = System.Drawing.Color.Transparent;
             this.star2.Image = ((System.Drawing.Image)(resources.GetObject("star2.Image")));
-            this.star2.Location = new System.Drawing.Point(596, 3);
+            this.star2.Location = new System.Drawing.Point(1528, 5);
             this.star2.Name = "star2";
             this.star2.Size = new System.Drawing.Size(90, 90);
             this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -448,7 +452,7 @@
             this.star1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star1.BackColor = System.Drawing.Color.Transparent;
             this.star1.Image = ((System.Drawing.Image)(resources.GetObject("star1.Image")));
-            this.star1.Location = new System.Drawing.Point(500, 5);
+            this.star1.Location = new System.Drawing.Point(1432, 3);
             this.star1.Name = "star1";
             this.star1.Size = new System.Drawing.Size(90, 90);
             this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -460,18 +464,18 @@
             this.panel1.BackgroundImage = global::wpf_in_winforms.Properties.Resources.header_background;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.picSetting);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1584, 226);
-            this.panel1.TabIndex = 4;
+            this.panel1.Size = new System.Drawing.Size(3818, 499);
+            this.panel1.TabIndex = 1;
             // 
             // picSetting
             // 
             this.picSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picSetting.BackColor = System.Drawing.Color.Transparent;
             this.picSetting.Image = global::wpf_in_winforms.Properties.Resources.cog;
-            this.picSetting.Location = new System.Drawing.Point(1549, 3);
+            this.picSetting.Location = new System.Drawing.Point(3795, 2);
             this.picSetting.Name = "picSetting";
             this.picSetting.Size = new System.Drawing.Size(30, 30);
             this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -479,14 +483,29 @@
             this.picSetting.TabStop = false;
             this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.splitContainer2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(3824, 2121);
+            this.tableLayoutPanel1.TabIndex = 6;
+            // 
             // GameFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
-            this.Controls.Add(this.splitContainer2);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(3824, 2121);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameFrame";
@@ -516,6 +535,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -539,6 +559,8 @@
         private System.Windows.Forms.PictureBox star3;
         private System.Windows.Forms.PictureBox star2;
         private System.Windows.Forms.PictureBox star1;
+        private System.Windows.Forms.PictureBox btnTrialPlay;
+        private System.Windows.Forms.PictureBox btnActualPlay;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
@@ -549,8 +571,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlaytime;
-        private System.Windows.Forms.PictureBox btnTrialPlay;
-        private System.Windows.Forms.PictureBox btnActualPlay;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

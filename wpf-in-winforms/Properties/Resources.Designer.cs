@@ -93,6 +93,46 @@ namespace wpf_in_winforms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HoneyWell {
+            get {
+                object obj = ResourceManager.GetObject("HoneyWell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hw1 {
+            get {
+                object obj = ResourceManager.GetObject("hw1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hw2 {
+            get {
+                object obj = ResourceManager.GetObject("hw2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hw3 {
+            get {
+                object obj = ResourceManager.GetObject("hw3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_logo_RTC_2023 {
             get {
                 object obj = ResourceManager.GetObject("icon-logo-RTC-2023", resourceCulture);
@@ -107,6 +147,26 @@ namespace wpf_in_winforms.Properties {
             get {
                 object obj = ResourceManager.GetObject("joystix_monospace", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap md1 {
+            get {
+                object obj = ResourceManager.GetObject("md1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap md2 {
+            get {
+                object obj = ResourceManager.GetObject("md2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -153,6 +213,16 @@ namespace wpf_in_winforms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MobyData {
+            get {
+                object obj = ResourceManager.GetObject("MobyData", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap play {
             get {
                 object obj = ResourceManager.GetObject("play", resourceCulture);
@@ -166,6 +236,16 @@ namespace wpf_in_winforms.Properties {
         internal static System.Drawing.Bitmap play_demo {
             get {
                 object obj = ResourceManager.GetObject("play_demo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rtc_logo {
+            get {
+                object obj = ResourceManager.GetObject("rtc-logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

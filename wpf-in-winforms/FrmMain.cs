@@ -12,7 +12,6 @@ namespace wpf_in_winforms
     public partial class FrmMain : Form
     {
         public Scanner scanner;
-
         public FrmMain()
         {
             InitializeComponent();
@@ -25,7 +24,7 @@ namespace wpf_in_winforms
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (ValidateInputs()) 
+            if (ValidateInputs())
             {
                 var InterestIDs = new List<int>();
                 if (chkInterest1.Checked) InterestIDs.Add(1);
@@ -42,24 +41,52 @@ namespace wpf_in_winforms
                 if (chkChannel4.Checked) ChannelIDs.Add(4);
                 if (chkChannel5.Checked) ChannelIDs.Add(5);
 
+                //var newCustomer = new Customers
+                //{
+                //    Name = txtName.Text,
+                //    Company = txtCompany.Text,
+                //    Email = txtEmail.Text,
+                //    PhoneNumber = txtPhoneNumber.Text,
+                //    PlayTime = 100000,
+                //    InterestIds = JsonConvert.SerializeObject(InterestIDs),
+                //    ChannelIds = JsonConvert.SerializeObject(ChannelIDs),
+                //    CreatedDate = DateTime.Now,
+                //};
                 var newCustomer = new Customers
                 {
-                    Name = txtName.Text,
+                    FullName = txtName.Text,
                     Company = txtCompany.Text,
-                    Email = txtEmail.Text,
+                    EmailAdress = txtEmail.Text,
                     PhoneNumber = txtPhoneNumber.Text,
                     PlayTime = 100000,
-                    InterestIds = JsonConvert.SerializeObject(InterestIDs),
-                    ChannelIds = JsonConvert.SerializeObject(ChannelIDs),
+                    SmartWarehouseSolutions = chkInterest1.Checked,
+                    MachineVisionSolutions = chkInterest2.Checked,
+                    AGVnAMRSolutions = chkInterest3.Checked,
+                    AutomaticMachineManufacturingSolutions = chkInterest4.Checked,
+                    AutomationEquipmentinProduction = chkInterest5.Checked,
+                    IoTSolutions = chkInterest6.Checked,
+                    OtherSolutions = chkInterest7.Checked,
+                    MailChannel = chkChannel1.Checked,
+                    WebsiteChannel = chkChannel2.Checked,
+                    FacebookChannel = chkChannel3.Checked,
+                    PartnersChannel = chkChannel4.Checked,
+                    OtherChannel = chkChannel5.Checked,
                     CreatedDate = DateTime.Now,
                 };
-                newCustomer.Id = SqliteHelper<Customers>.Insert(newCustomer);
+                //newCustomer.Id = SqliteHelper<Customers>.Insert(newCustomer);
                 Weapons weapon = new Weapons(this);
-                if (weapon.ShowDialog() != DialogResult.OK) return;
-
-                GameFrame frmGame = new GameFrame();
-                frmGame.customer = newCustomer;
-                frmGame.scanner = scanner;
+                this.Hide();
+                if (weapon.ShowDialog() != DialogResult.OK)
+                {
+                    this.Show();
+                    return;
+                }
+                newCustomer.Id = SqliteHelper<Customers>.Insert(newCustomer);
+                GameFrame frmGame = new GameFrame
+                {
+                    customer = newCustomer,
+                    scanner = scanner
+                };
                 frmGame.FormClosed += (s, ev) =>
                 {
                     frmGame.scannerSerialPort?.Close();
@@ -108,5 +135,21 @@ namespace wpf_in_winforms
                 return cp;
             }
         }
+        private void btnSummary_Click(object sender, EventArgs e)
+        {
+            Summary sm = new Summary();
+            sm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            txtName.Text = "Gigachad";
+            txtEmail.Text = "giggachad@gmail.com";
+            txtCompany.Text = "GIGACHAD COMPANY";
+            txtPhoneNumber.Text = "0123456789";
+            chkInterest1.Checked = chkChannel1.Checked = true;
+            btnStart_Click(null, null);
+        }
+
     }
 }

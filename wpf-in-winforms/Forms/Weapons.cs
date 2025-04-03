@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using wpf_in_winforms.Fonts;
 using wpf_in_winforms.Models;
 using wpf_in_winforms.UC;
 
@@ -29,7 +28,6 @@ namespace wpf_in_winforms.Forms
                 MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             LoadScannerInfo();
-            btnStart.Font = new Font(FontRegister.JoystickFont.Families[0], 26);
         }
 
         private void LoadScannerInfo()
@@ -44,10 +42,13 @@ namespace wpf_in_winforms.Forms
                     this.Controls.Add(wp);
                     weapons.Add(wp);
                 }
+                int totalGap = 150 * (weapons.Count + 1);
                 for (int i = 0; i < weapons.Count; i++)
                 {
-                    weapons[i].Size = new Size((this.Width / weapons.Count) - 30, this.Height - (btnStart.Height + 120));
-                    weapons[i].Location = new Point((this.Width * i / weapons.Count) + 5, 10);
+                    var width = (this.Width - totalGap) / weapons.Count;
+                    var height = this.Height - 300;
+                    weapons[i].Size = new Size(width, height);
+                    weapons[i].Location = new Point(150 + i * (width + 150), 150);
                 }
             }
             catch
@@ -56,12 +57,22 @@ namespace wpf_in_winforms.Forms
         }
         public void ChangePickedWeapon(int pickedIndex)
         {
-            main.scanner = scanners[pickedIndex];
-            btnStart.Enabled = true;
             for (int i = 0; i < weapons.Count; i++)
             {
-                if(i != pickedIndex && weapons[i].isClicked)
+                if (i != pickedIndex && weapons[i].isClicked)
                     weapons[i].HandleClickWeapon(false);
+            }
+            WeaponDetails wpd = new WeaponDetails(scanners[pickedIndex]);
+            this.Hide();
+            var result = wpd.ShowDialog();
+            if (result != DialogResult.OK)
+            {
+                this.Show();
+            }
+            else
+            {
+                main.scanner = scanners[pickedIndex];
+                this.DialogResult = DialogResult.OK;
             }
         }
         public static List<Scanner> GetScanners()
@@ -78,11 +89,6 @@ namespace wpf_in_winforms.Forms
             {
                 throw new FileNotFoundException("Không tìm được file Scanner.json");
             }
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
         }
 
         private void Weapons_FormClosing(object sender, FormClosingEventArgs e)

@@ -20,7 +20,7 @@ namespace wpf_in_winforms.UC
             scanner = s;
             weaponIndex = idx;
             DisplayData();
-            lblName.Font = new Font(FontRegister.JoystickFont.Families[0], 26);
+            lblName.Font = new Font(FontRegister.JoystickFont.Families[0], 55);
         }
 
         private void DisplayData()
@@ -28,7 +28,8 @@ namespace wpf_in_winforms.UC
             try
             {
                 lblName.Text = scanner.Name;
-                lblDescription.Text = scanner.Description;
+                //lblDescription.Text = scanner.Description;
+                picLogo.Image = scanner.Logo == "MobyData"? Properties.Resources.MobyData : Properties.Resources.HoneyWell;
                 string baseDir = AppDomain.CurrentDomain.BaseDirectory;
                 var picPath = Path.Combine(baseDir, "ScannerData", scanner.Picture);
                 var vidPath = Path.Combine(baseDir, "ScannerData", scanner.Video);

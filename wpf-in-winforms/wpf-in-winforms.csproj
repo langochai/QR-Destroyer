@@ -82,11 +82,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fonts\FontRegister.cs" />
+    <Compile Include="Forms\Summary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Summary.Designer.cs">
+      <DependentUpon>Summary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Victory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Victory.Designer.cs">
       <DependentUpon>Victory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WeaponDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WeaponDetails.Designer.cs">
+      <DependentUpon>WeaponDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Weapons.cs">
       <SubType>Form</SubType>
@@ -97,6 +109,7 @@
     <Compile Include="Models\Channels.cs" />
     <Compile Include="Models\CusomersViewJSON.cs" />
     <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\CustomersOld.cs" />
     <Compile Include="Forms\GameFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,8 +149,14 @@
     <EmbeddedResource Include="Forms\GameFrame.resx">
       <DependentUpon>GameFrame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Summary.resx">
+      <DependentUpon>Summary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Victory.resx">
       <DependentUpon>Victory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeaponDetails.resx">
+      <DependentUpon>WeaponDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Weapons.resx">
       <DependentUpon>Weapons.cs</DependentUpon>
@@ -241,6 +260,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cog.png" />
+    <Content Include="Images\hw1.png" />
+    <Content Include="Images\hw2.png" />
+    <Content Include="Images\hw3.png" />
+    <Content Include="Images\md1.png" />
+    <Content Include="Images\md2.png" />
     <Content Include="Images\qr1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -273,17 +297,22 @@
     <None Include="Resources\trial.png" />
     <None Include="Resources\play.png" />
     <None Include="Resources\play_demo.png" />
+    <None Include="Resources\rtc-logo.png" />
+    <None Include="Resources\MobyData.png" />
+    <None Include="Resources\HoneyWell.png" />
+    <None Include="Resources\hw1.png" />
+    <None Include="Resources\hw2.png" />
+    <None Include="Resources\hw3.png" />
+    <None Include="Resources\md1.png" />
+    <None Include="Resources\md2.png" />
     <Content Include="RtcIcon.ico" />
-    <Content Include="ScannerData\barcodescanner.png">
+    <Content Include="ScannerData\hw1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ScannerData\md1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ScannerData\placeholder.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ScannerData\ruleofnature.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ScannerData\scanner.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\bonus.wav">

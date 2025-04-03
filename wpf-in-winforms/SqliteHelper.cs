@@ -35,6 +35,11 @@ namespace wpf_in_winforms
                         command.Parameters.AddWithValue($"@{property.Name}", property.GetValue(model));
                     }
                     int id = Convert.ToInt32(command.ExecuteScalar());
+                    var idProperty = typeof(T).GetProperty("Id");
+                    if (idProperty != null && idProperty.CanWrite)
+                    {
+                        idProperty.SetValue(model, id);
+                    }
                     return id;
                 }
             }

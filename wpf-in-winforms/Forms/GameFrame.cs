@@ -33,6 +33,7 @@ namespace wpf_in_winforms
 
         private void GameFrame_Load(object sender, EventArgs e)
         {
+            grvRank.AutoGenerateColumns = false;
             DisplayRank();
         }
 

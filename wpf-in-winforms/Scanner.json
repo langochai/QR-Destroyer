@@ -1,8 +1,9 @@
 ﻿[
   {
-    "Name": "Scanner A",
+    "Name": "1952GSR",
     "Description": "High-speed barcode scanner",
-    "Picture": "scanner.gif",
+    "Logo": "HoneyWell",
+    "Picture": "hw1.png",
     "Video": "scanner_a.mp4",
     "Pairity": "None",
     "PortName": "COM5",
@@ -11,21 +12,11 @@
     "StopBits": 1
   },
   {
-    "Name": "Scanner B",
+    "Name": "KS2000BT",
     "Description": "Wireless QR code scanner",
-    "Picture": "barcodescanner.png",
+    "Logo": "MobyData",
+    "Picture": "md1.png",
     "Video": "scanner_b.mp4",
-    "Pairity": "Even",
-    "PortName": "COM4",
-    "BaudRate": 115200,
-    "DataBits": 8,
-    "StopBits": 2
-  },
-  {
-    "Name": "Scanner C",
-    "Description": "Some Holy Mother of Scanner",
-    "Picture": "jytjy",
-    "Video": "ruleofnature.mp4",
     "Pairity": "Even",
     "PortName": "COM4",
     "BaudRate": 115200,

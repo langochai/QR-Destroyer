@@ -11,7 +11,7 @@ namespace wpf_in_winforms.Forms
             InitializeComponent();
             game = g;
             lblAnnounce.Parent = picBackground;
-            int rank = SqliteHelper<Customers>.GetRank(game.customer.Id);
+            int rank = SqliteHelper<CustomersOld>.GetRank(game.customer.Id);
             if (game.isTrialPlay)
             {
                 lblAnnounce.Text = "Bạn đã hoàn thành lượt chơi";
