@@ -20,13 +20,13 @@ namespace wpf_in_winforms.Forms
                 switch (rank)
                 {
                     case 1:
-                        lblAnnounce.Text = "Quá tuyệt vời!!! Bạn chính là người chơi xuất sắc nhất quả đất!!!";
+                        lblAnnounce.Text = "Quá tuyệt vời!!!\nBạn đang là nhà vô địch của trò chơi này!!!";
                         break;
                     case 2:
-                        lblAnnounce.Text = "Thật xuất sắc!! Bạn đã dành được vị trí thứ hai trên bảng xếp hạng!!";
+                        lblAnnounce.Text = "Quá tuyệt vời!!!\nBạn đang đứng vị trí thứ hai trên bảng xếp hạng!!";
                         break;
                     case 3:
-                        lblAnnounce.Text = "Xin chúc mừng! Bạn đã dành được vị trí thứ ba trên bảng xếp hạng!";
+                        lblAnnounce.Text = "Quá tuyệt vời!!!\nBạn đang đứng vị trí thứ ba trên bảng xếp hạng!!";
                         break;
                     case 4:
                     case 5:
@@ -35,10 +35,10 @@ namespace wpf_in_winforms.Forms
                     case 8:
                     case 9:
                     case 10:
-                        lblAnnounce.Text = "Xin chúc mừng! Bạn đã nằm trong top 10 những người chơi tuyệt vời nhất!";
+                        lblAnnounce.Text = "Quá tuyệt vời!!!\nBạn đã có mặt trong top 10 trên bảng xếp hạng!!";
                         break;
                     default:
-                        lblAnnounce.Text = "Bạn là người chiến thắng!";
+                        lblAnnounce.Text = "Xin chúc mừng!\nBạn đã hoàn thành trò chơi!";
                         break;
                 }
             PlaySound();

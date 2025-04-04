@@ -39,16 +39,6 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.eleHost = new System.Windows.Forms.Integration.ElementHost();
             this.grvRank = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InterestIds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChannelIds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPlaytime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRanking = new System.Windows.Forms.Label();
             this.GameTick = new System.Windows.Forms.Timer(this.components);
@@ -65,6 +55,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picSetting = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InterestIds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChannelIds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPlaytime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -136,7 +136,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.grvRank);
             this.splitContainer2.Panel2.Controls.Add(this.panel2);
             this.splitContainer2.Size = new System.Drawing.Size(2558, 985);
-            this.splitContainer2.SplitterDistance = 1987;
+            this.splitContainer2.SplitterDistance = 1986;
             this.splitContainer2.TabIndex = 3;
             // 
             // eleHost
@@ -145,7 +145,7 @@
             this.eleHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eleHost.Location = new System.Drawing.Point(0, 0);
             this.eleHost.Name = "eleHost";
-            this.eleHost.Size = new System.Drawing.Size(1983, 981);
+            this.eleHost.Size = new System.Drawing.Size(1982, 981);
             this.eleHost.TabIndex = 0;
             this.eleHost.Text = "elementHost1";
             this.eleHost.Child = null;
@@ -209,98 +209,12 @@
             dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.grvRank.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.grvRank.RowTemplate.Height = 60;
-            this.grvRank.Size = new System.Drawing.Size(563, 926);
+            this.grvRank.Size = new System.Drawing.Size(564, 926);
             this.grvRank.TabIndex = 1;
             this.grvRank.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvRank_CellClick);
             this.grvRank.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grvRank_CellFormatting);
             this.grvRank.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.grvRank_CellPainting);
             this.grvRank.SizeChanged += new System.EventHandler(this.grvRank_SizeChanged);
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colCompany
-            // 
-            this.colCompany.DataPropertyName = "Company";
-            this.colCompany.HeaderText = "Company";
-            this.colCompany.Name = "colCompany";
-            this.colCompany.ReadOnly = true;
-            this.colCompany.Visible = false;
-            // 
-            // colEmail
-            // 
-            this.colEmail.DataPropertyName = "Email";
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            this.colEmail.Visible = false;
-            // 
-            // colPhoneNumber
-            // 
-            this.colPhoneNumber.DataPropertyName = "PhoneNumber";
-            this.colPhoneNumber.HeaderText = "PhoneNumber";
-            this.colPhoneNumber.Name = "colPhoneNumber";
-            this.colPhoneNumber.ReadOnly = true;
-            this.colPhoneNumber.Visible = false;
-            // 
-            // colCreatedDate
-            // 
-            this.colCreatedDate.DataPropertyName = "CreatedDate";
-            this.colCreatedDate.HeaderText = "CreatedDate";
-            this.colCreatedDate.Name = "colCreatedDate";
-            this.colCreatedDate.ReadOnly = true;
-            this.colCreatedDate.Visible = false;
-            // 
-            // InterestIds
-            // 
-            this.InterestIds.DataPropertyName = "InterestIds";
-            this.InterestIds.HeaderText = "InterestIds";
-            this.InterestIds.Name = "InterestIds";
-            this.InterestIds.ReadOnly = true;
-            this.InterestIds.Visible = false;
-            // 
-            // colChannelIds
-            // 
-            this.colChannelIds.DataPropertyName = "ChannelIds";
-            this.colChannelIds.HeaderText = "ChannelIds";
-            this.colChannelIds.Name = "colChannelIds";
-            this.colChannelIds.ReadOnly = true;
-            this.colChannelIds.Visible = false;
-            // 
-            // colRank
-            // 
-            this.colRank.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRank.DataPropertyName = "Rank";
-            this.colRank.FillWeight = 20F;
-            this.colRank.HeaderText = "Rank";
-            this.colRank.Name = "colRank";
-            this.colRank.ReadOnly = true;
-            this.colRank.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.DataPropertyName = "FullName";
-            this.colName.FillWeight = 60F;
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colPlaytime
-            // 
-            this.colPlaytime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPlaytime.DataPropertyName = "PlayTime";
-            this.colPlaytime.FillWeight = 20F;
-            this.colPlaytime.HeaderText = "Playtime";
-            this.colPlaytime.Name = "colPlaytime";
-            this.colPlaytime.ReadOnly = true;
-            this.colPlaytime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel2
             // 
@@ -309,18 +223,19 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(563, 55);
+            this.panel2.Size = new System.Drawing.Size(564, 55);
             this.panel2.TabIndex = 0;
             // 
             // lblRanking
             // 
-            this.lblRanking.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRanking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRanking.AutoSize = true;
             this.lblRanking.BackColor = System.Drawing.Color.Transparent;
-            this.lblRanking.Font = new System.Drawing.Font("Joystix Monospace", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRanking.Location = new System.Drawing.Point(156, 7);
+            this.lblRanking.Font = new System.Drawing.Font("Joystix Monospace", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRanking.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblRanking.Location = new System.Drawing.Point(157, 7);
             this.lblRanking.Name = "lblRanking";
-            this.lblRanking.Size = new System.Drawing.Size(250, 42);
+            this.lblRanking.Size = new System.Drawing.Size(259, 44);
             this.lblRanking.TabIndex = 0;
             this.lblRanking.Text = "Top rank";
             this.lblRanking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -355,7 +270,7 @@
             this.btnActualPlay.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnActualPlay.BackColor = System.Drawing.Color.Transparent;
             this.btnActualPlay.Image = global::wpf_in_winforms.Properties.Resources.play;
-            this.btnActualPlay.Location = new System.Drawing.Point(2218, 2);
+            this.btnActualPlay.Location = new System.Drawing.Point(2218, -1);
             this.btnActualPlay.Name = "btnActualPlay";
             this.btnActualPlay.Size = new System.Drawing.Size(162, 99);
             this.btnActualPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -368,7 +283,7 @@
             this.btnTrialPlay.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnTrialPlay.BackColor = System.Drawing.Color.Transparent;
             this.btnTrialPlay.Image = global::wpf_in_winforms.Properties.Resources.trial;
-            this.btnTrialPlay.Location = new System.Drawing.Point(2386, -1);
+            this.btnTrialPlay.Location = new System.Drawing.Point(2386, -3);
             this.btnTrialPlay.Name = "btnTrialPlay";
             this.btnTrialPlay.Size = new System.Drawing.Size(162, 99);
             this.btnTrialPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -502,6 +417,92 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2564, 1421);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colCompany
+            // 
+            this.colCompany.DataPropertyName = "Company";
+            this.colCompany.HeaderText = "Company";
+            this.colCompany.Name = "colCompany";
+            this.colCompany.ReadOnly = true;
+            this.colCompany.Visible = false;
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            this.colEmail.Visible = false;
+            // 
+            // colPhoneNumber
+            // 
+            this.colPhoneNumber.DataPropertyName = "PhoneNumber";
+            this.colPhoneNumber.HeaderText = "PhoneNumber";
+            this.colPhoneNumber.Name = "colPhoneNumber";
+            this.colPhoneNumber.ReadOnly = true;
+            this.colPhoneNumber.Visible = false;
+            // 
+            // colCreatedDate
+            // 
+            this.colCreatedDate.DataPropertyName = "CreatedDate";
+            this.colCreatedDate.HeaderText = "CreatedDate";
+            this.colCreatedDate.Name = "colCreatedDate";
+            this.colCreatedDate.ReadOnly = true;
+            this.colCreatedDate.Visible = false;
+            // 
+            // InterestIds
+            // 
+            this.InterestIds.DataPropertyName = "InterestIds";
+            this.InterestIds.HeaderText = "InterestIds";
+            this.InterestIds.Name = "InterestIds";
+            this.InterestIds.ReadOnly = true;
+            this.InterestIds.Visible = false;
+            // 
+            // colChannelIds
+            // 
+            this.colChannelIds.DataPropertyName = "ChannelIds";
+            this.colChannelIds.HeaderText = "ChannelIds";
+            this.colChannelIds.Name = "colChannelIds";
+            this.colChannelIds.ReadOnly = true;
+            this.colChannelIds.Visible = false;
+            // 
+            // colRank
+            // 
+            this.colRank.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRank.DataPropertyName = "Rank";
+            this.colRank.FillWeight = 15F;
+            this.colRank.HeaderText = "Rank";
+            this.colRank.Name = "colRank";
+            this.colRank.ReadOnly = true;
+            this.colRank.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.DataPropertyName = "FullName";
+            this.colName.FillWeight = 68F;
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colPlaytime
+            // 
+            this.colPlaytime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPlaytime.DataPropertyName = "PlayTime";
+            this.colPlaytime.FillWeight = 17F;
+            this.colPlaytime.HeaderText = "Playtime";
+            this.colPlaytime.Name = "colPlaytime";
+            this.colPlaytime.ReadOnly = true;
+            this.colPlaytime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // GameFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,6 +564,7 @@
         private System.Windows.Forms.PictureBox star1;
         private System.Windows.Forms.PictureBox btnTrialPlay;
         private System.Windows.Forms.PictureBox btnActualPlay;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
@@ -573,7 +575,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlaytime;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

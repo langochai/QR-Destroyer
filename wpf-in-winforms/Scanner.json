@@ -18,7 +18,7 @@
     "Picture": "md1.png",
     "Video": "scanner_b.mp4",
     "Pairity": "Even",
-    "PortName": "COM4",
+    "PortName": "COM7",
     "BaudRate": 115200,
     "DataBits": 8,
     "StopBits": 2

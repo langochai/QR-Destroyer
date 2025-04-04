@@ -140,6 +140,9 @@
     </Compile>
     <Compile Include="SortableBindingList.cs" />
     <Compile Include="SqliteHelper.cs" />
+    <Compile Include="UC\LargeCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UC\WeaponShowCase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,7 +179,7 @@
       <DependentUpon>WeaponShowCase.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="db.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Fonts\joystix_monospace.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

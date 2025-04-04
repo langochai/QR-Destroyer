@@ -42,25 +42,25 @@
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.chkInterest7 = new System.Windows.Forms.CheckBox();
-            this.chkInterest6 = new System.Windows.Forms.CheckBox();
-            this.chkInterest5 = new System.Windows.Forms.CheckBox();
-            this.chkInterest4 = new System.Windows.Forms.CheckBox();
-            this.chkInterest3 = new System.Windows.Forms.CheckBox();
-            this.chkInterest2 = new System.Windows.Forms.CheckBox();
-            this.chkInterest1 = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.chkChannel5 = new System.Windows.Forms.CheckBox();
-            this.chkChannel4 = new System.Windows.Forms.CheckBox();
-            this.chkChannel3 = new System.Windows.Forms.CheckBox();
-            this.chkChannel2 = new System.Windows.Forms.CheckBox();
-            this.chkChannel1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.PictureBox();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnSummary = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.chkInterest2 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkInterest1 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkInterest3 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkInterest4 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkInterest5 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkInterest6 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkInterest7 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkChannel5 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkChannel1 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkChannel2 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkChannel3 = new wpf_in_winforms.UC.LargeCheckBox();
+            this.chkChannel4 = new wpf_in_winforms.UC.LargeCheckBox();
             this.tblLayout.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -205,14 +205,14 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.chkInterest7);
             this.panel3.Controls.Add(this.chkInterest6);
             this.panel3.Controls.Add(this.chkInterest5);
             this.panel3.Controls.Add(this.chkInterest4);
             this.panel3.Controls.Add(this.chkInterest3);
-            this.panel3.Controls.Add(this.chkInterest2);
             this.panel3.Controls.Add(this.chkInterest1);
+            this.panel3.Controls.Add(this.chkInterest2);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(154, 294);
             this.panel3.Name = "panel3";
@@ -231,175 +231,19 @@
             this.label1.Text = "Bạn đang muốn tìm hiểu và quan tâm giải pháp gì?/What solutions do you want to le" +
     "arn and are interested in?";
             // 
-            // chkInterest7
-            // 
-            this.chkInterest7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkInterest7.AutoSize = true;
-            this.chkInterest7.BackColor = System.Drawing.Color.Transparent;
-            this.chkInterest7.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest7.Location = new System.Drawing.Point(16, 687);
-            this.chkInterest7.Name = "chkInterest7";
-            this.chkInterest7.Size = new System.Drawing.Size(215, 51);
-            this.chkInterest7.TabIndex = 11;
-            this.chkInterest7.Text = "Khác/Other";
-            this.chkInterest7.UseVisualStyleBackColor = false;
-            // 
-            // chkInterest6
-            // 
-            this.chkInterest6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkInterest6.AutoSize = true;
-            this.chkInterest6.BackColor = System.Drawing.Color.Transparent;
-            this.chkInterest6.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest6.Location = new System.Drawing.Point(16, 630);
-            this.chkInterest6.Name = "chkInterest6";
-            this.chkInterest6.Size = new System.Drawing.Size(640, 51);
-            this.chkInterest6.TabIndex = 10;
-            this.chkInterest6.Text = "IoT, OEE, SCADA, E-Factory, E-Logistics";
-            this.chkInterest6.UseVisualStyleBackColor = false;
-            // 
-            // chkInterest5
-            // 
-            this.chkInterest5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkInterest5.AutoSize = true;
-            this.chkInterest5.BackColor = System.Drawing.Color.Transparent;
-            this.chkInterest5.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest5.Location = new System.Drawing.Point(22, 526);
-            this.chkInterest5.Name = "chkInterest5";
-            this.chkInterest5.Size = new System.Drawing.Size(981, 98);
-            this.chkInterest5.TabIndex = 9;
-            this.chkInterest5.Text = "Thiết bị tự động hoá trong sản xuất/Automation Equipment \r\nin Production";
-            this.chkInterest5.UseVisualStyleBackColor = false;
-            // 
-            // chkInterest4
-            // 
-            this.chkInterest4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkInterest4.BackColor = System.Drawing.Color.Transparent;
-            this.chkInterest4.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest4.Location = new System.Drawing.Point(22, 466);
-            this.chkInterest4.Name = "chkInterest4";
-            this.chkInterest4.Size = new System.Drawing.Size(1073, 54);
-            this.chkInterest4.TabIndex = 8;
-            this.chkInterest4.Text = "Giải pháp chế tạo máy tự động/\r\nAutomatic Machine Manufacturing Solutions";
-            this.chkInterest4.UseVisualStyleBackColor = false;
-            // 
-            // chkInterest3
-            // 
-            this.chkInterest3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkInterest3.AutoSize = true;
-            this.chkInterest3.BackColor = System.Drawing.Color.Transparent;
-            this.chkInterest3.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest3.Location = new System.Drawing.Point(22, 409);
-            this.chkInterest3.Name = "chkInterest3";
-            this.chkInterest3.Size = new System.Drawing.Size(687, 51);
-            this.chkInterest3.TabIndex = 7;
-            this.chkInterest3.Text = "Giải pháp AGV/AMR/ AGV/AMR Solutions";
-            this.chkInterest3.UseVisualStyleBackColor = false;
-            // 
-            // chkInterest2
-            // 
-            this.chkInterest2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkInterest2.AutoSize = true;
-            this.chkInterest2.BackColor = System.Drawing.Color.Transparent;
-            this.chkInterest2.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest2.Location = new System.Drawing.Point(22, 300);
-            this.chkInterest2.Name = "chkInterest2";
-            this.chkInterest2.Size = new System.Drawing.Size(863, 98);
-            this.chkInterest2.TabIndex = 6;
-            this.chkInterest2.Text = "Giải pháp xử lý ảnh công nghiệp Machine Vision/\r\nMachine Vision Industrial Image " +
-    "Processing Solutions";
-            this.chkInterest2.UseVisualStyleBackColor = false;
-            // 
-            // chkInterest1
-            // 
-            this.chkInterest1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkInterest1.AutoSize = true;
-            this.chkInterest1.BackColor = System.Drawing.Color.Transparent;
-            this.chkInterest1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInterest1.Location = new System.Drawing.Point(22, 243);
-            this.chkInterest1.Name = "chkInterest1";
-            this.chkInterest1.Size = new System.Drawing.Size(1014, 51);
-            this.chkInterest1.TabIndex = 5;
-            this.chkInterest1.Text = "Giải pháp quản lý kho thông minh/Smart Warehouse Solutions";
-            this.chkInterest1.UseVisualStyleBackColor = false;
-            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.chkChannel5);
             this.panel4.Controls.Add(this.chkChannel4);
             this.panel4.Controls.Add(this.chkChannel3);
             this.panel4.Controls.Add(this.chkChannel2);
             this.panel4.Controls.Add(this.chkChannel1);
+            this.panel4.Controls.Add(this.chkChannel5);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(1265, 294);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1105, 876);
             this.panel4.TabIndex = 3;
-            // 
-            // chkChannel5
-            // 
-            this.chkChannel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkChannel5.AutoSize = true;
-            this.chkChannel5.BackColor = System.Drawing.Color.Transparent;
-            this.chkChannel5.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel5.Location = new System.Drawing.Point(20, 565);
-            this.chkChannel5.Name = "chkChannel5";
-            this.chkChannel5.Size = new System.Drawing.Size(215, 51);
-            this.chkChannel5.TabIndex = 16;
-            this.chkChannel5.Text = "Khác/Other";
-            this.chkChannel5.UseVisualStyleBackColor = false;
-            // 
-            // chkChannel4
-            // 
-            this.chkChannel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkChannel4.AutoSize = true;
-            this.chkChannel4.BackColor = System.Drawing.Color.Transparent;
-            this.chkChannel4.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel4.Location = new System.Drawing.Point(20, 461);
-            this.chkChannel4.Name = "chkChannel4";
-            this.chkChannel4.Size = new System.Drawing.Size(592, 98);
-            this.chkChannel4.TabIndex = 15;
-            this.chkChannel4.Text = "Đối tác, Bạn bè giới thiệu/\r\nPartners and Friends introduced me";
-            this.chkChannel4.UseVisualStyleBackColor = false;
-            // 
-            // chkChannel3
-            // 
-            this.chkChannel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkChannel3.AutoSize = true;
-            this.chkChannel3.BackColor = System.Drawing.Color.Transparent;
-            this.chkChannel3.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel3.Location = new System.Drawing.Point(20, 404);
-            this.chkChannel3.Name = "chkChannel3";
-            this.chkChannel3.Size = new System.Drawing.Size(187, 51);
-            this.chkChannel3.TabIndex = 14;
-            this.chkChannel3.Text = "Facebook";
-            this.chkChannel3.UseVisualStyleBackColor = false;
-            // 
-            // chkChannel2
-            // 
-            this.chkChannel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkChannel2.AutoSize = true;
-            this.chkChannel2.BackColor = System.Drawing.Color.Transparent;
-            this.chkChannel2.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel2.Location = new System.Drawing.Point(20, 347);
-            this.chkChannel2.Name = "chkChannel2";
-            this.chkChannel2.Size = new System.Drawing.Size(466, 51);
-            this.chkChannel2.TabIndex = 13;
-            this.chkChannel2.Text = "Qua kênh website / website";
-            this.chkChannel2.UseVisualStyleBackColor = false;
-            // 
-            // chkChannel1
-            // 
-            this.chkChannel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkChannel1.AutoSize = true;
-            this.chkChannel1.BackColor = System.Drawing.Color.Transparent;
-            this.chkChannel1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkChannel1.Location = new System.Drawing.Point(20, 243);
-            this.chkChannel1.Name = "chkChannel1";
-            this.chkChannel1.Size = new System.Drawing.Size(567, 98);
-            this.chkChannel1.TabIndex = 12;
-            this.chkChannel1.Text = "Tôi nhận được thư mời qua email/\r\nI received an invitation via email?";
-            this.chkChannel1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -474,6 +318,139 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // chkInterest2
+            // 
+            this.chkInterest2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkInterest2.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkInterest2.Location = new System.Drawing.Point(22, 300);
+            this.chkInterest2.Name = "chkInterest2";
+            this.chkInterest2.Size = new System.Drawing.Size(1079, 103);
+            this.chkInterest2.TabIndex = 42;
+            this.chkInterest2.Text = "Giải pháp xử lý ảnh công nghiệp Machine Vision/\r\nMachine Vision Industrial Image " +
+    "Processing Solutions";
+            this.chkInterest2.UseVisualStyleBackColor = true;
+            // 
+            // chkInterest1
+            // 
+            this.chkInterest1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkInterest1.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkInterest1.Location = new System.Drawing.Point(22, 250);
+            this.chkInterest1.Name = "chkInterest1";
+            this.chkInterest1.Size = new System.Drawing.Size(1079, 53);
+            this.chkInterest1.TabIndex = 43;
+            this.chkInterest1.Text = "Giải pháp quản lý kho thông minh/Smart Warehouse Solutions";
+            this.chkInterest1.UseVisualStyleBackColor = true;
+            // 
+            // chkInterest3
+            // 
+            this.chkInterest3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkInterest3.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkInterest3.Location = new System.Drawing.Point(22, 402);
+            this.chkInterest3.Name = "chkInterest3";
+            this.chkInterest3.Size = new System.Drawing.Size(1079, 53);
+            this.chkInterest3.TabIndex = 44;
+            this.chkInterest3.Text = "Giải pháp AGV/AMR/ AGV/AMR Solutions";
+            this.chkInterest3.UseVisualStyleBackColor = true;
+            // 
+            // chkInterest4
+            // 
+            this.chkInterest4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkInterest4.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkInterest4.Location = new System.Drawing.Point(22, 462);
+            this.chkInterest4.Name = "chkInterest4";
+            this.chkInterest4.Size = new System.Drawing.Size(1079, 97);
+            this.chkInterest4.TabIndex = 45;
+            this.chkInterest4.Text = "Giải pháp chế tạo máy tự động/\r\nAutomatic Machine Manufacturing Solutions\r\n";
+            this.chkInterest4.UseVisualStyleBackColor = true;
+            // 
+            // chkInterest5
+            // 
+            this.chkInterest5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkInterest5.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkInterest5.Location = new System.Drawing.Point(22, 565);
+            this.chkInterest5.Name = "chkInterest5";
+            this.chkInterest5.Size = new System.Drawing.Size(1079, 97);
+            this.chkInterest5.TabIndex = 46;
+            this.chkInterest5.Text = "Thiết bị tự động hoá trong sản xuất/Automation Equipment \r\nin Production\r\n";
+            this.chkInterest5.UseVisualStyleBackColor = true;
+            // 
+            // chkInterest6
+            // 
+            this.chkInterest6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkInterest6.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkInterest6.Location = new System.Drawing.Point(22, 668);
+            this.chkInterest6.Name = "chkInterest6";
+            this.chkInterest6.Size = new System.Drawing.Size(1079, 53);
+            this.chkInterest6.TabIndex = 47;
+            this.chkInterest6.Text = "IoT, OEE, SCADA, E-Factory, E-Logistics";
+            this.chkInterest6.UseVisualStyleBackColor = true;
+            // 
+            // chkInterest7
+            // 
+            this.chkInterest7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkInterest7.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkInterest7.Location = new System.Drawing.Point(22, 727);
+            this.chkInterest7.Name = "chkInterest7";
+            this.chkInterest7.Size = new System.Drawing.Size(1079, 53);
+            this.chkInterest7.TabIndex = 48;
+            this.chkInterest7.Text = "Khác/Other";
+            this.chkInterest7.UseVisualStyleBackColor = true;
+            // 
+            // chkChannel5
+            // 
+            this.chkChannel5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkChannel5.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkChannel5.Location = new System.Drawing.Point(20, 605);
+            this.chkChannel5.Name = "chkChannel5";
+            this.chkChannel5.Size = new System.Drawing.Size(1079, 53);
+            this.chkChannel5.TabIndex = 49;
+            this.chkChannel5.Text = "Khác/Other";
+            this.chkChannel5.UseVisualStyleBackColor = true;
+            // 
+            // chkChannel1
+            // 
+            this.chkChannel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkChannel1.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkChannel1.Location = new System.Drawing.Point(20, 245);
+            this.chkChannel1.Name = "chkChannel1";
+            this.chkChannel1.Size = new System.Drawing.Size(1079, 99);
+            this.chkChannel1.TabIndex = 50;
+            this.chkChannel1.Text = "Tôi nhận được thư mời qua email/\r\nI received an invitation via email";
+            this.chkChannel1.UseVisualStyleBackColor = true;
+            // 
+            // chkChannel2
+            // 
+            this.chkChannel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkChannel2.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkChannel2.Location = new System.Drawing.Point(20, 353);
+            this.chkChannel2.Name = "chkChannel2";
+            this.chkChannel2.Size = new System.Drawing.Size(1079, 53);
+            this.chkChannel2.TabIndex = 51;
+            this.chkChannel2.Text = "Qua kênh website / website";
+            this.chkChannel2.UseVisualStyleBackColor = true;
+            // 
+            // chkChannel3
+            // 
+            this.chkChannel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkChannel3.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkChannel3.Location = new System.Drawing.Point(20, 425);
+            this.chkChannel3.Name = "chkChannel3";
+            this.chkChannel3.Size = new System.Drawing.Size(1079, 53);
+            this.chkChannel3.TabIndex = 52;
+            this.chkChannel3.Text = "Facebook";
+            this.chkChannel3.UseVisualStyleBackColor = true;
+            // 
+            // chkChannel4
+            // 
+            this.chkChannel4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkChannel4.Font = new System.Drawing.Font("Segoe UI", 26.25F);
+            this.chkChannel4.Location = new System.Drawing.Point(20, 490);
+            this.chkChannel4.Name = "chkChannel4";
+            this.chkChannel4.Size = new System.Drawing.Size(1079, 100);
+            this.chkChannel4.TabIndex = 53;
+            this.chkChannel4.Text = "Đối tác, Bạn bè giới thiệu/\r\nPartners and Friends introduced me";
+            this.chkChannel4.UseVisualStyleBackColor = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,9 +473,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnStart)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -519,24 +494,24 @@
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.CheckBox chkInterest7;
-        private System.Windows.Forms.CheckBox chkInterest6;
-        private System.Windows.Forms.CheckBox chkInterest5;
-        private System.Windows.Forms.CheckBox chkInterest4;
-        private System.Windows.Forms.CheckBox chkInterest3;
-        private System.Windows.Forms.CheckBox chkInterest2;
-        private System.Windows.Forms.CheckBox chkInterest1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox chkChannel5;
-        private System.Windows.Forms.CheckBox chkChannel4;
-        private System.Windows.Forms.CheckBox chkChannel3;
-        private System.Windows.Forms.CheckBox chkChannel2;
-        private System.Windows.Forms.CheckBox chkChannel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnStart;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label btnSummary;
+        private UC.LargeCheckBox chkInterest2;
+        private UC.LargeCheckBox chkInterest1;
+        private UC.LargeCheckBox chkInterest3;
+        private UC.LargeCheckBox chkInterest4;
+        private UC.LargeCheckBox chkInterest5;
+        private UC.LargeCheckBox chkInterest6;
+        private UC.LargeCheckBox chkInterest7;
+        private UC.LargeCheckBox chkChannel1;
+        private UC.LargeCheckBox chkChannel5;
+        private UC.LargeCheckBox chkChannel2;
+        private UC.LargeCheckBox chkChannel3;
+        private UC.LargeCheckBox chkChannel4;
     }
 }

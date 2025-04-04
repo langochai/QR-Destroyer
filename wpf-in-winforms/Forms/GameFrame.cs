@@ -81,7 +81,7 @@ namespace wpf_in_winforms
 
         private void DisplayFonts()
         {
-            lblRanking.Font = new Font(FontRegister.JoystickFont.Families[0], 20);
+            lblRanking.Font = new Font(FontRegister.JoystickFont.Families[0], 28);
             lblPlayTime.Font = new Font(FontRegister.MonoFont.Families[0], 36);
         }
 

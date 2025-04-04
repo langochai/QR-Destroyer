@@ -26,21 +26,6 @@ namespace wpf_in_winforms
         {
             if (ValidateInputs())
             {
-                var InterestIDs = new List<int>();
-                if (chkInterest1.Checked) InterestIDs.Add(1);
-                if (chkInterest2.Checked) InterestIDs.Add(2);
-                if (chkInterest3.Checked) InterestIDs.Add(3);
-                if (chkInterest4.Checked) InterestIDs.Add(4);
-                if (chkInterest5.Checked) InterestIDs.Add(5);
-                if (chkInterest6.Checked) InterestIDs.Add(6);
-                if (chkInterest7.Checked) InterestIDs.Add(7);
-                var ChannelIDs = new List<int>();
-                if (chkChannel1.Checked) ChannelIDs.Add(1);
-                if (chkChannel2.Checked) ChannelIDs.Add(2);
-                if (chkChannel3.Checked) ChannelIDs.Add(3);
-                if (chkChannel4.Checked) ChannelIDs.Add(4);
-                if (chkChannel5.Checked) ChannelIDs.Add(5);
-
                 var newCustomer = new Customers
                 {
                     FullName = txtName.Text,
@@ -48,7 +33,7 @@ namespace wpf_in_winforms
                     EmailAdress = txtEmail.Text,
                     PhoneNumber = txtPhoneNumber.Text,
                     PlayTime = 100000,
-                    SmartWarehouseSolutions = chkInterest1.Checked,
+                    SmartWarehouseSolutions = chkInterest2.Checked,
                     MachineVisionSolutions = chkInterest2.Checked,
                     AGVnAMRSolutions = chkInterest3.Checked,
                     AutomaticMachineManufacturingSolutions = chkInterest4.Checked,
@@ -68,6 +53,7 @@ namespace wpf_in_winforms
                 if (weapon.ShowDialog() != DialogResult.OK)
                 {
                     this.Show();
+                    ResetCheckBoxes(this);
                     return;
                 }
                 newCustomer.Id = SqliteHelper<Customers>.Insert(newCustomer);
@@ -82,6 +68,7 @@ namespace wpf_in_winforms
                     frmGame.scannerSerialPort?.Dispose();
                     frmGame.scannerSerialPort = null;
                     this.Show();
+                    ResetCheckBoxes(this);
                 };
                 this.Hide();
                 txtCompany.Text = txtEmail.Text = txtName.Text = txtPhoneNumber.Text = "";
@@ -96,24 +83,25 @@ namespace wpf_in_winforms
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
+        void ResetCheckBoxes(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is CheckBox c) c.Checked = false;
+                // Recursively check child controls
+                if (ctrl.HasChildren)
+                {
+                    ResetCheckBoxes(ctrl);
+                }
+            }
+        }
         private bool ValidateInputs()
         {
             return !(String.IsNullOrWhiteSpace(txtName.Text) || String.IsNullOrWhiteSpace(txtEmail.Text) ||
                 String.IsNullOrWhiteSpace(txtCompany.Text) || String.IsNullOrWhiteSpace(txtPhoneNumber.Text)) &&
-                (chkInterest1.Checked || chkInterest2.Checked || chkInterest3.Checked || chkInterest4.Checked ||
+                (chkInterest2.Checked || chkInterest2.Checked || chkInterest3.Checked || chkInterest4.Checked ||
                 chkInterest5.Checked || chkInterest6.Checked || chkInterest7.Checked) &&
                 (chkChannel1.Checked || chkChannel2.Checked || chkChannel3.Checked || chkChannel4.Checked || chkChannel5.Checked);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtName.Text = "Gigachad";
-            txtEmail.Text = "giggachad@gmail.com";
-            txtCompany.Text = "GIGACHAD COMPANY";
-            txtPhoneNumber.Text = "0123456789";
-            chkInterest1.Checked = chkChannel1.Checked = true;
-            btnStart_Click(null, null);
         }
         protected override CreateParams CreateParams //prevent flickering
         {
@@ -136,7 +124,7 @@ namespace wpf_in_winforms
             txtEmail.Text = "giggachad@gmail.com";
             txtCompany.Text = "GIGACHAD COMPANY";
             txtPhoneNumber.Text = "0123456789";
-            chkInterest1.Checked = chkChannel1.Checked = true;
+            chkInterest2.Checked = chkChannel1.Checked = true;
             btnStart_Click(null, null);
         }
 
