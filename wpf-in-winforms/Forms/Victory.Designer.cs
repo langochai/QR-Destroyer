@@ -40,7 +40,7 @@
             this.picBackground.Image = global::wpf_in_winforms.Properties.Resources.victory;
             this.picBackground.Location = new System.Drawing.Point(0, 0);
             this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(1234, 761);
+            this.picBackground.Size = new System.Drawing.Size(1419, 1013);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
@@ -52,9 +52,9 @@
             this.lblAnnounce.BackColor = System.Drawing.Color.Transparent;
             this.lblAnnounce.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnnounce.ForeColor = System.Drawing.Color.White;
-            this.lblAnnounce.Location = new System.Drawing.Point(117, 532);
+            this.lblAnnounce.Location = new System.Drawing.Point(117, 784);
             this.lblAnnounce.Name = "lblAnnounce";
-            this.lblAnnounce.Size = new System.Drawing.Size(1015, 224);
+            this.lblAnnounce.Size = new System.Drawing.Size(1200, 224);
             this.lblAnnounce.TabIndex = 1;
             this.lblAnnounce.Text = "Bạn là người chiến thắng";
             this.lblAnnounce.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 761);
+            this.ClientSize = new System.Drawing.Size(1419, 1013);
             this.Controls.Add(this.lblAnnounce);
             this.Controls.Add(this.picBackground);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

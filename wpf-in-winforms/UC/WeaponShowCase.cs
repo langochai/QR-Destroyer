@@ -1,76 +1,25 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-using wpf_in_winforms.Fonts;
 using wpf_in_winforms.Models;
 
 namespace wpf_in_winforms.UC
 {
     public partial class WeaponShowCase : UserControl
     {
-        private Scanner scanner;
+        public Scanner scanner;
         public bool isClicked = false;
-        public event Action<int> OnPickWeapon;
-        public int weaponIndex = 0;
 
-        public WeaponShowCase(Scanner s, int idx)
+        public event Action<int> OnPickWeapon;
+
+        private int weaponIndex = 0;
+        private Image weaponImage;
+
+        public WeaponShowCase()
         {
             InitializeComponent();
-            scanner = s;
-            weaponIndex = idx;
-            DisplayData();
-            lblName.Font = new Font(FontRegister.JoystickFont.Families[0], 55);
-        }
-
-        private void DisplayData()
-        {
-            try
-            {
-                lblName.Text = scanner.Name;
-                //lblDescription.Text = scanner.Description;
-                picLogo.Image = scanner.Logo == "MobyData"? Properties.Resources.MobyData : Properties.Resources.HoneyWell;
-                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-                var picPath = Path.Combine(baseDir, "ScannerData", scanner.Picture);
-                var vidPath = Path.Combine(baseDir, "ScannerData", scanner.Video);
-                var placeholderPath = Path.Combine(baseDir, "ScannerData", "placeholder.jpg");
-                bool hasVideo = File.Exists(vidPath);
-                bool hasPic = File.Exists(picPath);
-                if (hasVideo)
-                {
-                    picAbout.Visible = false;
-                    vidAbout.Visible = true;
-                    vidAbout.URL = vidPath;
-                    vidAbout.settings.volume = 100;
-                    vidAbout.settings.mute = true;
-                    vidAbout.settings.setMode("loop", true);
-                    vidAbout.uiMode = "none";
-                    vidAbout.Ctlcontrols.play();
-                }
-                else if (hasPic && !hasVideo)
-                {
-                    vidAbout.Visible = false;
-                    picAbout.Visible = true;
-                    picAbout.Image = Image.FromFile(picPath);
-                }
-                else
-                {
-                    vidAbout.Visible = false;
-                    picAbout.Visible = true;
-                    picAbout.Image = Image.FromFile(placeholderPath);
-                }
-            }
-            catch
-            {
-            }
-        }
-
-        public void TurnOffVid()
-        {
-            vidAbout.Ctlcontrols.stop();
-            vidAbout.URL = "";
-            vidAbout.close();
-            vidAbout.Dispose();
+            //lblName.Font = new Font(FontRegister.JoystickFont.Families[0], 55);
         }
 
         private void WeaponShowCase_Paint(object sender, PaintEventArgs e)
@@ -83,6 +32,7 @@ namespace wpf_in_winforms.UC
                 e.Graphics.DrawRectangle(pen, rect);
             }
         }
+
         public void HandleClickWeapon(bool clicked)
         {
             isClicked = clicked;
@@ -90,25 +40,65 @@ namespace wpf_in_winforms.UC
             this.Update();
             this.Refresh();
         }
+
         public void WeaponShowCase_Click(object sender = null, EventArgs e = null)
         {
-            OnPickWeapon?.Invoke(weaponIndex);
+            OnPickWeapon?.Invoke(WeaponIndex);
             HandleClickWeapon(true);
         }
 
-        private void lblName_Click(object sender, EventArgs e)
+        [Category("Custom")]
+        [Description("Index of the selected weapon.")]
+        public int WeaponIndex
         {
-            WeaponShowCase_Click();
+            get => weaponIndex;
+            set
+            {
+                weaponIndex = value;
+            }
         }
 
-        private void lblDescription_Click(object sender, EventArgs e)
+        [Category("Custom")]
+        [Description("Image of the selected weapon.")]
+        public Image WeaponImage
         {
-            WeaponShowCase_Click();
+            get => weaponImage;
+            set
+            {
+                weaponImage = value;
+                picWeapon.Image = weaponImage;
+                Invalidate();
+            }
         }
 
-        private void picAbout_Click(object sender, EventArgs e)
+        private int radius = 100;
+
+        [DefaultValue(100)]
+        public int Radius
         {
-            WeaponShowCase_Click();
+            get { return radius; }
+            set
+            {
+                radius = value;
+                this.RecreateRegion();
+            }
+        }
+
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect,
+            int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+
+        private void RecreateRegion()
+        {
+            var bounds = ClientRectangle;
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(bounds.Left, bounds.Top, bounds.Right, bounds.Bottom, Radius, radius));
+            this.Invalidate();
+        }
+
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            this.RecreateRegion();
         }
     }
 }

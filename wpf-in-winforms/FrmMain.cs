@@ -41,17 +41,6 @@ namespace wpf_in_winforms
                 if (chkChannel4.Checked) ChannelIDs.Add(4);
                 if (chkChannel5.Checked) ChannelIDs.Add(5);
 
-                //var newCustomer = new Customers
-                //{
-                //    Name = txtName.Text,
-                //    Company = txtCompany.Text,
-                //    Email = txtEmail.Text,
-                //    PhoneNumber = txtPhoneNumber.Text,
-                //    PlayTime = 100000,
-                //    InterestIds = JsonConvert.SerializeObject(InterestIDs),
-                //    ChannelIds = JsonConvert.SerializeObject(ChannelIDs),
-                //    CreatedDate = DateTime.Now,
-                //};
                 var newCustomer = new Customers
                 {
                     FullName = txtName.Text,

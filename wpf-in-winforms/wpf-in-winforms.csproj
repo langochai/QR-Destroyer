@@ -305,6 +305,10 @@
     <None Include="Resources\hw3.png" />
     <None Include="Resources\md1.png" />
     <None Include="Resources\md2.png" />
+    <None Include="Resources\wp1.png" />
+    <None Include="Resources\wp2.png" />
+    <None Include="Resources\dt1.png" />
+    <None Include="Resources\dt2.png" />
     <Content Include="RtcIcon.ico" />
     <Content Include="ScannerData\hw1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
