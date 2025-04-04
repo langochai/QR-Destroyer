@@ -14,7 +14,6 @@ namespace wpf_in_winforms.UC
         {
             base.OnPaintBackground(e);
 
-            // Scale tick box size based on font height, with an optional scaling factor.
             int tickSize = (int)(this.Font.Height * 0.8);
             var tickRect = new Rectangle(new Point(0, this.Height / 2 - tickSize / 2), new Size(tickSize, tickSize));
 
