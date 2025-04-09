@@ -1,5 +1,6 @@
 ﻿using System.Media;
 using System.Windows.Forms;
+using wpf_in_winforms.Models;
 
 namespace wpf_in_winforms.Forms
 {
@@ -12,11 +13,12 @@ namespace wpf_in_winforms.Forms
             game = g;
             lblAnnounce.Parent = picBackground;
             int rank = SqliteHelper<CustomersOld>.GetRank(game.customer.Id);
+            lblPlaytime.Text = $"Thời gian chơi: {string.Format("{0:N2}%", g.stopwatch.Elapsed.TotalSeconds)}";
             if (game.isTrialPlay)
             {
                 lblAnnounce.Text = "Bạn đã hoàn thành lượt chơi";
             }
-            else 
+            else
                 switch (rank)
                 {
                     case 1:

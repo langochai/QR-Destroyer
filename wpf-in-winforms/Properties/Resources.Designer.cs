@@ -313,6 +313,16 @@ namespace wpf_in_winforms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap startscreen {
+            get {
+                object obj = ResourceManager.GetObject("startscreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trial {
             get {
                 object obj = ResourceManager.GetObject("trial", resourceCulture);

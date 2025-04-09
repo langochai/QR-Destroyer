@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using wpf_in_winforms.Fonts;
 using wpf_in_winforms.Models;
 using wpf_in_winforms.UC;
 
@@ -10,13 +12,14 @@ namespace wpf_in_winforms.Forms
 {
     public partial class Weapons : Form
     {
-        private readonly FrmMain main;
+        private readonly FrmMainNew main;
         private List<Scanner> scanners;
         private List<WeaponShowCase> weapons = new List<WeaponShowCase>();
 
-        public Weapons(FrmMain m)
+        public Weapons(FrmMainNew m)
         {
             InitializeComponent();
+            lblHeader.Font = new Font(FontRegister.JoystickFont.Families[0], 72);
             this.main = m;
             try
             {

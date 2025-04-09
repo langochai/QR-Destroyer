@@ -2,7 +2,7 @@
 
 namespace wpf_in_winforms.Models
 {
-    public class CustomersView : Customers
+    public class CustomersView : CustomersOld
     {
         public int Rank { get; set; }
     }

@@ -13,7 +13,7 @@ namespace wpf_in_winforms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new StartScreen());
         }
     }
 }

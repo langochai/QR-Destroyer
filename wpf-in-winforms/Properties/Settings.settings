@@ -21,22 +21,22 @@
       <Value Profile="(Default)">qr6.png</Value>
     </Setting>
     <Setting Name="QR1Content" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">RTC01</Value>
+      <Value Profile="(Default)">WELCOME</Value>
     </Setting>
     <Setting Name="QR2Content" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">RTC02</Value>
+      <Value Profile="(Default)">TO</Value>
     </Setting>
     <Setting Name="QR3Content" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">RTC03</Value>
+      <Value Profile="(Default)">RTC</Value>
     </Setting>
     <Setting Name="QR4Content" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">RTC04</Value>
+      <Value Profile="(Default)">VIMF</Value>
     </Setting>
     <Setting Name="QR5Content" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">RTC05</Value>
+      <Value Profile="(Default)">EXHIBITION</Value>
     </Setting>
     <Setting Name="QR6Content" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">RTC06</Value>
+      <Value Profile="(Default)">2025</Value>
     </Setting>
     <Setting Name="Speed" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1</Value>

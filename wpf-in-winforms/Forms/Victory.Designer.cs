@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Victory));
             this.picBackground = new System.Windows.Forms.PictureBox();
             this.lblAnnounce = new System.Windows.Forms.Label();
+            this.lblPlaytime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,11 +60,26 @@
             this.lblAnnounce.Text = "Bạn là người chiến thắng";
             this.lblAnnounce.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblPlaytime
+            // 
+            this.lblPlaytime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPlaytime.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlaytime.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaytime.ForeColor = System.Drawing.Color.White;
+            this.lblPlaytime.Location = new System.Drawing.Point(117, 0);
+            this.lblPlaytime.Name = "lblPlaytime";
+            this.lblPlaytime.Size = new System.Drawing.Size(805, 210);
+            this.lblPlaytime.TabIndex = 2;
+            this.lblPlaytime.Text = "Thời gian chơi:";
+            this.lblPlaytime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Victory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 738);
+            this.Controls.Add(this.lblPlaytime);
             this.Controls.Add(this.lblAnnounce);
             this.Controls.Add(this.picBackground);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -82,5 +98,6 @@
 
         private System.Windows.Forms.PictureBox picBackground;
         private System.Windows.Forms.Label lblAnnounce;
+        private System.Windows.Forms.Label lblPlaytime;
     }
 }

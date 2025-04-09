@@ -9,10 +9,10 @@ using wpf_in_winforms.Models;
 
 namespace wpf_in_winforms
 {
-    public partial class FrmMain : Form
+    public partial class FrmMainOld : Form
     {
         public Scanner scanner;
-        public FrmMain()
+        public FrmMainOld()
         {
             InitializeComponent();
             SetStyle(ControlStyles.UserPaint |
@@ -26,7 +26,7 @@ namespace wpf_in_winforms
         {
             if (ValidateInputs())
             {
-                var newCustomer = new Customers
+                var newCustomer = new CustomersOld
                 {
                     FullName = txtName.Text,
                     Company = txtCompany.Text,
@@ -56,7 +56,7 @@ namespace wpf_in_winforms
                     ResetCheckBoxes(this);
                     return;
                 }
-                newCustomer.Id = SqliteHelper<Customers>.Insert(newCustomer);
+                newCustomer.Id = SqliteHelper<CustomersOld>.Insert(newCustomer);
                 GameFrame frmGame = new GameFrame
                 {
                     customer = newCustomer,

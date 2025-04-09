@@ -22,7 +22,7 @@ namespace wpf_in_winforms
         private SortableBindingList<CustomersView> customers = new SortableBindingList<CustomersView>();
         private readonly List<PictureBox> Stars = new List<PictureBox>();
         private List<QRs> QRs = new List<QRs>();
-        private Stopwatch stopwatch = new Stopwatch();
+        public Stopwatch stopwatch = new Stopwatch();
         public bool isTrialPlay = false;
         public bool isPlaying = false;
 
@@ -34,6 +34,7 @@ namespace wpf_in_winforms
         private void GameFrame_Load(object sender, EventArgs e)
         {
             grvRank.AutoGenerateColumns = false;
+            grvRank.Columns["colPlaytime"].DefaultCellStyle.Format = "N2";
             DisplayRank();
         }
 
@@ -171,7 +172,7 @@ namespace wpf_in_winforms
             }
             else
             {
-                customer.PlayTime = Convert.ToInt32(stopwatch.Elapsed.TotalSeconds);
+                customer.PlayTime = stopwatch.Elapsed.TotalMilliseconds;
                 SqliteHelper<Customers>.Update(customer);
                 grvRank.BeginInvoke(new Action(() => { DisplayRank(); }));
                 this.BeginInvoke(new Action(() =>
@@ -299,7 +300,8 @@ namespace wpf_in_winforms
             if (isPlaying) return;
             isTrialPlay = false;
             StopGame();
-            if (customer.PlayTime > 0 && customer.PlayTime < 100000) { 
+            if (customer.PlayTime > 0 && customer.PlayTime < 100000)
+            {
                 MessageBox.Show("Bạn đã hoàn thành lượt chơi của mình", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 isPlaying = false;
             }

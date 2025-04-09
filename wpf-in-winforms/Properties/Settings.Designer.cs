@@ -79,7 +79,7 @@ namespace wpf_in_winforms.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("RTC01")]
+        [global::System.Configuration.DefaultSettingValueAttribute("WELCOME")]
         public string QR1Content {
             get {
                 return ((string)(this["QR1Content"]));
@@ -88,7 +88,7 @@ namespace wpf_in_winforms.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("RTC02")]
+        [global::System.Configuration.DefaultSettingValueAttribute("TO")]
         public string QR2Content {
             get {
                 return ((string)(this["QR2Content"]));
@@ -97,7 +97,7 @@ namespace wpf_in_winforms.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("RTC03")]
+        [global::System.Configuration.DefaultSettingValueAttribute("RTC")]
         public string QR3Content {
             get {
                 return ((string)(this["QR3Content"]));
@@ -106,7 +106,7 @@ namespace wpf_in_winforms.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("RTC04")]
+        [global::System.Configuration.DefaultSettingValueAttribute("VIMF")]
         public string QR4Content {
             get {
                 return ((string)(this["QR4Content"]));
@@ -115,7 +115,7 @@ namespace wpf_in_winforms.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("RTC05")]
+        [global::System.Configuration.DefaultSettingValueAttribute("EXHIBITION")]
         public string QR5Content {
             get {
                 return ((string)(this["QR5Content"]));
@@ -124,7 +124,7 @@ namespace wpf_in_winforms.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("RTC06")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2025")]
         public string QR6Content {
             get {
                 return ((string)(this["QR6Content"]));

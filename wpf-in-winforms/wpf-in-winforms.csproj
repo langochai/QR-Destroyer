@@ -106,21 +106,28 @@
     <Compile Include="Forms\Weapons.Designer.cs">
       <DependentUpon>Weapons.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMainNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainNew.Designer.cs">
+      <DependentUpon>FrmMainNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerAPI.cs" />
+    <Compile Include="Models\Customers.cs" />
+    <Compile Include="StartScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartScreen.Designer.cs">
+      <DependentUpon>StartScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Channels.cs" />
     <Compile Include="Models\CusomersViewJSON.cs" />
-    <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\CustomersOld.cs" />
     <Compile Include="Forms\GameFrame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\GameFrame.Designer.cs">
       <DependentUpon>GameFrame.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomersView.cs" />
     <Compile Include="Models\Interests.cs" />
@@ -164,8 +171,11 @@
     <EmbeddedResource Include="Forms\Weapons.resx">
       <DependentUpon>Weapons.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMainNew.resx">
+      <DependentUpon>FrmMainNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartScreen.resx">
+      <DependentUpon>StartScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -312,6 +322,7 @@
     <None Include="Resources\wp2.png" />
     <None Include="Resources\dt1.png" />
     <None Include="Resources\dt2.png" />
+    <None Include="Resources\startscreen.jpg" />
     <Content Include="RtcIcon.ico" />
     <Content Include="ScannerData\hw1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -14,13 +14,18 @@ namespace wpf_in_winforms.Forms
         {
             InitializeComponent();
             scanner = s;
-            btnStart.Font = new Font(FontRegister.JoystickFont.Families[0], 26);
+            btnStart.Font = btnCancel.Font = new Font(FontRegister.JoystickFont.Families[0], 50);
             if (scanner.Logo == "HoneyWell") pictureBox1.Image = Properties.Resources.dt1;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

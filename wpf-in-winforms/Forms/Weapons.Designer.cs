@@ -31,15 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Weapons));
             this.weaponShowCase1 = new wpf_in_winforms.UC.WeaponShowCase();
             this.weaponShowCase2 = new wpf_in_winforms.UC.WeaponShowCase();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // weaponShowCase1
             // 
             this.weaponShowCase1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.weaponShowCase1.BackColor = System.Drawing.Color.Transparent;
-            this.weaponShowCase1.Location = new System.Drawing.Point(385, 140);
+            this.weaponShowCase1.Location = new System.Drawing.Point(456, 254);
             this.weaponShowCase1.Name = "weaponShowCase1";
-            this.weaponShowCase1.Size = new System.Drawing.Size(743, 1090);
+            this.weaponShowCase1.Size = new System.Drawing.Size(695, 976);
             this.weaponShowCase1.TabIndex = 1;
             this.weaponShowCase1.WeaponImage = global::wpf_in_winforms.Properties.Resources.wp2;
             this.weaponShowCase1.WeaponIndex = 1;
@@ -48,18 +49,29 @@
             // 
             this.weaponShowCase2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.weaponShowCase2.BackColor = System.Drawing.Color.Transparent;
-            this.weaponShowCase2.Location = new System.Drawing.Point(1386, 140);
+            this.weaponShowCase2.Location = new System.Drawing.Point(1407, 254);
             this.weaponShowCase2.Name = "weaponShowCase2";
-            this.weaponShowCase2.Size = new System.Drawing.Size(743, 1090);
+            this.weaponShowCase2.Size = new System.Drawing.Size(695, 976);
             this.weaponShowCase2.TabIndex = 0;
             this.weaponShowCase2.WeaponImage = global::wpf_in_winforms.Properties.Resources.wp1;
             this.weaponShowCase2.WeaponIndex = 0;
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Joystix Monospace", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(581, 44);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(1417, 115);
+            this.lblHeader.TabIndex = 2;
+            this.lblHeader.Text = "CHOOSE YOUR WEAPON";
             // 
             // Weapons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2564, 1421);
+            this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.weaponShowCase1);
             this.Controls.Add(this.weaponShowCase2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -68,6 +80,7 @@
             this.Text = "Weapons";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -75,5 +88,6 @@
 
         private UC.WeaponShowCase weaponShowCase2;
         private UC.WeaponShowCase weaponShowCase1;
+        private System.Windows.Forms.Label lblHeader;
     }
 }
