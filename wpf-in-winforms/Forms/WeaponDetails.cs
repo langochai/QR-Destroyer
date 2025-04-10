@@ -9,6 +9,7 @@ namespace wpf_in_winforms.Forms
     public partial class WeaponDetails : Form
     {
         private Scanner scanner;
+        private int enableSeconds = 5;
 
         public WeaponDetails(Scanner s)
         {
@@ -26,6 +27,26 @@ namespace wpf_in_winforms.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void timerEnable_Tick(object sender, EventArgs e)
+        {
+            enableSeconds--;
+            if (enableSeconds > 0)
+            {
+                btnStart.Text = enableSeconds.ToString();
+            }
+            else
+            {
+                btnStart.Text = "COMFIRM";
+                btnStart.Enabled = true;
+                timerEnable.Stop();
+            }
+        }
+
+        private void WeaponDetails_Shown(object sender, EventArgs e)
+        {
+            timerEnable.Start();
         }
     }
 }

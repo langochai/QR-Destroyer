@@ -323,6 +323,18 @@
     <None Include="Resources\dt1.png" />
     <None Include="Resources\dt2.png" />
     <None Include="Resources\startscreen.jpg" />
+    <None Include="Resources\star1_d.png" />
+    <None Include="Resources\star2_d.png" />
+    <None Include="Resources\star3_d.png" />
+    <None Include="Resources\star4_d.png" />
+    <None Include="Resources\star5_d.png" />
+    <None Include="Resources\star6_d.png" />
+    <None Include="Resources\star1_e.png" />
+    <None Include="Resources\star2_e.png" />
+    <None Include="Resources\star3_e.png" />
+    <None Include="Resources\star4_e.png" />
+    <None Include="Resources\star5_e.png" />
+    <None Include="Resources\star6_e.png" />
     <Content Include="RtcIcon.ico" />
     <Content Include="ScannerData\hw1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

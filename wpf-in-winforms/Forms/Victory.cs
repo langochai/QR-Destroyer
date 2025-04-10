@@ -1,4 +1,5 @@
-﻿using System.Media;
+﻿using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 using wpf_in_winforms.Models;
 
@@ -11,9 +12,9 @@ namespace wpf_in_winforms.Forms
         {
             InitializeComponent();
             game = g;
-            lblAnnounce.Parent = picBackground;
+            lblAnnounce.Parent = lblPlaytime.Parent = picBackground;
             int rank = SqliteHelper<CustomersOld>.GetRank(game.customer.Id);
-            lblPlaytime.Text = $"Thời gian chơi: {string.Format("{0:N2}%", g.stopwatch.Elapsed.TotalSeconds)}";
+            lblPlaytime.Text = $"Thời gian chơi: {string.Format("{0:N2}s", g.stopwatch.Elapsed.TotalSeconds)}";
             if (game.isTrialPlay)
             {
                 lblAnnounce.Text = "Bạn đã hoàn thành lượt chơi";

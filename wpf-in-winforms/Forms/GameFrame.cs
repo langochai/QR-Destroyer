@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.IO.Ports;
 using System.Media;
+using System.Reflection;
 using System.Windows.Forms;
 using wpf_control;
 using wpf_control.Models;
@@ -54,7 +55,7 @@ namespace wpf_in_winforms
         {
             stopwatch.Reset();
             lblPlayTime.Text = "00:00";
-            foreach (var star in Stars) { star.Image = Properties.Resources.star_new_disabled; }
+            foreach (var star in Stars) { star.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject($"star{star.Tag}_d"); ; }
             eleHost.Child = null;
             if (scannerSerialPort != null)
             {
@@ -127,7 +128,7 @@ namespace wpf_in_winforms
                 scannerSerialPort.DataReceived -= Com_DataReceived;
                 scannerSerialPort.DataReceived += Com_DataReceived;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Thiết bị chưa được kết nối hoặc không có quyền truy cập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -146,7 +147,7 @@ namespace wpf_in_winforms
                 if (!isCorrect) return;
                 Stars[index].BeginInvoke(new Action(() =>
                 {
-                    Stars[index].Image = Properties.Resources.star_new;
+                    Stars[index].Image = (Bitmap)Properties.Resources.ResourceManager.GetObject($"star{index + 1}_e");
                 }));
                 if (index == 5) HandleVictory();
                 game.Dispatcher.BeginInvoke(new Action(() => { game.RespawnImage(); }));

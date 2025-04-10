@@ -36,7 +36,8 @@ namespace wpf_in_winforms
                 try
                 {
                     var client = new HttpClient();
-                    var response = await client.GetStringAsync($"api and shit");
+                    var api = $"http://192.168.1.2:8080/luckynumber/customer/GetByID?id={txtSTT.Text}";
+                    var response = await client.GetStringAsync(api);
                     var result = JsonConvert.DeserializeObject<CustomerAPI>(response);
                     if (result == null || result.Status == 0)
                     {
@@ -81,6 +82,7 @@ namespace wpf_in_winforms
                     frmGame.scannerSerialPort = null;
                     this.Show();
                 };
+                txtSTT.Text = "";
                 this.Hide();
                 frmGame.Show();
             }
@@ -156,5 +158,12 @@ namespace wpf_in_winforms
             return slot > maxSlot ? maxSlot : slot;
         }
 
+        private void txtSTT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

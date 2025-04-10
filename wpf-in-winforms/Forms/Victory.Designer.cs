@@ -41,7 +41,7 @@
             this.picBackground.Image = global::wpf_in_winforms.Properties.Resources.victory;
             this.picBackground.Location = new System.Drawing.Point(0, 0);
             this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(1024, 738);
+            this.picBackground.Size = new System.Drawing.Size(1024, 762);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
@@ -53,7 +53,7 @@
             this.lblAnnounce.BackColor = System.Drawing.Color.Transparent;
             this.lblAnnounce.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnnounce.ForeColor = System.Drawing.Color.White;
-            this.lblAnnounce.Location = new System.Drawing.Point(117, 509);
+            this.lblAnnounce.Location = new System.Drawing.Point(117, 533);
             this.lblAnnounce.Name = "lblAnnounce";
             this.lblAnnounce.Size = new System.Drawing.Size(805, 224);
             this.lblAnnounce.TabIndex = 1;
@@ -62,23 +62,23 @@
             // 
             // lblPlaytime
             // 
-            this.lblPlaytime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPlaytime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPlaytime.BackColor = System.Drawing.Color.Transparent;
             this.lblPlaytime.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlaytime.ForeColor = System.Drawing.Color.White;
-            this.lblPlaytime.Location = new System.Drawing.Point(117, 0);
+            this.lblPlaytime.Location = new System.Drawing.Point(117, 4);
             this.lblPlaytime.Name = "lblPlaytime";
-            this.lblPlaytime.Size = new System.Drawing.Size(805, 210);
+            this.lblPlaytime.Size = new System.Drawing.Size(805, 198);
             this.lblPlaytime.TabIndex = 2;
-            this.lblPlaytime.Text = "Thời gian chơi:";
+            this.lblPlaytime.Text = "Bạn là người chiến thắng";
             this.lblPlaytime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Victory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 738);
+            this.ClientSize = new System.Drawing.Size(1024, 762);
             this.Controls.Add(this.lblPlaytime);
             this.Controls.Add(this.lblAnnounce);
             this.Controls.Add(this.picBackground);

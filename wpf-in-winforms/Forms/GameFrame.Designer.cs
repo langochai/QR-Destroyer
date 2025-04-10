@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameFrame));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,19 +52,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRanking = new System.Windows.Forms.Label();
             this.GameTick = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.picSetting = new System.Windows.Forms.PictureBox();
+            this.lblPlayTime = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnActualPlay = new System.Windows.Forms.PictureBox();
             this.btnTrialPlay = new System.Windows.Forms.PictureBox();
-            this.lblPlayTime = new System.Windows.Forms.Label();
             this.star6 = new System.Windows.Forms.PictureBox();
             this.star5 = new System.Windows.Forms.PictureBox();
             this.star4 = new System.Windows.Forms.PictureBox();
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.picSetting = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -74,6 +74,9 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvRank)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTrialPlay)).BeginInit();
@@ -83,9 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.star3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -159,15 +159,15 @@
             this.grvRank.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grvRank.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grvRank.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvRank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvRank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grvRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvRank.ColumnHeadersVisible = false;
             this.grvRank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -181,33 +181,33 @@
             this.colRank,
             this.colName,
             this.colPlaytime});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grvRank.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvRank.DefaultCellStyle = dataGridViewCellStyle2;
             this.grvRank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvRank.GridColor = System.Drawing.SystemColors.Window;
             this.grvRank.Location = new System.Drawing.Point(0, 55);
             this.grvRank.Name = "grvRank";
             this.grvRank.ReadOnly = true;
             this.grvRank.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grvRank.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvRank.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grvRank.RowHeadersVisible = false;
             this.grvRank.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.grvRank.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.grvRank.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grvRank.RowTemplate.Height = 60;
             this.grvRank.Size = new System.Drawing.Size(564, 926);
             this.grvRank.TabIndex = 1;
@@ -286,7 +286,7 @@
             // 
             this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colName.DataPropertyName = "FullName";
-            this.colName.FillWeight = 68F;
+            this.colName.FillWeight = 60F;
             this.colName.HeaderText = "Name";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
@@ -296,7 +296,7 @@
             // 
             this.colPlaytime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colPlaytime.DataPropertyName = "PlayTime";
-            this.colPlaytime.FillWeight = 17F;
+            this.colPlaytime.FillWeight = 25F;
             this.colPlaytime.HeaderText = "Playtime";
             this.colPlaytime.Name = "colPlaytime";
             this.colPlaytime.ReadOnly = true;
@@ -330,6 +330,62 @@
             // 
             this.GameTick.Interval = 1000;
             this.GameTick.Tick += new System.EventHandler(this.GameTick_Tick);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.splitContainer2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2564, 1421);
+            this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackgroundImage = global::wpf_in_winforms.Properties.Resources.header_background;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.picSetting);
+            this.panel1.Controls.Add(this.lblPlayTime);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2558, 324);
+            this.panel1.TabIndex = 1;
+            // 
+            // picSetting
+            // 
+            this.picSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSetting.BackColor = System.Drawing.Color.Transparent;
+            this.picSetting.Image = global::wpf_in_winforms.Properties.Resources.cog;
+            this.picSetting.Location = new System.Drawing.Point(2523, 7);
+            this.picSetting.Name = "picSetting";
+            this.picSetting.Size = new System.Drawing.Size(30, 30);
+            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSetting.TabIndex = 7;
+            this.picSetting.TabStop = false;
+            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
+            // 
+            // lblPlayTime
+            // 
+            this.lblPlayTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblPlayTime.AutoSize = true;
+            this.lblPlayTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayTime.Font = new System.Drawing.Font("LCDMono2", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayTime.ForeColor = System.Drawing.Color.Red;
+            this.lblPlayTime.Location = new System.Drawing.Point(22, 263);
+            this.lblPlayTime.Name = "lblPlayTime";
+            this.lblPlayTime.Size = new System.Drawing.Size(143, 42);
+            this.lblPlayTime.TabIndex = 8;
+            this.lblPlayTime.Text = "00:00";
             // 
             // panel3
             // 
@@ -376,133 +432,83 @@
             this.btnTrialPlay.TabStop = false;
             this.btnTrialPlay.Click += new System.EventHandler(this.btnTrialPlay_Click);
             // 
-            // lblPlayTime
-            // 
-            this.lblPlayTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPlayTime.AutoSize = true;
-            this.lblPlayTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlayTime.Font = new System.Drawing.Font("LCDMono2", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayTime.ForeColor = System.Drawing.Color.Red;
-            this.lblPlayTime.Location = new System.Drawing.Point(22, 263);
-            this.lblPlayTime.Name = "lblPlayTime";
-            this.lblPlayTime.Size = new System.Drawing.Size(143, 42);
-            this.lblPlayTime.TabIndex = 8;
-            this.lblPlayTime.Text = "00:00";
-            // 
             // star6
             // 
             this.star6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star6.BackColor = System.Drawing.Color.Transparent;
-            this.star6.Image = ((System.Drawing.Image)(resources.GetObject("star6.Image")));
-            this.star6.Location = new System.Drawing.Point(1282, 3);
+            this.star6.Image = global::wpf_in_winforms.Properties.Resources.star6_d;
+            this.star6.Location = new System.Drawing.Point(1553, 0);
             this.star6.Name = "star6";
-            this.star6.Size = new System.Drawing.Size(90, 90);
+            this.star6.Size = new System.Drawing.Size(152, 90);
             this.star6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star6.TabIndex = 5;
             this.star6.TabStop = false;
+            this.star6.Tag = "6";
             // 
             // star5
             // 
             this.star5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star5.BackColor = System.Drawing.Color.Transparent;
-            this.star5.Image = ((System.Drawing.Image)(resources.GetObject("star5.Image")));
-            this.star5.Location = new System.Drawing.Point(1186, 3);
+            this.star5.Image = global::wpf_in_winforms.Properties.Resources.star5_d;
+            this.star5.Location = new System.Drawing.Point(1263, 0);
             this.star5.Name = "star5";
-            this.star5.Size = new System.Drawing.Size(90, 90);
+            this.star5.Size = new System.Drawing.Size(284, 90);
             this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star5.TabIndex = 4;
             this.star5.TabStop = false;
+            this.star5.Tag = "5";
             // 
             // star4
             // 
             this.star4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star4.BackColor = System.Drawing.Color.Transparent;
-            this.star4.Image = ((System.Drawing.Image)(resources.GetObject("star4.Image")));
-            this.star4.Location = new System.Drawing.Point(1090, 5);
+            this.star4.Image = global::wpf_in_winforms.Properties.Resources.star4_d;
+            this.star4.Location = new System.Drawing.Point(1117, 0);
             this.star4.Name = "star4";
-            this.star4.Size = new System.Drawing.Size(90, 90);
+            this.star4.Size = new System.Drawing.Size(140, 90);
             this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star4.TabIndex = 3;
             this.star4.TabStop = false;
+            this.star4.Tag = "4";
             // 
             // star3
             // 
             this.star3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star3.BackColor = System.Drawing.Color.Transparent;
-            this.star3.Image = ((System.Drawing.Image)(resources.GetObject("star3.Image")));
-            this.star3.Location = new System.Drawing.Point(994, 5);
+            this.star3.Image = global::wpf_in_winforms.Properties.Resources.star3_d;
+            this.star3.Location = new System.Drawing.Point(993, 0);
             this.star3.Name = "star3";
-            this.star3.Size = new System.Drawing.Size(90, 90);
+            this.star3.Size = new System.Drawing.Size(118, 90);
             this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star3.TabIndex = 2;
             this.star3.TabStop = false;
+            this.star3.Tag = "3";
             // 
             // star2
             // 
             this.star2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star2.BackColor = System.Drawing.Color.Transparent;
-            this.star2.Image = ((System.Drawing.Image)(resources.GetObject("star2.Image")));
-            this.star2.Location = new System.Drawing.Point(898, 5);
+            this.star2.Image = global::wpf_in_winforms.Properties.Resources.star2_d;
+            this.star2.Location = new System.Drawing.Point(892, 0);
             this.star2.Name = "star2";
-            this.star2.Size = new System.Drawing.Size(90, 90);
+            this.star2.Size = new System.Drawing.Size(95, 90);
             this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star2.TabIndex = 1;
             this.star2.TabStop = false;
+            this.star2.Tag = "2";
             // 
             // star1
             // 
             this.star1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.star1.BackColor = System.Drawing.Color.Transparent;
-            this.star1.Image = ((System.Drawing.Image)(resources.GetObject("star1.Image")));
-            this.star1.Location = new System.Drawing.Point(802, 3);
+            this.star1.Image = global::wpf_in_winforms.Properties.Resources.star1_d;
+            this.star1.Location = new System.Drawing.Point(606, 0);
             this.star1.Name = "star1";
-            this.star1.Size = new System.Drawing.Size(90, 90);
+            this.star1.Size = new System.Drawing.Size(280, 90);
             this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star1.TabIndex = 0;
             this.star1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackgroundImage = global::wpf_in_winforms.Properties.Resources.header_background;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.picSetting);
-            this.panel1.Controls.Add(this.lblPlayTime);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2558, 324);
-            this.panel1.TabIndex = 1;
-            // 
-            // picSetting
-            // 
-            this.picSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSetting.BackColor = System.Drawing.Color.Transparent;
-            this.picSetting.Image = global::wpf_in_winforms.Properties.Resources.cog;
-            this.picSetting.Location = new System.Drawing.Point(2523, 7);
-            this.picSetting.Name = "picSetting";
-            this.picSetting.Size = new System.Drawing.Size(30, 30);
-            this.picSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSetting.TabIndex = 7;
-            this.picSetting.TabStop = false;
-            this.picSetting.Click += new System.EventHandler(this.picSetting_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.splitContainer2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(2564, 1421);
-            this.tableLayoutPanel1.TabIndex = 6;
+            this.star1.Tag = "1";
             // 
             // GameFrame
             // 
@@ -527,6 +533,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvRank)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnActualPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTrialPlay)).EndInit();
@@ -536,10 +546,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.star3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -75,8 +75,8 @@ namespace wpf_control
             bitmap.Freeze();
             BouncingImage = new Image
             {
-                Width = 150,
-                Height = 150,
+                Width = bitmap.Width,
+                Height = bitmap.Height,
                 Source = bitmap,
                 Stretch = System.Windows.Media.Stretch.Uniform
             };
