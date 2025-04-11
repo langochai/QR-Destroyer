@@ -44,7 +44,11 @@
             this.colRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPlaytime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSetting = new System.Windows.Forms.Label();
+            this.cboStage = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grvRank)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grvRank
@@ -88,7 +92,7 @@
             this.grvRank.DefaultCellStyle = dataGridViewCellStyle2;
             this.grvRank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvRank.GridColor = System.Drawing.SystemColors.Window;
-            this.grvRank.Location = new System.Drawing.Point(0, 0);
+            this.grvRank.Location = new System.Drawing.Point(0, 100);
             this.grvRank.Name = "grvRank";
             this.grvRank.ReadOnly = true;
             this.grvRank.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -106,7 +110,7 @@
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.grvRank.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grvRank.RowTemplate.Height = 60;
-            this.grvRank.Size = new System.Drawing.Size(752, 900);
+            this.grvRank.Size = new System.Drawing.Size(752, 800);
             this.grvRank.TabIndex = 2;
             this.grvRank.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvRank_CellClick);
             this.grvRank.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grvRank_CellFormatting);
@@ -199,18 +203,59 @@
             this.colPlaytime.ReadOnly = true;
             this.colPlaytime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cboStage);
+            this.panel1.Controls.Add(this.lblSetting);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(752, 100);
+            this.panel1.TabIndex = 3;
+            // 
+            // lblSetting
+            // 
+            this.lblSetting.AutoSize = true;
+            this.lblSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetting.Location = new System.Drawing.Point(12, 28);
+            this.lblSetting.Name = "lblSetting";
+            this.lblSetting.Size = new System.Drawing.Size(109, 37);
+            this.lblSetting.TabIndex = 0;
+            this.lblSetting.Text = "Stage:";
+            // 
+            // cboStage
+            // 
+            this.cboStage.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStage.FormattingEnabled = true;
+            this.cboStage.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "5",
+            "6"});
+            this.cboStage.Location = new System.Drawing.Point(127, 27);
+            this.cboStage.Name = "cboStage";
+            this.cboStage.Size = new System.Drawing.Size(121, 41);
+            this.cboStage.TabIndex = 1;
+            this.cboStage.SelectedIndexChanged += new System.EventHandler(this.cboStage_SelectedIndexChanged);
+            // 
             // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 900);
             this.Controls.Add(this.grvRank);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Summary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Summary";
             this.Shown += new System.EventHandler(this.Summary_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.grvRank)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +273,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlaytime;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblSetting;
+        private System.Windows.Forms.ComboBox cboStage;
     }
 }

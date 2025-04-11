@@ -37,6 +37,7 @@ namespace wpf_in_winforms
             grvRank.AutoGenerateColumns = false;
             grvRank.Columns["colPlaytime"].DefaultCellStyle.Format = "N2";
             DisplayRank();
+            DisplayFonts();
         }
 
         private void InitializeGame()
@@ -48,7 +49,6 @@ namespace wpf_in_winforms
             ConnectCom();
             stopwatch.Start();
             GameTick.Start();
-            DisplayFonts();
         }
 
         private void StopGame()
@@ -67,7 +67,7 @@ namespace wpf_in_winforms
 
         public void DisplayRank()
         {
-            customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView());
+            customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView(GetStage()));
             if (customers.Count < 10)
             {
                 var missingCount = 10 - customers.Count;
@@ -173,7 +173,7 @@ namespace wpf_in_winforms
             }
             else
             {
-                customer.PlayTime = stopwatch.Elapsed.TotalMilliseconds;
+                customer.PlayTime = Math.Round(stopwatch.Elapsed.TotalSeconds, 2);
                 SqliteHelper<Customers>.Update(customer);
                 grvRank.BeginInvoke(new Action(() => { DisplayRank(); }));
                 this.BeginInvoke(new Action(() =>
@@ -308,6 +308,23 @@ namespace wpf_in_winforms
             }
             else InitializeGame();
             isPlaying = true;
+        }
+        private static int GetStage()
+        {
+            var now = DateTime.Now;
+            DateTime anchor = new DateTime(2025, 4, 16, 12, 0, 0);
+
+            const double hoursPerSlot = 12;
+            const int maxSlot = 6;
+
+            double hoursSinceAnchor = (now - anchor).TotalHours;
+
+            if (hoursSinceAnchor < 0)
+                return 1;
+
+            int slot = (int)(hoursSinceAnchor / hoursPerSlot) + 2;
+
+            return slot > maxSlot ? maxSlot : slot;
         }
     }
 }

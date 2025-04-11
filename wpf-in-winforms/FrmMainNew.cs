@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using wpf_in_winforms.Fonts;
 using wpf_in_winforms.Forms;
@@ -18,8 +19,6 @@ namespace wpf_in_winforms
             SetStyle(ControlStyles.UserPaint |
                      ControlStyles.AllPaintingInWmPaint |
                      ControlStyles.DoubleBuffer, true);
-            bool registered = FontRegister.Register();
-            if (registered) btnStart.Font = new Font(FontRegister.JoystickFont.Families[0], 36);
             var btns = new Button[] { btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnBackspace, btnReset };
             foreach (Button b in btns)
             {
@@ -32,28 +31,31 @@ namespace wpf_in_winforms
         {
             if (ValidateInputs())
             {
-                var customerName = "";
-                try
+                var customerTask = GetCustomerAsync(txtSTT.Text);
+                Weapons weapon = new Weapons(this);
+                this.Hide();
+                if (weapon.ShowDialog() != DialogResult.OK)
                 {
-                    var client = new HttpClient();
-                    var api = $"http://192.168.1.2:8080/luckynumber/customer/GetByID?id={txtSTT.Text}";
-                    var response = await client.GetStringAsync(api);
-                    var result = JsonConvert.DeserializeObject<CustomerAPI>(response);
-                    if (result == null || result.Status == 0)
-                    {
-                        MessageBox.Show("Bạn chưa đăng ký STT, vui lòng liên hệ nhân viên quầy để được giúp đỡ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else
-                    {
-                        customerName = result.Data.FullName;
-                    }
+                    this.Show();
+                    return;
                 }
-                catch
+                var customer = await customerTask;
+                string customerName;
+                if (customer == null)
                 {
-                    customerName = $"Người chơi {(new Random()).Next(1, 200)}";
+                    customerName = $"Người chơi {new Random().Next(1, 200)}";
                 }
-
+                else if (customer.Status == 0)
+                {
+                    MessageBox.Show(
+                      "Bạn chưa đăng ký STT, vui lòng liên hệ nhân viên quầy để được giúp đỡ",
+                      "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    customerName = customer.Data.FullName;
+                }
                 var newCustomer = new Customers
                 {
                     CustomerId = Convert.ToInt32(txtSTT.Text),
@@ -62,13 +64,6 @@ namespace wpf_in_winforms
                     Stage = GetStage(),
                     CreatedDate = DateTime.Now,
                 };
-                Weapons weapon = new Weapons(this);
-                this.Hide();
-                if (weapon.ShowDialog() != DialogResult.OK)
-                {
-                    this.Show();
-                    return;
-                }
                 SqliteHelper<Customers>.Insert(newCustomer);
                 GameFrame frmGame = new GameFrame
                 {
@@ -163,6 +158,23 @@ namespace wpf_in_winforms
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+        private async Task<CustomerAPI> GetCustomerAsync(string id)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.Timeout = TimeSpan.FromSeconds(5);
+                    var apiUrl = $"http://192.168.1.2:8080/luckynumber/customer/GetByID?id={id}";
+                    var json = await client.GetStringAsync(apiUrl).ConfigureAwait(false);
+                    return JsonConvert.DeserializeObject<CustomerAPI>(json);
+                }
+            }
+            catch
+            {
+                return null;
             }
         }
     }

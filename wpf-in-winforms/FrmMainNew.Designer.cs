@@ -50,7 +50,6 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnSummary = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.PictureBox();
             this.tblLayout.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,10 +92,10 @@
             // 
             // txtSTT
             // 
-            this.txtSTT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSTT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSTT.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSTT.Location = new System.Drawing.Point(203, 529);
-            this.txtSTT.MaxLength = 6;
+            this.txtSTT.MaxLength = 20;
             this.txtSTT.Name = "txtSTT";
             this.txtSTT.Size = new System.Drawing.Size(587, 135);
             this.txtSTT.TabIndex = 1;
@@ -104,7 +103,7 @@
             // 
             // lblSTT
             // 
-            this.lblSTT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSTT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSTT.AutoSize = true;
             this.lblSTT.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSTT.Location = new System.Drawing.Point(93, 377);
@@ -116,7 +115,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(1265, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1004, 1167);
@@ -124,7 +122,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -383,17 +381,6 @@
             this.label3.Text = "ĐĂNG KÝ THAM GIA TRÒ CHƠI";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1935, 1324);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 59);
-            this.button1.TabIndex = 55;
-            this.button1.Text = "TEST";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // btnStart
             // 
             this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -412,9 +399,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::wpf_in_winforms.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(2564, 1421);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.tblLayout);
@@ -439,7 +426,6 @@
         private System.Windows.Forms.PictureBox btnStart;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label btnSummary;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

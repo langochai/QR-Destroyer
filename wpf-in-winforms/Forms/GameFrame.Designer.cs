@@ -136,7 +136,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.grvRank);
             this.splitContainer2.Panel2.Controls.Add(this.panel2);
             this.splitContainer2.Size = new System.Drawing.Size(2558, 985);
-            this.splitContainer2.SplitterDistance = 1986;
+            this.splitContainer2.SplitterDistance = 1985;
             this.splitContainer2.TabIndex = 3;
             // 
             // eleHost
@@ -145,7 +145,7 @@
             this.eleHost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eleHost.Location = new System.Drawing.Point(0, 0);
             this.eleHost.Name = "eleHost";
-            this.eleHost.Size = new System.Drawing.Size(1982, 981);
+            this.eleHost.Size = new System.Drawing.Size(1981, 981);
             this.eleHost.TabIndex = 0;
             this.eleHost.Text = "elementHost1";
             this.eleHost.Child = null;
@@ -209,7 +209,7 @@
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.grvRank.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grvRank.RowTemplate.Height = 60;
-            this.grvRank.Size = new System.Drawing.Size(564, 926);
+            this.grvRank.Size = new System.Drawing.Size(565, 926);
             this.grvRank.TabIndex = 1;
             this.grvRank.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvRank_CellClick);
             this.grvRank.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grvRank_CellFormatting);
@@ -309,7 +309,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(564, 55);
+            this.panel2.Size = new System.Drawing.Size(565, 55);
             this.panel2.TabIndex = 0;
             // 
             // lblRanking

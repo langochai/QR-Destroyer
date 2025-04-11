@@ -162,14 +162,48 @@ namespace wpf_in_winforms
             throw new NotSupportedException($"Type {type} not supported");
         }
 
-        public static List<T> GetCustomerView()
+        public static List<T> GetCustomerView(int stage = 0)
         {
             var results = new List<T>();
             using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
-                string query = @"SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank, *
-                                FROM customers ORDER BY PlayTime ASC LIMIT 10";
+                var where = stage == 0 ? "" : $"AND stage = {stage}";
+                //string query = $@"SELECT ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank, *
+                //                FROM customers {where} ORDER BY PlayTime ASC LIMIT 10";
+                string query = $@"
+                            WITH
+                                top10 AS (
+                                    SELECT *
+                                    FROM customers
+                                    WHERE PlayTime < 100000
+                                    {where}
+                                    ORDER BY PlayTime ASC
+                                    LIMIT 10
+                                    ),
+                                pad AS (
+                                    SELECT *
+                                    FROM customers
+                                    WHERE stage IS NULL
+                                    ORDER BY PlayTime ASC
+                                    LIMIT (10 - (SELECT COUNT(*) FROM top10))
+                                    ),
+                                combined AS (
+                                    SELECT * FROM top10
+                                    UNION ALL
+                                    SELECT * FROM pad
+                                    )
+                            SELECT
+                                ROW_NUMBER() OVER (ORDER BY PlayTime ASC) AS Rank,
+                                Id,
+                                CustomerId,
+                                FullName,
+                                PlayTime,
+                                Stage,
+                                CreatedDate
+                            FROM combined
+                            ORDER BY Rank;
+                ";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 using (var reader = command.ExecuteReader())
                 {

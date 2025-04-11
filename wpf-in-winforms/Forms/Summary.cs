@@ -17,11 +17,12 @@ namespace wpf_in_winforms.Forms
         {
             InitializeComponent();
             grvRank.AutoGenerateColumns = false;
-            DisplayRank();
+            cboStage.SelectedIndex = GetStage() - 1;
+            DisplayRank(GetStage());
         }
-        public void DisplayRank()
+        public void DisplayRank(int stage)
         {
-            var customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView());
+            var customers = new SortableBindingList<CustomersView>(SqliteHelper<CustomersView>.GetCustomerView(stage));
             if (customers.Count < 10)
             {
                 var missingCount = 10 - customers.Count;
@@ -111,6 +112,28 @@ namespace wpf_in_winforms.Forms
         {
             grvRank.ClearSelection();
             grvRank.CurrentCell = null;
+        }
+        private static int GetStage()
+        {
+            var now = DateTime.Now;
+            DateTime anchor = new DateTime(2025, 4, 16, 12, 0, 0);
+
+            const double hoursPerSlot = 12;
+            const int maxSlot = 6;
+
+            double hoursSinceAnchor = (now - anchor).TotalHours;
+
+            if (hoursSinceAnchor < 0)
+                return 1;
+
+            int slot = (int)(hoursSinceAnchor / hoursPerSlot) + 2;
+
+            return slot > maxSlot ? maxSlot : slot;
+        }
+
+        private void cboStage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayRank(cboStage.SelectedIndex + 1);
         }
     }
 }

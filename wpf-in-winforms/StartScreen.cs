@@ -15,6 +15,7 @@ namespace wpf_in_winforms
         public StartScreen()
         {
             InitializeComponent();
+            FontRegister.Register();
         }
 
         private void StartScreen_KeyUp(object sender, KeyEventArgs e)

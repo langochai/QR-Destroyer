@@ -29,14 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Weapons));
+            this.lblHeader = new System.Windows.Forms.Label();
             this.weaponShowCase1 = new wpf_in_winforms.UC.WeaponShowCase();
             this.weaponShowCase2 = new wpf_in_winforms.UC.WeaponShowCase();
-            this.lblHeader = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Joystix Monospace", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(581, 44);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(1417, 115);
+            this.lblHeader.TabIndex = 2;
+            this.lblHeader.Text = "CHOOSE YOUR WEAPON";
             // 
             // weaponShowCase1
             // 
-            this.weaponShowCase1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.weaponShowCase1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.weaponShowCase1.BackColor = System.Drawing.Color.Transparent;
             this.weaponShowCase1.Location = new System.Drawing.Point(456, 254);
             this.weaponShowCase1.Name = "weaponShowCase1";
@@ -47,7 +58,7 @@
             // 
             // weaponShowCase2
             // 
-            this.weaponShowCase2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.weaponShowCase2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.weaponShowCase2.BackColor = System.Drawing.Color.Transparent;
             this.weaponShowCase2.Location = new System.Drawing.Point(1407, 254);
             this.weaponShowCase2.Name = "weaponShowCase2";
@@ -55,16 +66,6 @@
             this.weaponShowCase2.TabIndex = 0;
             this.weaponShowCase2.WeaponImage = global::wpf_in_winforms.Properties.Resources.wp1;
             this.weaponShowCase2.WeaponIndex = 0;
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Joystix Monospace", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(581, 44);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(1417, 115);
-            this.lblHeader.TabIndex = 2;
-            this.lblHeader.Text = "CHOOSE YOUR WEAPON";
             // 
             // Weapons
             // 
